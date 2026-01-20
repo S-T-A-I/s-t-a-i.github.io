@@ -609,6 +609,12 @@ img.in-text {
     margin-bottom: 50px;
 }
 
+.open-list-item .opening-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
 .open-list-item .opening {
     color: #333333;
     font-size: 1em;

@@ -1,10 +1,16 @@
 +++
 title = "MSc"
-date = "2025-12-22"
+date = "2026-01-20"
 short_description = ""
 status = "Open"
 weight = 3
 +++
+
+**Expectations**
+
+We expect MSc students to run their own first-author projects, with possible collaborations with both senior and junior members inside and outside the lab.
+
+**Application process**
 
 1. Send an email to [Seong Joon Oh](mailto:coallaoh@gmail.com) with your CV and research statement attached
 2. Coffee chat with Seong Joon to figure out initial fit

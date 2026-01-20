@@ -1,10 +1,16 @@
 +++
 title = "Internship (Pre-MSc)"
-date = "2025-12-21"
+date = "2026-01-20"
 short_description = ""
 status = "Open"
 weight = 4
 +++
+
+**Expectations**
+
+We expect interns to participate in a predefined research agenda as a co-author, working closely with their PhD student host.
+
+**Application process**
 
 1. Send an email to the relevant PhD student (cc: [Seong Joon Oh](mailto:coallaoh@gmail.com)) with your CV and research statement attached
 2. Coffee chat with the PhD student

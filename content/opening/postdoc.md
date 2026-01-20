@@ -1,10 +1,16 @@
 +++
 title = "Postdoc"
-date = "2026-01-18"
+date = "2026-01-20"
 short_description = ""
 status = "Open"
 weight = 1
 +++
+
+**Expectations**
+
+We expect postdocs to be independent researchers who can manage multiple research threads in the lab through supervision, while pursuing their own first-author agenda. A research vision broader than a single project is expected.
+
+**Application process**
 
 1. Send an email to [Seong Joon Oh](mailto:coallaoh@gmail.com) with your CV and research statement attached
 2. Coffee chat with Seong Joon to figure out initial fit
