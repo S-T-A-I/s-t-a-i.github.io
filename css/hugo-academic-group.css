@@ -225,6 +225,12 @@ span.darknav {
     font-size: 25pt;
 }
 
+@media (max-width: 991px) {
+    .section-heading {
+        margin-bottom: 30px;
+    }
+}
+
 .section-heading h1 a {
     color: #000000;
 }
@@ -245,6 +251,12 @@ span.darknav {
 
 .logos-row {
   font-size: 0;
+}
+
+@media (max-width: 767px) {
+    .logos-row {
+        margin-top: 50px;
+    }
 }
 
 .logos-row  > * {
@@ -545,18 +557,41 @@ img.in-text {
  *  Publications
  **************************************************/
 
-.pub-banner {
-    width: 200px;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+.pub-row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 768px) {
-  .pub-banner {
-      width: 180px;
-  }
+.pub-thumbnail-col {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .pub-thumbnail-col {
+        flex: 0 0 150px;
+        max-width: 150px;
+        margin-bottom: 0;
+    }
+    .pub-row > .col-sm-9 {
+        flex: 1;
+        max-width: calc(100% - 150px);
+    }
+}
+
+.pub-banner {
+    width: 130px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 767px) {
+    .pub-banner {
+        width: 160px;
+        margin-bottom: 10px;
+    }
 }
 
 .pub .pub-title {
@@ -680,11 +715,19 @@ img.in-text {
 }
 
 /*************************************************
- *  Members
+ *  Members & Alumni grid layout
  **************************************************/
 
-#members > .container > .row > .col-md-3:nth-child(4n+1) {
-    clear: both;
+#members > .container > .row,
+#alumni > .container > .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#members > .container > .row > [class*="col-"],
+#alumni > .container > .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
 }
 
 /*************************************************
