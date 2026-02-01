@@ -51,9 +51,6 @@ tag = "tags"
     title = "Courses"
     subtitle = ""
     str_all = "More Courses"
-    # for newlines in tables
-    [markup.goldmark.renderer]
-      unsafe = true
 
   # Section will only be displayed if there are posts in `content/post/`.
   [params.posts]
@@ -113,3 +110,9 @@ tag = "tags"
       name = "Contact"
       url = "/#contact"
       weight = 8
+
+# Allow raw HTML in markdown (for custom table styling)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
