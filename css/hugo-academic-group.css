@@ -686,6 +686,19 @@ img.in-text {
     padding-top: 5px;
 }
 
+.course-header-row {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+}
+
+.course-header-row > [class*="col-"] {
+    float: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .course-banner {
     width: 300px;
     max-width: 100%;
@@ -700,10 +713,22 @@ img.in-text {
     color: #333333;
 }
 
+.container > .row > .col-sm-12 > h2 {
+    font-weight: 700;
+}
+
+.course-article-style h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.6em;
+}
+
 .course-article-style h3 {
     margin-top: 20px;
     margin-bottom: 10px;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 1.3em;
 }
 
 /*************************************************
@@ -932,3 +957,20 @@ nav#navbar-main li {
         padding-bottom: 10px;
     }
 }
+
+/*************************************************
+ *  Schedule table part colours
+ **************************************************/
+
+table tr.part-0,
+table tr.part-0 td { background-color: #f5f5f5 !important; }
+table tr.part-1,
+table tr.part-1 td { background-color: #f3f9fe !important; }
+table tr.part-2,
+table tr.part-2 td { background-color: #fffbf0 !important; }
+table tr.part-3,
+table tr.part-3 td { background-color: #fcf5fd !important; }
+table tr.part-4,
+table tr.part-4 td { background-color: #f5fbf6 !important; }
+table tr.part-5,
+table tr.part-5 td { background-color: #fef0f2 !important; }

@@ -112,22 +112,21 @@ During my undergraduate studies, I conducted research on this topic and publishe
 &lt;p&gt;I previously co-founded a deep learning startup and have worked across research, engineering, and product roles in AI startups. My research experience includes speech synthesis and audio understanding, and I have published at ICASSP.&lt;/p&gt;
 &lt;p&gt;Recently, I have been working on evaluation frameworks for tool-using agents, focusing on how agents decompose tasks, acquire information from multiple sources, and integrate heterogeneous outputs in a reliable way.&lt;/p&gt;</description></item><item><title>PhD Student</title><link>https://s-t-a-i.github.io/member/bryan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://s-t-a-i.github.io/member/bryan/</guid><description>&lt;p&gt;I am an incoming PhD Student at KAIST AI (Spring 2026), where I work in the group on Scalable Trustworthy AI (STAI).&lt;/p&gt;
 &lt;p&gt;I am driven by a simple question: why do some models look brilliant in benchmarks yet stumble when deployed in the wild?
-My work focuses on understanding that gap - probing the assumptions, inductive biases, and failure modes that cause systems to overperform in controlled settings but degrade under real-world complexity.&lt;/p&gt;</description></item><item><title>Trustworthy Machine Learning</title><link>https://s-t-a-i.github.io/courses/tml_spring_26/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://s-t-a-i.github.io/courses/tml_spring_26/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-&lt;h3 id="goal"&gt;Goal&lt;/h3&gt;
+My work focuses on understanding that gap - probing the assumptions, inductive biases, and failure modes that cause systems to overperform in controlled settings but degrade under real-world complexity.&lt;/p&gt;</description></item><item><title>Trustworthy Machine Learning</title><link>https://s-t-a-i.github.io/courses/tml_spring_26/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://s-t-a-i.github.io/courses/tml_spring_26/</guid><description>&lt;h2 id="1-goal"&gt;1. Goal&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Students will be able to critically read, assess, and discuss research work in Trustworthy Machine Learning (TML).&lt;/li&gt;
 &lt;li&gt;Students will gain the technical background to implement basic TML techniques in a deep learning framework.&lt;/li&gt;
 &lt;li&gt;Students will be ready to conduct their own research in TML and make contributions to the research community.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="prerequisites"&gt;Prerequisites&lt;/h3&gt;
+&lt;h2 id="2-prerequisites"&gt;2. Prerequisites&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Familiarity with Python and PyTorch coding.&lt;/li&gt;
 &lt;li&gt;A pass grade from the Deep Learning Course (or equivalent).&lt;/li&gt;
 &lt;li&gt;Basic knowledge of machine learning concepts.&lt;/li&gt;
 &lt;li&gt;Basic maths: multivariate calculus, linear algebra, probability, statistics, and optimisation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="tml-book"&gt;TML Book&lt;/h2&gt;
-&lt;p&gt;Last year&amp;rsquo;s course materials are now a book. You can find it here: &lt;a href="https://trustworthyml.io/"&gt;https://trustworthyml.io/&lt;/a&gt;. It&amp;rsquo;s also on arXiv: &lt;a href="https://arxiv.org/abs/2310.08215"&gt;https://arxiv.org/abs/2310.08215&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Trustworthy Machine Learning</title><link>https://s-t-a-i.github.io/courses/tml_winter_2223/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://s-t-a-i.github.io/courses/tml_winter_2223/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;h2 id="3-tml-book"&gt;3. TML Book&lt;/h2&gt;
+&lt;p&gt;Previous course materials are available as a book: &lt;a href="https://trustworthyml.io/"&gt;https://trustworthyml.io/&lt;/a&gt; (also on &lt;a href="https://arxiv.org/abs/2310.08215"&gt;arXiv&lt;/a&gt;).&lt;/p&gt;</description></item><item><title>Trustworthy Machine Learning</title><link>https://s-t-a-i.github.io/courses/tml_winter_2223/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://s-t-a-i.github.io/courses/tml_winter_2223/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
 &lt;h3 id="goal"&gt;Goal&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Students will be able to critically read, assess, and discuss research work in Trustworthy Machine Learning (TML).&lt;/li&gt;
