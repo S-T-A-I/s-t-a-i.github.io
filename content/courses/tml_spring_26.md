@@ -2,7 +2,7 @@
 title = "Trustworthy Machine Learning"
 semester = "Spring Semester 2026"
 university = "KAIST AI"
-image = "tml-compass.jpg"
+image = "compass-2026.png"
 sort_position = 4
 subtitle = "Bridging the Communication Gap in Deploying General AI"
 description = "Why does AI solve the Math Olympiad but fail to manage your calendar? General AI is not trustworthy in private settings because of three broken communication channels. Human to AI: underspecification (it doesn't know what I want). AI to Human: unexplainability and overconfidence (I don't know why it did that or if it's guessing). Environment: hostility (privacy leaks and security attacks). This course covers theoretical and technical background for these key topics in Trustworthy Machine Learning (TML). We conduct a critical review of classical and contemporary research papers and provide hands-on practicals."
