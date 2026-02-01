@@ -3,17 +3,13 @@ abstract = "CLIP (Contrastive Language-Image Pretraining) has become a popular c
 date = "2026-01-27T00:00:00+00:00"
 publication_date = "2026-04-24T00:00:00+00:00"
 image = "darina2025binding.png"
-math = false
 publication = "International Conference on Learning Representations"
 publication_short = "ICLR"
-selected = false
 title = "CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally"
 url_code = "//github.com/AlexanderRubinstein/OCCAM"
-url_dataset = ""
 url_arxiv = "//arxiv.org/abs/2502.03566"
 url_pdf = "//arxiv.org/pdf/2502.03566"
 url_project = "//alexanderrubinstein.github.io/are-we-done-with-ocl/"
-url_video = ""
 url_rtai = "//researchtrend.ai/papers/2502.03566"
 
 

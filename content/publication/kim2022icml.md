@@ -2,17 +2,12 @@
 abstract = "The great success of machine learning with massive amounts of data comes at a price of huge computation costs and storage for training and tuning. Recent studies on dataset condensation attempt to reduce the dependence on such massive data by synthesizing a compact training dataset. However, the existing approaches have fundamental limitations in optimization due to the limited representability of synthetic datasets without considering any data regularity characteristics. To this end, we propose a novel condensation framework that generates multiple synthetic data with a limited storage budget via efficient parameterization considering data regularity. We further analyze the shortcomings of the existing gradient matching-based condensation methods and develop an effective optimization technique for improving the condensation of training data information. We propose a unified algorithm that drastically improves the quality of condensed data against the current state-of-the-art on CIFAR-10, ImageNet, and Speech Commands."
 date = "2022-07-01T00:00:00+00:00"
 image = "kim2022icml.png"
-math = false
 publication = "International Conference on Machine Learning"
 publication_short = "ICML"
-selected = false
 title = "Dataset Condensation via Efficient Synthetic-Data Parameterization"
 url_code = "//github.com/snu-mllab/Efficient-Dataset-Condensation"
-url_dataset = ""
 url_arxiv = "//arxiv.org/abs/2205.14959"
 url_pdf = "//arxiv.org/pdf/2205.14959"
-url_project = ""
-url_poster = ""
 url_rtai = "//researchtrend.ai/papers/2205.14959"
 
 [[authors]]

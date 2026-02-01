@@ -41,7 +41,7 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-3 pub-row-heading">Publication</div>
-                    <div class="col-xs-12 col-sm-9">{{ .Params.publication | markdownify }}</div>
+                    <div class="col-xs-12 col-sm-9">{{ .Params.publication | markdownify }} {{ if .Params.publication_date }}{{ dateFormat "2006" .Params.publication_date }}{{ else }}{{ .Date.Format "2006" }}{{ end }}</div>
                 </div>
             </div>
         </div>
@@ -61,19 +61,6 @@
         </div>
         {{ end }}
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-3 pub-row-heading">Date</div>
-                    <div class="col-xs-12 col-sm-9" itemprop="datePublished">
-                        {{ if .Params.to_be_published }}
-                            To be published in
-                        {{ end }}
-                        {{ .Date.Format "January, 2006" }}
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="visible-xs space-below"></div>
 

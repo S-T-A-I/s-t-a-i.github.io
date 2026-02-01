@@ -3,18 +3,13 @@ abstract = "Dr.LLM improves reasoning with less computation. Lightweight routers
 date = "2026-01-27T00:00:00+00:00"
 publication_date = "2026-04-24T00:00:00+00:00"
 image = "ahmed2025drllm.png"
-math = false
 publication = "International Conference on Learning Representations"
 publication_short = "ICLR"
-selected = false
 title = "Dr.LLM: Dynamic Layer Routing for LLMs"
 url_code = "//github.com/parameterlab/dr-llm"
-url_dataset = ""
 url_arxiv = "//arxiv.org/abs/2510.12773"
 url_pdf = "//arxiv.org/pdf/2510.12773"
 url_rtai = "//researchtrend.ai/papers/2510.12773"
-url_project = ""
-url_video = ""
 
 
 [[authors]]

@@ -3,17 +3,12 @@ abstract = "Image-Text matching (ITM) is a common task for evaluating the qualit
 date = "2022-08-01T00:00:00+00:00"
 publication_date= "2022-10-23T00:00:00+00:00"
 image = "chun2022eccv.png"
-math = false
 publication = "European Conference on Computer Vision"
 publication_short = "ECCV"
-selected = false
 title = "ECCV Caption: Correcting False Negatives by Collecting Machine-and-Human-verified Image-Caption Associations for MS-COCO"
 url_code = "//github.com/naver-ai/eccv-caption"
-url_dataset = ""
 url_arxiv = "//arxiv.org/abs/2204.03359"
 url_pdf = "//arxiv.org/pdf/2204.03359"
-url_project = ""
-url_poster = ""
 url_rtai = "//researchtrend.ai/papers/2204.03359"
 
 [[authors]]

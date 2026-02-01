@@ -3,18 +3,12 @@ abstract = "We introduce SelfReflect, an information-theoretic metric measuring 
 date = "2026-01-27T00:00:00+00:00"
 publication_date = "2026-04-24T00:00:00+00:00"
 image = "michael2025selfreflect.png"
-math = false
 publication = "International Conference on Learning Representations"
 publication_short = "ICLR"
-selected = false
 title = "SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?"
-url_code = ""
-url_dataset = ""
 url_arxiv = "//arxiv.org/abs/2505.20295"
 url_pdf = "//arxiv.org/pdf/2505.20295"
 url_rtai = "//researchtrend.ai/papers/2505.20295"
-url_project = ""
-url_video = ""
 
 
 [[authors]]

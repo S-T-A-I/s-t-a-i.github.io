@@ -3,17 +3,12 @@ abstract = "The favorable performance of Vision Transformers (ViTs) is often att
 date = "2023-07-25T00:00:00+00:00"
 publication_date= "2023-10-01T00:00:00+00:00"
 image = "nam2023iccv.png"
-math = false
 publication = "International Conference on Computer Vision"
 publication_short = "ICCV"
-selected = false
 title = "Scratching Visual Transformer's Back with Uniform Attention"
 url_code = "//uniform-attention.github.io/"
-url_dataset = ""
 url_arxiv = "//arxiv.org/abs/2210.08457"
 url_pdf = "//arxiv.org/pdf/2210.08457"
-url_project = ""
-url_video = ""
 url_rtai = "//researchtrend.ai/papers/2210.08457"
 
 [[authors]]

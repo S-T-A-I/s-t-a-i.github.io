@@ -20,18 +20,12 @@
                 {{ else }}
                     {{ .Params.publication | markdownify }}
                 {{ end }}
+                {{ if .Params.publication_date }}{{ dateFormat "2006" .Params.publication_date }}{{ else }}{{ .Date.Format "2006" }}{{ end }}
                 {{ with .Params.award }}
                     <br>
                         {{ . }}
                     </br>
                 {{ end }}
-                <div itemprop="datePublished">
-                    {{ if .Params.to_be_published }}
-                        To be published in {{ dateFormat "January, 2006" .Params.publication_date }}
-                    {{ else }}
-                        {{ .Date.Format "January, 2006" }}
-                    {{ end }}
-                </div>
             </div>
 
             <div class="pub-links">

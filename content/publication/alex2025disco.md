@@ -3,18 +3,14 @@ abstract = "Evaluating modern machine learning models has become prohibitively e
 date = "2026-01-27T00:00:00+00:00"
 publication_date = "2026-04-24T00:00:00+00:00"
 image = "alex2025disco.png"
-math = false
 publication = "International Conference on Learning Representations"
 publication_short = "ICLR"
-selected = false
 title = "DISCO: Diversifying Sample Condensation for Efficient Model Evaluation"
 url_code = "//github.com/arubique/disco-public"
-url_dataset = ""
 url_arxiv = "//arxiv.org/abs/2510.07959"
 url_pdf = "//arxiv.org/pdf/2510.07959"
 url_rtai = "//researchtrend.ai/papers/2510.07959"
 url_project = "//arubique.github.io/disco-site/"
-url_video = ""
 
 
 [[authors]]
