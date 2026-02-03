@@ -6,6 +6,9 @@ image = "minyoung2026delimiter.png"
 publication = "International Conference on Learning Representations"
 publication_short = "ICLR"
 title = "Enhancing Multi-Image Understanding through Delimiter Token Scaling"
+url_arxiv = "//arxiv.org/abs/2602.01984"
+url_pdf = "//arxiv.org/pdf/2602.01984"
+url_code = "//github.com/MYMY-young/DelimScaling"
 url_openreview = "//openreview.net/forum?id=7QFf05KrOm"
 
 
