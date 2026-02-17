@@ -27,8 +27,15 @@
         </p>
 
         <div class="row logos-row">
-          <div class="col-xs-4 col-sm-2 affiliate-logos">
-            <a href="https://scalabletrustworthyai.github.io/"><img class="affiliate-logos" src="img/stai_logo.png" alt="STAI logo" style="position: relative; top: -15px;"></a>
+          <div class="col-xs-4 col-sm-2 affiliate-logos affiliate-logos-stai">
+            <a href="https://scalabletrustworthyai.github.io/">
+              {{ if isset .Site.Params.logo "image_dark" }}
+              <img class="affiliate-logos logo-light" src="/{{ .Site.Params.logo.image }}" alt="STAI logo">
+              <img class="affiliate-logos logo-dark" src="/{{ .Site.Params.logo.image_dark }}" alt="STAI logo">
+              {{ else }}
+              <img class="affiliate-logos" src="/{{ .Site.Params.logo.image }}" alt="STAI logo">
+              {{ end }}
+            </a>
           </div>
           <div class="col-xs-4 col-sm-2 affiliate-logos">
             <a href="https://gsai.kaist.ac.kr/"><img class="affiliate-logos" src="img/logo_kaist.png" alt="KAIST logo"></a>

@@ -1,0 +1,304 @@
+/**
+ * Dark mode theme for s-t-a-i.github.io
+ * Applied when .dark-mode is set on <html> (by theme toggle or system preference)
+ */
+
+.dark-mode body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.dark-mode .navbar-default {
+  background: #252525;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .navbar-default .navbar-nav li a,
+.dark-mode .navbar-default .navbar-nav li a:visited {
+  color: #c0c0c0;
+}
+
+.dark-mode .navbar-default .navbar-nav li a:hover {
+  color: #5eb3f6;
+}
+
+.dark-mode .navbar-brand {
+  color: #e8e8e8;
+}
+
+.dark-mode .navbar-brand a {
+  color: #c0c0c0;
+}
+
+/* Bright/dark logo: show dark logo in dark mode, bright logo otherwise */
+.navbar-brand .logo-dark {
+  display: none;
+}
+.dark-mode .navbar-brand .logo-light {
+  display: none;
+}
+.dark-mode .navbar-brand .logo-dark {
+  display: inline-block;
+}
+
+/* Affiliate logos: STAI bright/dark by theme */
+.affiliate-logos-stai .logo-dark {
+  display: none;
+}
+.dark-mode .affiliate-logos-stai .logo-light {
+  display: none;
+}
+.dark-mode .affiliate-logos-stai .logo-dark {
+  display: inline-block;
+}
+
+.dark-mode .navbar-default .navbar-toggle .icon-bar {
+  background-color: #c0c0c0;
+}
+
+.dark-mode .navbar-collapse {
+  border-color: #404040;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: #252525;
+  border-color: #404040;
+}
+
+.dark-mode .dropdown-menu > li > a {
+  color: #c0c0c0;
+}
+
+.dark-mode .dropdown-menu > li > a:hover,
+.dark-mode .dropdown-menu > li > a:focus {
+  background-color: #353535;
+  color: #e8e8e8;
+}
+
+.dark-mode .home-section {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .home-section:nth-of-type(even) {
+  background-color: #222222;
+}
+
+.dark-mode .section-heading h1 a {
+  color: #e8e8e8;
+}
+
+.dark-mode .section-heading p {
+  color: #9ca3a8;
+}
+
+.dark-mode a,
+.dark-mode a:visited {
+  color: #5eb3f6;
+}
+
+.dark-mode a:hover {
+  color: #7ec4f8;
+}
+
+.dark-mode .portrait-title h2 {
+  color: #e8e8e8;
+}
+
+.dark-mode .portrait-title h3 {
+  color: #b0b0b0;
+}
+
+.dark-mode .portrait-title h4 {
+  color: #9ca3a8;
+}
+
+.dark-mode .article-metadata,
+.dark-mode .article-metadata .article-date,
+.dark-mode .article-metadata .article-tags {
+  color: #9ca3a8;
+}
+
+.dark-mode .article-metadata a {
+  color: #9ca3a8;
+}
+
+.dark-mode .article-metadata a:hover {
+  color: #5eb3f6;
+}
+
+.dark-mode .article-style p {
+  color: #d0d0d0;
+}
+
+.dark-mode .article-style figure img,
+.dark-mode .article-style figure video {
+  box-shadow: 1px 1px 0 #2a2a2a, -1px -1px 0 #2a2a2a, 1px -1px 0 #2a2a2a, -1px 1px 0 #2a2a2a;
+}
+
+.dark-mode .pub-list-item .pub-publication,
+.dark-mode .open-list-item .opening-date,
+.dark-mode .course-list-item .course-date {
+  color: #9ca3a8;
+}
+
+.dark-mode .open-list-item .opening,
+.dark-mode .course-list-item .course,
+.dark-mode .course-article-style p {
+  color: #d0d0d0;
+}
+
+.dark-mode ul.ul-edu li .description p.institution {
+  color: #9ca3a8;
+}
+
+.dark-mode span.darknav {
+  color: #5eb3f6;
+}
+
+.dark-mode .site-footer,
+.dark-mode footer a#back_to_top i {
+  color: #7a8288;
+}
+
+.dark-mode .site-footer a {
+  color: #5eb3f6;
+}
+
+.dark-mode .btn-primary {
+  border-color: #3d9de0;
+  background-color: #006199;
+}
+
+.dark-mode .btn-primary:hover,
+.dark-mode .btn-primary:focus,
+.dark-mode .btn-primary:active {
+  background: #0077b8;
+  border-color: #5eb3f6;
+}
+
+.dark-mode .btn-primary.btn-outline {
+  color: #5eb3f6;
+  border-color: #5eb3f6;
+}
+
+.dark-mode .btn-primary.btn-outline:hover {
+  color: #1a1a1a;
+  background: #5eb3f6;
+}
+
+/* Schedule table part colours in dark mode */
+.dark-mode table tr.part-0,
+.dark-mode table tr.part-0 td { background-color: #2a2a2a !important; }
+.dark-mode table tr.part-1,
+.dark-mode table tr.part-1 td { background-color: #1e2a35 !important; }
+.dark-mode table tr.part-2,
+.dark-mode table tr.part-2 td { background-color: #352e22 !important; }
+.dark-mode table tr.part-3,
+.dark-mode table tr.part-3 td { background-color: #2e2435 !important; }
+.dark-mode table tr.part-4,
+.dark-mode table tr.part-4 td { background-color: #1e2e24 !important; }
+.dark-mode table tr.part-5,
+.dark-mode table tr.part-5 td { background-color: #352428 !important; }
+
+/* Base table styles in dark mode */
+.dark-mode .table {
+  background-color: #222222;
+  color: #e0e0e0;
+}
+
+.dark-mode .table > thead > tr > th,
+.dark-mode .table > tbody > tr > th,
+.dark-mode .table > tfoot > tr > th,
+.dark-mode .table > thead > tr > td,
+.dark-mode .table > tbody > tr > td,
+.dark-mode .table > tfoot > tr > td {
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+/* Override Bootstrap .table-striped: no light alternating rows */
+.dark-mode .table-striped > tbody > tr:nth-of-type(odd),
+.dark-mode .table-striped > tbody > tr:nth-of-type(odd) > td {
+  background-color: #222222;
+  color: #e0e0e0;
+}
+
+.dark-mode .table-striped > tbody > tr:nth-of-type(even),
+.dark-mode .table-striped > tbody > tr:nth-of-type(even) > td {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+.dark-mode .table-bordered {
+  border-color: #404040;
+}
+
+.dark-mode .table-bordered > thead > tr > th,
+.dark-mode .table-bordered > tbody > tr > th,
+.dark-mode .table-bordered > tfoot > tr > th,
+.dark-mode .table-bordered > thead > tr > td,
+.dark-mode .table-bordered > tbody > tr > td,
+.dark-mode .table-bordered > tfoot > tr > td {
+  border-color: #404040;
+}
+
+/* Legacy/plain table (no .table class) */
+.dark-mode table {
+  color: #e0e0e0;
+}
+
+.dark-mode table td,
+.dark-mode table th {
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+.dark-mode .alert.alert-info {
+  background-color: #1e3a4a;
+  border-color: #2a4a5e;
+  color: #c8dce6;
+}
+
+.dark-mode .alert.alert-info a {
+  color: #7ec4f8;
+}
+
+.dark-mode code {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #404040;
+}
+
+.dark-mode pre {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #404040;
+}
+
+.dark-mode pre code {
+  background-color: transparent;
+  color: inherit;
+}
+
+/* Header section: overlay behind image; content above overlay (z-index) so text is readable */
+.dark-mode header {
+  position: relative;
+}
+
+.dark-mode header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.dark-mode header .header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.dark-mode header .header-content-inner {
+  color: rgba(255, 255, 255, 0.92);
+}
