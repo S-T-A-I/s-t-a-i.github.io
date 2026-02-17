@@ -23,8 +23,9 @@ tag = "tags"
   slogan_text = "Creating scalable and trustworthy AI with human guidance"
 
   [params.logo]
-    image = "img/stai_logo.png"
-    link = "img/stai_logo.png"
+    image = "img/stai-logos-bright.png"
+    image_dark = "img/stai-logos-dark.png"
+    link = "/"
 
   [params.publications_selected]
     detailed_list = true

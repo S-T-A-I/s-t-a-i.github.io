@@ -13,8 +13,11 @@
 
             <div class="navbar-brand">
                 {{ if isset .Site.Params "logo"}}
-                    <a class="logo" href="/{{ .Site.Params.baseurl }}">
-                        <img src="/{{.Site.Params.logo.image}}" alt="Research group logo"></img>
+                    <a class="logo" href="/">
+                        <img class="logo-light" src="/{{.Site.Params.logo.image}}" alt="Research group logo">
+                        {{ if isset .Site.Params.logo "image_dark"}}
+                        <img class="logo-dark" src="/{{.Site.Params.logo.image_dark}}" alt="Research group logo">
+                        {{ end }}
                     </a>
                 {{ end }}
                 {{ if isset .Site.Params "navbar_hierarchy" }}
@@ -53,7 +56,16 @@
                         <li class="nav-item"><a data-scroll href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                 {{ end }}
-
+                <li class="dropdown theme-toggle-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Theme">
+                        <i class="fa fa-adjust" aria-hidden="true"></i> <span class="theme-label">Theme</span> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#" data-theme-choice="light"><i class="fa fa-sun-o" aria-hidden="true"></i> Light</a></li>
+                        <li><a href="#" data-theme-choice="dark"><i class="fa fa-moon-o" aria-hidden="true"></i> Dark</a></li>
+                        <li><a href="#" data-theme-choice="system"><i class="fa fa-desktop" aria-hidden="true"></i> System</a></li>
+                    </ul>
+                </li>
             </ul>
 
         </div><!-- /.navbar-collapse -->
