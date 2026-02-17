@@ -25,11 +25,10 @@
   }
 
   function updateDropdownLabel() {
-    var label = document.querySelector('.theme-toggle-dropdown .theme-label');
-    if (label) {
-      var theme = getStoredTheme();
-      label.textContent = theme === 'light' ? 'Light' : theme === 'dark' ? 'Dark' : 'System';
-    }
+    var theme = getStoredTheme();
+    var text = theme === 'light' ? 'Light' : theme === 'dark' ? 'Dark' : 'System';
+    var labels = document.querySelectorAll('.theme-toggle-dropdown .theme-label');
+    labels.forEach(function(label) { label.textContent = text; });
   }
 
   function handleChoice(e) {

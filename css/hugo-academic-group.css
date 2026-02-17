@@ -961,6 +961,26 @@ nav#navbar-main li {
         /* padding-right: 10px; */
         padding-bottom: 10px;
     }
+    .theme-toggle-desktop {
+        display: none !important;
+    }
+    .theme-toggle-navbar-mobile {
+        display: block;
+        float: right;
+        line-height: 50px;
+        padding-right: 15px;
+    }
+    .theme-toggle-navbar-mobile .dropdown-toggle {
+        padding: 15px 10px;
+        line-height: 20px;
+        color: inherit;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    .theme-toggle-navbar-mobile {
+        display: none;
+    }
 }
 
 /*************************************************
