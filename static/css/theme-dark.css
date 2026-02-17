@@ -56,6 +56,13 @@
   background-color: #c0c0c0;
 }
 
+.dark-mode .theme-toggle-navbar-mobile .dropdown-toggle {
+  color: #c0c0c0;
+}
+.dark-mode .theme-toggle-navbar-mobile .dropdown-toggle:hover {
+  color: #5eb3f6;
+}
+
 .dark-mode .navbar-collapse {
   border-color: #404040;
 }

@@ -34,6 +34,18 @@
 
                 {{end}}
             </div>
+            <div class="theme-toggle-navbar-mobile">
+                <div class="dropdown theme-toggle-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Theme">
+                        <i class="fa fa-adjust" aria-hidden="true"></i> <span class="theme-label">Theme</span> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#" data-theme-choice="light"><i class="fa fa-sun-o" aria-hidden="true"></i> Light</a></li>
+                        <li><a href="#" data-theme-choice="dark"><i class="fa fa-moon-o" aria-hidden="true"></i> Dark</a></li>
+                        <li><a href="#" data-theme-choice="system"><i class="fa fa-desktop" aria-hidden="true"></i> System</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,7 +68,7 @@
                         <li class="nav-item"><a data-scroll href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                 {{ end }}
-                <li class="dropdown theme-toggle-dropdown">
+                <li class="dropdown theme-toggle-dropdown theme-toggle-desktop">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Theme">
                         <i class="fa fa-adjust" aria-hidden="true"></i> <span class="theme-label">Theme</span> <span class="caret"></span>
                     </a>
