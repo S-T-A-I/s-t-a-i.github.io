@@ -78,7 +78,7 @@ body {
     padding-top: 0;
     counter-reset: captions;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     body {
         /* Offset body content by navbar height. */
         margin-top: 51px;
@@ -900,7 +900,7 @@ nav#navbar-main li {
     text-decoration: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .navbar {
         min-height: 50px !important;
     }
@@ -977,9 +977,10 @@ nav#navbar-main li {
     }
 }
 
-@media screen and (min-width: 1001px) {
-    .theme-toggle-navbar-mobile {
-        display: none;
+@media screen and (min-width: 1201px) {
+    #navbar-main .theme-toggle-navbar-mobile,
+    .navbar .theme-toggle-navbar-mobile {
+        display: none !important;
     }
 }
 
