@@ -11,7 +11,8 @@ url_rtai = "//researchtrend.ai/papers/2601.21601"
 
 [[authors]]
     name = "Hoyeon Chang"
-    is_member = false
+    is_member = true
+    id = "hoyeon"
 [[authors]]
     name = "Bálint Mucsányi"
     is_member = true
