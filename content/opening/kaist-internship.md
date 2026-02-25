@@ -1,5 +1,5 @@
 +++
-title = "Internship (Pre-MSc)"
+title = "Internship"
 date = "2026-01-20"
 short_description = ""
 status = "Open"
@@ -11,6 +11,8 @@ weight = 4
 We expect interns to participate in a predefined research agenda as a co-author, working closely with their PhD student host.
 
 **Application process**
+
+![Internship application process](/img/flowcharts/flowchart-intern-public.png)
 
 1. Send an email to the relevant PhD student (cc: [stai.there@gmail.com](mailto:stai.there@gmail.com)) with your CV and research statement attached
 2. Coffee chat with the PhD student

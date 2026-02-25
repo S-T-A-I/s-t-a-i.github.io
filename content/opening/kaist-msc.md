@@ -12,7 +12,9 @@ We expect MSc students to run their own first-author projects, with possible col
 
 **Application process**
 
-1. Send an email to [Seong Joon Oh](mailto:stai.there@gmail.com) with your CV and research statement attached
+![MSc application process](/img/flowcharts/flowchart-msc-public.png)
+
+1. Email [stai.there@gmail.com](mailto:stai.there@gmail.com) with your CV and research statement attached
 2. Coffee chat with Seong Joon to figure out initial fit
 3. Interview: 30 min + 30 min with Seong Joon
    - *First half*: Present your prior work (aim for 10 minutes, leaving 20 minutes for discussion)
