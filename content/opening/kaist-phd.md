@@ -16,7 +16,8 @@ We expect PhD students to run their own first-author projects, with possible col
 2. Coffee chat with Seong Joon to figure out initial fit
 3. Half-day interview
    - *Job talk*: Present your prior work to the entire lab (30 minutes + discussion)
-   - *1-on-1 interviews*: Meet individually with 2 lab members (on-site: scheduled throughout the day; remote: candidate reaches out to members and arranges meetings individually)
+   - *1-on-1 interviews*: Meet individually with 2 lab members (we will connect you via email to arrange times)
+   - *Interview with Seong Joon*: Discuss research directions
 4. Offer
 5. Apply to the grad school with Seong Joon Oh's supervision intent via [KAIST Graduate Admissions](https://admission.kaist.ac.kr/)
 
