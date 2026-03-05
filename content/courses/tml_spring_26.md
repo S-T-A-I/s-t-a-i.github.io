@@ -34,28 +34,26 @@ The book will be useful for the course. However, the course materials are update
 <tr><th>#</th><th>Date</th><th>Content</th><th>Quiz</th><th>Project</th></tr>
 </thead>
 <tbody>
-<tr class="part-0"><td>L1</td><td>Mar 06</td><td>Orientation (short session)</td><td>—</td><td><strong>Interest survey</strong></td></tr>
+<tr class="part-0"><td>L1</td><td>Mar 06</td><td>Orientation (short session)</td><td>—</td><td>—</td></tr>
 <tr class="part-1"><td>L2</td><td>Mar 13</td><td><strong>I. Human → AI:</strong> ML Foundations & Generalisation Primer</td><td>Quiz 0 (trial)</td><td>—</td></tr>
-<tr class="part-1"><td>L3</td><td>Mar 20</td><td>Underspecification & Cues</td><td>—</td><td><strong>Team formation due</strong></td></tr>
+<tr class="part-1"><td>L3</td><td>Mar 20</td><td>Underspecification & Cues</td><td>—</td><td><strong>Team formation due (23:59)</strong></td></tr>
 <tr class="part-1"><td>L4</td><td>Mar 27</td><td>LLM Communication & Modularity</td><td>—</td><td>—</td></tr>
 <tr class="part-2"><td>L5</td><td>Apr 03</td><td><strong>II. AI → Human:</strong> Explanation & XAI</td><td>Quiz 1</td><td>—</td></tr>
 <tr class="part-2"><td>L6</td><td>Apr 10</td><td>Attribution Methods</td><td>—</td><td>—</td></tr>
 <tr class="part-2"><td>L7</td><td>Apr 17</td><td>TDA Frontiers & Mechanistic Interpretability</td><td>—</td><td>—</td></tr>
-<tr class="part-5"><td>L8</td><td>Apr 24</td><td>Proposal presentations (midterm week)</td><td>—</td><td><strong>Proposal report due; Proposal presentation</strong></td></tr>
+<tr class="part-5"><td>L8</td><td>Apr 24</td><td>Proposal presentations (midterm week)</td><td>—</td><td><strong>Proposal report due (23:59); Proposal presentation</strong></td></tr>
 <tr class="part-2"><td>L9</td><td>May 01</td><td>Uncertainty I (Aleatoric)</td><td>Quiz 2</td><td>—</td></tr>
 <tr class="part-2"><td>L10</td><td>May 08</td><td>Uncertainty II (Epistemic)</td><td>—</td><td>—</td></tr>
 <tr class="part-2"><td>L11</td><td>May 15</td><td>Uncertainty III (LLMs)</td><td>—</td><td>—</td></tr>
 <tr class="part-3"><td>L12</td><td>May 22</td><td><strong>III. Privacy & Security:</strong> Landscape & Data Privacy</td><td>Quiz 3</td><td>—</td></tr>
 <tr class="part-3"><td>L13</td><td>May 29</td><td>Contextual Privacy & Model Integrity</td><td>—</td><td>—</td></tr>
 <tr class="part-3"><td>L14</td><td>Jun 05</td><td>Adversarial Attacks & Jailbreaking</td><td>—</td><td>—</td></tr>
-<tr class="part-4"><td>L15</td><td>Jun 12</td><td><strong>IV. Synthesis & Wrap-up</strong></td><td>Quiz 4</td><td><strong>Final report due; Peer eval due</strong></td></tr>
+<tr class="part-4"><td>L15</td><td>Jun 12</td><td><strong>IV. Synthesis & Wrap-up</strong></td><td>Quiz 4</td><td><strong>Final report due (23:59); Peer eval due (23:59)</strong></td></tr>
 <tr class="part-5"><td>L16</td><td>Jun 19</td><td>Final Presentations</td><td>—</td><td><strong>Final presentation</strong></td></tr>
 </tbody>
 </table>
 
-## 5. Assessment
-
-### 5.1 Grading
+## 5. Grading
 
 {{<table "table table-striped table-bordered">}}
 | Component | Weight |
@@ -68,29 +66,25 @@ The book will be useful for the course. However, the course materials are update
 | **Total** | **100%** |
 {{</table>}}
 
-### 5.2 Late submission policy
-
 Late submissions are not accepted. A missed deadline counts as a zero.
 
-### 5.3 Quizzes
+## 6. Quizzes
 
 - **Format:** Google Forms, accessible via QR code in class (link shared on Slack simultaneously).
 - **Timing:** Strict 10-minute window at the start of class.
 - **Structure:** 3 questions covering material from previous lectures. Attending lectures is essential.
 - **Quiz 0** is a trial run so students can get used to the format. It does not count towards the grade.
 
-### 5.4 Projects
-
-- **Deliverable:** 4-page report + 10 min presentation.
-- **Peer evaluation:** Mandatory form at the end. Distribute 100 points among your team members based on contribution. Unequal splits will affect individual grades.
-
-## 6. Team Projects
+## 7. Projects
 
 - **Team size:** 3 students per team.
-- **Formation:**
-  - Week 1: Interest survey.
-  - Week 3: Teams finalised.
+- **Formation:** Use the `#team-formation` Slack channel to find team members. Teams finalised by L3 (Mar 20, 23:59).
 - **Compute:** Each student receives a 50 USD Google Cloud Platform voucher for the project. Each team of three therefore has 150 USD credit.
+- **Template:** Use the [ICML 2026 LaTeX template](https://icml.cc/Conferences/2026/AuthorInstructions) for both proposal and final reports.
+- **Deliverables:**
+  - Proposal: 1-2 page report + 5 min presentation.
+  - Final: 4-page report (ICML format, excluding references) + 10 min presentation.
+- **Peer evaluation:** Mandatory form at the end. Distribute 100 points among your team members based on contribution. Unequal splits will affect individual grades.
 
 ### Example project topics
 
@@ -102,7 +96,7 @@ Topics are open; students choose direction and methods. Examples of the kind of 
 4. **Confidence under distribution shift.** Methods like BaseCal and EAGLE improve calibration on in-distribution data. Less is known about how confidence estimates degrade under distribution shift or across multi-turn conversations. Evaluate existing calibration methods on shifted inputs and propose a detection strategy. Models: Llama 3.1 8B or Mistral 7B (sampling-based methods need ~20-50 forward passes per input; budget for this). Datasets: TriviaQA, MMLU with domain-shifted or adversarially perturbed variants. References: [IB-EDL](https://proceedings.iclr.cc/paper_files/paper/2025/hash/0cbdd1e6613c42fe975337671790f406-Abstract-Conference.html) (ICLR 2025, information-theoretic evidential calibration), [Multicalibration](https://proceedings.mlr.press/v235/detommaso24a.html) (ICML 2024, group-wise calibration for LLMs).
 5. **Paper reproduction.** Reproduce the key experiments of a published paper covered in the course. Verify the claims, test on a different model or dataset, and report where the results hold and where they break. Choose a paper whose experiments fit the compute budget.
 
-## 7. Generative AI Policies
+## 8. Generative AI Policies
 
 Students may use generative AI tools (e.g. LLMs, VLMs, image generators). However, you are solely responsible for all outputs you submit. We will apply heavy penalties for:
 - Hallucinated or factually incorrect outputs.
@@ -116,13 +110,13 @@ You must be ready to answer clarification requests from the lecturer or tutors a
 
 We do not tolerate very similar creative work among class members. AI tends to produce similar outputs across sessions and model families. Diversify your answers, especially for creative work. Suspicion of copied work will be penalised.
 
-## 8. Communication & Logistics
+## 9. Communication & Logistics
 
 **Language:** English
 
 **Lecturer:** [Seong Joon Oh](../../member/joon/)
 
-**Tutors:** [Bryan Truong](../../member/bryan), [Seokwon Jung](../../member/seokwonjung)
+**Tutors:** TBA
 
 **When:** Fridays 13:00-16:00
 
