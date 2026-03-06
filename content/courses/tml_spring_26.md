@@ -34,7 +34,7 @@ The book will be useful for the course. However, the course materials are update
 <tr><th>#</th><th>Date</th><th>Content</th><th>Quiz</th><th>Project</th></tr>
 </thead>
 <tbody>
-<tr class="part-0"><td>L1</td><td>Mar 06</td><td>Orientation (short session)</td><td>—</td><td>—</td></tr>
+<tr class="part-0"><td>L1</td><td>Mar 06</td><td><a href="https://docs.google.com/presentation/d/17BCFaHw7q4Momahitjh-9yj12tGIzV6-hsnCwl9k5Ao/edit?usp=sharing">Orientation (short session)</a></td><td>—</td><td>—</td></tr>
 <tr class="part-1"><td>L2</td><td>Mar 13</td><td><strong>I. Human → AI:</strong> ML Foundations & Generalisation Primer</td><td>Quiz 0 (trial)</td><td>—</td></tr>
 <tr class="part-1"><td>L3</td><td>Mar 20</td><td>Underspecification & Cues</td><td>—</td><td><strong>Team formation due (23:59)</strong></td></tr>
 <tr class="part-1"><td>L4</td><td>Mar 27</td><td>LLM Communication & Modularity</td><td>—</td><td>—</td></tr>
@@ -120,7 +120,7 @@ We do not tolerate very similar creative work among class members. AI tends to p
 
 **When:** Fridays 13:00-16:00
 
-**Where:** 양재산학캠퍼스 대강의실 (Hybrid)
+**Where:** 양재산학캠퍼스 대강의실 (Hybrid, [Zoom](https://kaist.zoom.us/j/8340478956))
 
 **Email:** `stai.there@gmail.com` for submissions, questions, and feedback.
 
