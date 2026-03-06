@@ -120,7 +120,7 @@ We do not tolerate very similar creative work among class members. AI tends to p
 
 **When:** Fridays 13:00-16:00
 
-**Where:** 양재산학캠퍼스 대강의실 (Hybrid)
+**Where:** 양재산학캠퍼스 대강의실 (Hybrid, [Zoom](https://kaist.zoom.us/j/8340478956))
 
 **Email:** `stai.there@gmail.com` for submissions, questions, and feedback.
 
