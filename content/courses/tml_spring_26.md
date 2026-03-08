@@ -110,7 +110,7 @@ We do not tolerate very similar creative work among class members. AI tends to p
 
 **Tutors:** TBA
 
-**When:** Fridays 13:00-16:00
+**When:** Fridays 13:00-15:30 (1st session 13:00-14:10, break 14:10-14:20, 2nd session 14:20-15:30)
 
 **Where:** 양재산학캠퍼스 대강의실 (Hybrid, [Zoom](https://kaist.zoom.us/j/8340478956))
 
