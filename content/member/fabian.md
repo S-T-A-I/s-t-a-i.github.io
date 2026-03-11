@@ -9,6 +9,7 @@ short_bio = "MSc student interested in Parameter Spaces."
 short_name = "Fabian"
 title = "MSc Student"
 sort_position = 15
+is_former_member = true
 
 [[social]]
     icon = "envelope"

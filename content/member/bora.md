@@ -9,6 +9,7 @@ short_bio = "MSc student interested in representation learning."
 short_name = "Bora"
 title = "MSc Student"
 sort_position = 14
+is_former_member = true
 
 [[social]]
     icon = "envelope"

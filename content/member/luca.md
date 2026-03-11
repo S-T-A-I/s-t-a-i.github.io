@@ -9,6 +9,7 @@ short_bio = "I am Luca Füger."
 short_name = "Luca"
 title = "MSc student"
 sort_position = 15
+is_former_member = true
 
 
 [[social]]

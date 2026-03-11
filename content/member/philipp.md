@@ -9,6 +9,7 @@ short_bio = "MSc student working on TDA for LLMs"
 short_name = "Philipp"
 title = "MSc Student"
 sort_position = 14
+is_former_member = true
 
 [[social]]
     icon = "envelope"
