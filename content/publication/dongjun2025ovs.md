@@ -5,13 +5,19 @@ publication_date = "2025-12-01T00:00:00+00:00"
 image = "dongjun2025ovs.png"
 publication = "Conference on Neural Information Processing Systems"
 publication_short = "NeurIPS"
-title = "Overcoming Domain Limitations in Open-vocabulary Segmentation"
+title = "OVS Meets Continual Learning: Towards Sustainable Open-Vocabulary Segmentation"
 url_arxiv = "//arxiv.org/abs/2410.11536"
 url_pdf = "//arxiv.org/pdf/2410.11536"
 url_rtai = "//researchtrend.ai/papers/2410.11536"
 
 [[authors]]
     name = "Dongjun Hwang"
+    is_member = false
+[[authors]]
+    name = "Yejin Kim"
+    is_member = false
+[[authors]]
+    name = "Minyoung Lee"
     is_member = false
 [[authors]]
     name = "Seong Joon Oh"
