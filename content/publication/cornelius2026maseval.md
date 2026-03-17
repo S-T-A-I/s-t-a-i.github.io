@@ -13,7 +13,6 @@ url_rtai = "//researchtrend.ai/papers/2603.08835"
 
 [[authors]]
     name = "Cornelius Emde"
-    star = true
     is_member = false
 [[authors]]
     name = "Alexander Rubinstein"
