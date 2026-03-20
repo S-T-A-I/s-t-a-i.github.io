@@ -36,7 +36,7 @@ The book will be useful for the course. However, the course materials are update
 <tbody>
 <tr class="part-0"><td>L1</td><td>Mar 06</td><td><a href="https://docs.google.com/presentation/d/17BCFaHw7q4Momahitjh-9yj12tGIzV6-hsnCwl9k5Ao/edit?usp=sharing">Orientation (short session)</a> · <a href="https://drive.google.com/file/d/1_HKmdhgUxwxeqyRJ5E6_Dcx_xQmVfsOv/view?usp=sharing">Video</a></td><td>—</td></tr>
 <tr class="part-1"><td>L2</td><td>Mar 13</td><td><a href="https://docs.google.com/presentation/d/1kr70p-gPwJnSQ_8cL-JlCWAYep89h71fZZ5TT4fLYBc/edit?usp=sharing"><strong>I. Human → AI:</strong> ML Foundations & Generalisation Primer</a> · <a href="https://drive.google.com/file/d/1H9VMPBQ7GkGcNnw9O6pP60eL6A4UFdtm/view?usp=sharing">Video</a></td><td>—</td></tr>
-<tr class="part-1"><td>L3</td><td>Mar 20</td><td>Underspecification & Cues</td><td><strong>Team formation due (23:59)</strong></td></tr>
+<tr class="part-1"><td>L3</td><td>Mar 20</td><td><a href="https://docs.google.com/presentation/d/1uRUM5xvDMY4iAE5shYl_-S-nHD8NipM2LEyrjzn7apg/edit?usp=sharing">Underspecification & Cues</a></td><td><strong>Team formation due (23:59)</strong></td></tr>
 <tr class="part-1"><td>L4</td><td>Mar 27</td><td>LLM Communication & Modularity</td><td>—</td></tr>
 <tr class="part-2"><td>L5</td><td>Apr 03</td><td><strong>II. AI → Human:</strong> Explanation & XAI</td><td>—</td></tr>
 <tr class="part-2"><td>L6</td><td>Apr 10</td><td>Attribution Methods</td><td>—</td></tr>
