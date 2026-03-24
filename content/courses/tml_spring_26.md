@@ -108,7 +108,7 @@ We do not tolerate very similar creative work among class members. AI tends to p
 
 **Lecturer:** [Seong Joon Oh](../../member/joon/)
 
-**Tutors:** TBA
+**Tutors:** Myungkyu Koo (`jameskoo0503@kaist.ac.kr`), Gyouk Chu (`kyouwook@kaist.ac.kr`), Kyuyoung Kim (`kykim@kaist.ac.kr`), Sangwon Jang (`sangwon.jang@kaist.ac.kr`)
 
 **When:** Fridays 13:00-15:30 (1st session 13:00-14:10, break 14:10-14:20, 2nd session 14:20-15:30)
 
