@@ -38,7 +38,7 @@ The book will be useful for the course. However, the course materials are update
 <tr class="part-1"><td>L2</td><td>Mar 13</td><td><a href="https://docs.google.com/presentation/d/1kr70p-gPwJnSQ_8cL-JlCWAYep89h71fZZ5TT4fLYBc/edit?usp=sharing"><strong>I. Human → AI:</strong> ML Foundations & Generalisation Primer</a> · <a href="https://drive.google.com/file/d/1H9VMPBQ7GkGcNnw9O6pP60eL6A4UFdtm/view?usp=sharing">Video</a></td><td>—</td></tr>
 <tr class="part-1"><td>L3</td><td>Mar 20</td><td><a href="https://docs.google.com/presentation/d/1uRUM5xvDMY4iAE5shYl_-S-nHD8NipM2LEyrjzn7apg/edit?usp=sharing">Underspecification & Cues</a> · <a href="https://drive.google.com/file/d/1WsOGc8VA05Pz9cOxYDaMbZzk4XveZ3lK/view?usp=sharing">Video</a></td><td><strong>Team formation due (23:59)</strong></td></tr>
 <tr class="part-1"><td>L4</td><td>Mar 27</td><td><a href="https://docs.google.com/presentation/d/1ONe5yfFDhKlnh48-TEsZWC6GuejwSiYs98vcStdArK4/edit?usp=sharing">LLM Communication & Modularity</a> · <a href="https://drive.google.com/file/d/16bynb2GK7IumseldWAArJ5bcp8I97mri/view?usp=sharing">Video</a></td><td>—</td></tr>
-<tr class="part-2"><td>L5</td><td>Apr 03</td><td><strong>II. AI → Human:</strong> Explanation & XAI</td><td>—</td></tr>
+<tr class="part-2"><td>L5</td><td>Apr 03</td><td><a href="https://docs.google.com/presentation/d/1RLPpxEzXZQGjAmMe8AXWdnO_eV2uxyc9wzBBvB5Ok5U/edit?usp=sharing"><strong>II. AI → Human:</strong> Explanation & XAI</a></td><td>—</td></tr>
 <tr class="part-2"><td>L6</td><td>Apr 10</td><td>Attribution Methods</td><td>—</td></tr>
 <tr class="part-2"><td>L7</td><td>Apr 17</td><td>TDA Frontiers & Mechanistic Interpretability</td><td>—</td></tr>
 <tr class="part-5"><td>L8</td><td>Apr 24</td><td>Proposal presentations (midterm week)</td><td><strong>Proposal report due (23:59); Proposal presentation</strong></td></tr>
@@ -67,12 +67,68 @@ The book will be useful for the course. However, the course materials are update
 
 Late submissions are not accepted. A missed deadline counts as a zero.
 
+All criteria use a 5-point scale: **1** (Poor) / **2** (Below expectations) / **3** (Meets expectations) / **4** (Good) / **5** (Excellent). Criteria within each rubric are equally weighted.
+
+### Proposal report (15%)
+
+Due L8 (Apr 24, 23:59). 1-2 pages, ICML 2026 format.
+
+{{<table "table table-striped table-bordered">}}
+| Criterion | Description | 1 (Poor) | 5 (Excellent) |
+|---|---|---|---|
+| Problem definition | Is the research question stated clearly? Does the report specify what problem the project addresses and why it matters? | Problem is vague or absent. | Reader immediately understands the gap and the question. |
+| Related work awareness | Does the team cite key references and position their project relative to existing work? A full literature review is not expected, but awareness of the landscape is. | No references or awareness of prior work. | Clear positioning with relevant citations. |
+| Proposed approach | Is there a concrete plan? This includes model choice, data, metrics, and experimental design. | Approach is missing or hand-wavy. | Detailed, actionable plan. |
+| Writing quality | Is the report well-structured, concise, and free of major errors? AI slop (generic, low-effort AI-generated text) will be penalised. | Disorganised or incomprehensible. | Polished writing. |
+{{</table>}}
+
+### Proposal presentation (15%)
+
+L8 (Apr 24). 5-minute lightning talk per team.
+
+{{<table "table table-striped table-bordered">}}
+| Criterion | Description | 1 (Poor) | 5 (Excellent) |
+|---|---|---|---|
+| Clarity of problem and motivation | Can the audience understand what the project is about and why it matters within the first two minutes? | Audience is lost. | Immediately clear. |
+| Plan communication | Does the team convey a credible plan? This includes approach, data, and expected outcomes. | No plan is communicated. | Plan is convincing and concrete. |
+| Slide quality | Are slides readable, well-designed, and not overloaded? | Unreadable walls of text or irrelevant graphics. | Clean, effective visuals. |
+| Time management | Does the team stay within the 5-minute limit and pace themselves well? | Severely over or under time. | Smooth pacing with a natural conclusion. |
+{{</table>}}
+
+### Final report (35%)
+
+Due L15 (Jun 12, 23:59). 4 pages excluding references, ICML 2026 format.
+
+{{<table "table table-striped table-bordered">}}
+| Criterion | Description | 1 (Poor) | 5 (Excellent) |
+|---|---|---|---|
+| Problem formulation | Is the research question clearly stated and well-motivated? Compared to the proposal, this should now be refined and precise. | Question remains vague. | Crisp, well-scoped question. |
+| Technical depth | Does the report demonstrate understanding of the methods used? Are technical choices justified? | Superficial or incorrect technical content. | Command of relevant techniques with principled decisions. |
+| Experimental design and results | Are experiments well-designed with appropriate baselines? Are results presented clearly (tables, figures, error bars where applicable)? | Missing or poorly designed experiments. | Rigorous experiments with clear presentation. |
+| Analysis and discussion | Does the team interpret their results, discuss limitations, and reflect on what worked and what did not? | No interpretation. | Thoughtful analysis that goes beyond "method X got accuracy Y". |
+| Writing quality | Is the report well-organised, clearly written, and properly formatted? Are figures and tables captioned and referenced? AI slop will be penalised. | Disorganised or hard to follow. | Publication-ready writing. |
+{{</table>}}
+
+### Final presentation (35%)
+
+L16 (Jun 19). 10 minutes per team + Q&A.
+
+{{<table "table table-striped table-bordered">}}
+| Criterion | Description | 1 (Poor) | 5 (Excellent) |
+|---|---|---|---|
+| Clarity and structure | Is the presentation logically structured? Does the audience follow the narrative from problem to method to results to takeaway? | Incoherent structure. | Compelling, well-organised talk. |
+| Technical communication | Can the team explain their technical approach at the right level of detail? | Audience cannot understand the method. | Complex ideas made accessible without oversimplification. |
+| Results presentation | Are results communicated effectively? Are key findings highlighted with readable figures and tables? | Results are buried or absent. | Audience clearly sees what was achieved. |
+| Slide quality | Are slides clean, readable, and well-designed? | Unreadable walls of text or irrelevant graphics. | Clean, effective visuals. |
+| Time management | Does the team stay within the 10-minute limit and pace themselves well? | Severely over or under time. | Smooth pacing with a natural conclusion. |
+{{</table>}}
+
 ## 6. Projects
 
 - **Team size:** 3 students per team.
 - **Formation:** Use the `#team-formation` Slack channel to find team members. Teams finalised by L3 (Mar 20, 23:59).
 - **Compute:** Each student receives a 50 USD Google Cloud Platform voucher for the project. Each team of three therefore has 150 USD credit.
-- **Template:** Use the [ICML 2026 LaTeX template](https://icml.cc/Conferences/2026/AuthorInstructions) for both proposal and final reports.
+- **Template:** Use the [ICML 2026 LaTeX template](https://media.icml.cc/Conferences/ICML2026/Styles/icml2026.zip) (zip) for both proposal and final reports.
 - **Deliverables:**
   - Proposal: 1-2 page report + 5 min presentation.
   - Final: 4-page report (ICML format, excluding references) + 10 min presentation.
