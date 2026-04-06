@@ -281,14 +281,12 @@ span.darknav {
 }
 
 .portrait {
-    background-image: url('../img/portraits/portrait.jpg');
     width: 150px;
     height: 150px;
     margin: 0 auto;
     border-radius: 50%;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    object-fit: cover;
+    display: block;
 }
 
 .portrait-title h2 {
