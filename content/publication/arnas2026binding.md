@@ -11,10 +11,12 @@ title = "How can embedding models bind concepts?"
     name = "Arnas Uselis"
     is_member = true
     id = "arnas"
+    star = true
 [[authors]]
     name = "Darina Koishigarina"
     is_member = true
     id = "darina"
+    star = true
 [[authors]]
     name = "Seong Joon Oh"
     is_member = true
