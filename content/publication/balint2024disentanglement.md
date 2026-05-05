@@ -8,7 +8,6 @@ title = "Benchmarking Uncertainty Disentanglement: Specialized Uncertainties for
 url_code = "//github.com/bmucsanyi/bud"
 url_arxiv = "//arxiv.org/abs/2402.19460"
 url_pdf = "//arxiv.org/pdf/2402.19460"
-url_rtai = "//researchtrend.ai/papers/2402.19460"
 
 [[authors]]
     name = "Bálint Mucsányi"

@@ -10,7 +10,6 @@ url_code = "//github.com/AlexanderRubinstein/OCCAM"
 url_arxiv = "//arxiv.org/abs/2502.03566"
 url_pdf = "//arxiv.org/pdf/2502.03566"
 url_project = "//alexanderrubinstein.github.io/are-we-done-with-ocl/"
-url_rtai = "//researchtrend.ai/papers/2502.03566"
 
 
 [[authors]]

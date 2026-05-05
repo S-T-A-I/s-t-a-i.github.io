@@ -8,7 +8,6 @@ publication_short = "ACL"
 title = "Calibrating Large Language Models Using Their Generations Only"
 url_arxiv = "//arxiv.org/abs/2403.05973"
 url_pdf = "//arxiv.org/pdf/2403.05973"
-url_rtai = "//researchtrend.ai/papers/2403.05973"
 
 
 [[authors]]

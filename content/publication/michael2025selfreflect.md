@@ -8,7 +8,6 @@ publication_short = "ICLR"
 title = "SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?"
 url_arxiv = "//arxiv.org/abs/2505.20295"
 url_pdf = "//arxiv.org/pdf/2505.20295"
-url_rtai = "//researchtrend.ai/papers/2505.20295"
 
 
 [[authors]]

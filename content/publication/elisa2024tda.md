@@ -7,7 +7,6 @@ publication_short = "arXiv"
 title = "Towards User-Focused Research in Training Data Attribution for Human-Centered Explainable AI"
 url_arxiv = "//arxiv.org/abs/2409.16978"
 url_pdf = "//arxiv.org/pdf/2409.16978"
-url_rtai = "//researchtrend.ai/papers/2409.16978"
 
 
 [[authors]]

@@ -11,7 +11,6 @@ subtitle = ""
 to_be_published = false
 url_arxiv = ""
 url_pdf = ""
-url_rtai = ""
 url_code = ""
 url_dataset = ""
 url_project = ""

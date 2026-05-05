@@ -8,7 +8,6 @@ title = "Scalable Ensemble Diversification for OOD Generalization and Detection"
 url_code = "//github.com/AlexanderRubinstein/diverse-universe-public"
 url_arxiv = "//arxiv.org/abs/2409.16797"
 url_pdf = "//arxiv.org/pdf/2409.16797"
-url_rtai = "//researchtrend.ai/papers/2409.16797"
 
 
 [[authors]]

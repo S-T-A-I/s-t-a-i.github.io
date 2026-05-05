@@ -9,7 +9,6 @@ title = "URL: A Representation Learning Benchmark for Transferable Uncertainty E
 url_code = "https://github.com/mkirchhof/url"
 url_arxiv = "//arxiv.org/abs/2307.03810"
 url_pdf = "//arxiv.org/pdf/2307.03810"
-url_rtai = "//researchtrend.ai/papers/2307.03810"
 
 [[authors]]
     name = "Michael Kirchhof"

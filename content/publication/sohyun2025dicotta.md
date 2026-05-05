@@ -7,7 +7,6 @@ publication_short = "arXiv"
 title = "DiCoTTA: Domain-invariant Learning for Continual Test-time Adaptation"
 url_arxiv = "//arxiv.org/abs/2504.04981"
 url_pdf = "//arxiv.org/pdf/2504.04981"
-url_rtai = "//researchtrend.ai/papers/2504.04981"
 
 [[authors]]
     name = "Sohyun Lee"

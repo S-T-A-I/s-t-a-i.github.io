@@ -8,7 +8,6 @@ title = "A Bayesian Perspective On Training Data Attribution"
 url_code = "https://github.com/elisanguyen/bayesian-tda"
 url_arxiv = "//arxiv.org/abs/2305.19765"
 url_pdf = "//arxiv.org/pdf/2305.19765"
-url_rtai = "//researchtrend.ai/papers/2305.19765"
 
 
 [[authors]]

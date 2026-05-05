@@ -8,7 +8,6 @@ title = "Pretrained Visual Uncertainties"
 url_code = "//github.com/mkirchhof/url"
 url_arxiv = "//arxiv.org/abs/2402.16569"
 url_pdf = "//arxiv.org/pdf/2402.16569"
-url_rtai = "//researchtrend.ai/papers/2402.16569"
 
 [[authors]]
     name = "Michael Kirchhof"

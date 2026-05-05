@@ -8,7 +8,6 @@ publication_short = "ACL Findings"
 title = "TRAP: Targeted Random Adversarial Prompt Honeypot for Black-Box Identification"
 url_arxiv = "//arxiv.org/abs/2402.12991"
 url_pdf = "//arxiv.org/pdf/2402.12991"
-url_rtai = "//researchtrend.ai/papers/2402.12991"
 
 
 [[authors]]

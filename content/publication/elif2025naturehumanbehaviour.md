@@ -7,7 +7,6 @@ publication_short = "Nature Human Behaviour"
 title = "Playing repeated games with Large Language Models"
 url_arxiv = "//arxiv.org/abs/2305.16867"
 url_pdf = "//arxiv.org/pdf/2305.16867"
-url_rtai = "//researchtrend.ai/papers/2305.16867"
 
 
 [[authors]]

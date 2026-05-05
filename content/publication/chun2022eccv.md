@@ -9,7 +9,6 @@ title = "ECCV Caption: Correcting False Negatives by Collecting Machine-and-Huma
 url_code = "//github.com/naver-ai/eccv-caption"
 url_arxiv = "//arxiv.org/abs/2204.03359"
 url_pdf = "//arxiv.org/pdf/2204.03359"
-url_rtai = "//researchtrend.ai/papers/2204.03359"
 
 [[authors]]
     name = "Shanghyuk Chun"

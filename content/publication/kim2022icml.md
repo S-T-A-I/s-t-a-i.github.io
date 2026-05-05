@@ -8,7 +8,6 @@ title = "Dataset Condensation via Efficient Synthetic-Data Parameterization"
 url_code = "//github.com/snu-mllab/Efficient-Dataset-Condensation"
 url_arxiv = "//arxiv.org/abs/2205.14959"
 url_pdf = "//arxiv.org/pdf/2205.14959"
-url_rtai = "//researchtrend.ai/papers/2205.14959"
 
 [[authors]]
     name = "Jang-Hyun Kim"

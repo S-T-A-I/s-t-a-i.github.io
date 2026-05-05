@@ -9,7 +9,6 @@ title = "Scratching Visual Transformer's Back with Uniform Attention"
 url_code = "//uniform-attention.github.io/"
 url_arxiv = "//arxiv.org/abs/2210.08457"
 url_pdf = "//arxiv.org/pdf/2210.08457"
-url_rtai = "//researchtrend.ai/papers/2210.08457"
 
 [[authors]]
     name = "Hyeon-Woo Nam"

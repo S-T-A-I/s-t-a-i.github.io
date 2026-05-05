@@ -9,7 +9,6 @@ title = "Does Data Scaling Lead to Visual Compositional Generalization?"
 url_code = "//github.com/oshapio/visual-compositional-generalization"
 url_arxiv = "//arxiv.org/abs/2507.07102"
 url_pdf = "//arxiv.org/pdf/2507.07102"
-url_rtai = "//researchtrend.ai/papers/2507.07102"
 
 [[authors]]
     name = "Arnas Uselis"

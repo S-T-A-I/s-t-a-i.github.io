@@ -8,7 +8,6 @@ title = "LLM generation novelty through the lens of semantic similarity"
 url_dataset = "//huggingface.co/datasets/stai-tuebingen/faiss-smollm"
 url_arxiv = "//arxiv.org/abs/2510.27313"
 url_pdf = "//arxiv.org/pdf/2510.27313"
-url_rtai = "//researchtrend.ai/papers/2510.27313"
 
 [[authors]]
     name = "Philipp Davydov"

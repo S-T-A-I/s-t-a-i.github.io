@@ -9,7 +9,6 @@ title = "Dr.LLM: Dynamic Layer Routing for LLMs"
 url_code = "//github.com/parameterlab/dr-llm"
 url_arxiv = "//arxiv.org/abs/2510.12773"
 url_pdf = "//arxiv.org/pdf/2510.12773"
-url_rtai = "//researchtrend.ai/papers/2510.12773"
 
 [[workshops]]
     name = "Third Workshop on Test-Time Updates (Main Track)"

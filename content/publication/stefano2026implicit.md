@@ -7,7 +7,6 @@ publication_short = "ICML"
 title = "Universal Algorithm-Implicit Learning"
 url_arxiv = "//arxiv.org/abs/2602.14761"
 url_pdf = "//arxiv.org/pdf/2602.14761"
-url_rtai = "//researchtrend.ai/papers/2602.14761"
 
 [[authors]]
     name = "Stefano Woerner"

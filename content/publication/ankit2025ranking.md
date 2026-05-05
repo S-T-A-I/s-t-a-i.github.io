@@ -9,7 +9,6 @@ title = "On the Rankability of Visual Embeddings"
 url_code = "//github.com/aktsonthalia/rankable-vision-embeddings"
 url_arxiv = "//arxiv.org/abs/2507.03683"
 url_pdf = "//arxiv.org/pdf/2507.03683"
-url_rtai = "//researchtrend.ai/papers/2507.03683"
 
 [[authors]]
     name = "Ankit Sonthalia"

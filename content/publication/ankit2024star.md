@@ -8,7 +8,6 @@ title = "Do Deep Neural Network Solutions Form a Star Domain?"
 url_code = "//github.com/aktsonthalia/starlight"
 url_arxiv = "//arxiv.org/abs/2403.07968"
 url_pdf = "//arxiv.org/pdf/2403.07968"
-url_rtai = "//researchtrend.ai/papers/2403.07968"
 
 [[authors]]
     name = "Ankit Sonthalia"

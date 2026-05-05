@@ -8,7 +8,6 @@ title = "MASEval: Extending Multi-Agent Evaluation from Models to Systems"
 url_code = "//github.com/parameterlab/MASEval"
 url_arxiv = "//arxiv.org/abs/2603.08835"
 url_pdf = "//arxiv.org/pdf/2603.08835"
-url_rtai = "//researchtrend.ai/papers/2603.08835"
 
 [[workshops]]
     name = "GEM 2026 Workshop on Natural Language Generation, Evaluation, and Metrics"

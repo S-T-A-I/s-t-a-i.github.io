@@ -10,7 +10,6 @@ url_code = "//github.com/parameterlab/c-seo-bench"
 url_dataset = "//huggingface.co/datasets/parameterlab/c-seo-bench"
 url_arxiv = "//arxiv.org/abs/2506.11097"
 url_pdf = "//arxiv.org/pdf/2506.11097"
-url_rtai = "//researchtrend.ai/papers/2506.11097"
 
 
 [[authors]]

@@ -7,7 +7,6 @@ publication_short = "ICLR"
 title = "Intermediate Layer Classifiers for OOD Generalization"
 url_arxiv = "//arxiv.org/abs/2504.05461"
 url_pdf = "//arxiv.org/pdf/2504.05461"
-url_rtai = "//researchtrend.ai/papers/2504.05461"
 
 [[authors]]
     name = "Arnas Uselis"

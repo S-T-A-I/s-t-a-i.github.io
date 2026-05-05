@@ -8,7 +8,6 @@ publication_short = "NeurIPS"
 title = "ID and OOD Performance Are Sometimes Inversely Correlated on Real-world Datasets"
 url_arxiv = "//arxiv.org/abs/2209.00613"
 url_pdf = "//arxiv.org/pdf/2209.00613"
-url_rtai = "//researchtrend.ai/papers/2209.00613"
 
 [[authors]]
     name = "Damien Teney"

@@ -7,7 +7,6 @@ publication_short = "ICML"
 title = "When Do Diffusion Models learn to Generate Multiple Objects?"
 url_arxiv = "//arxiv.org/abs/2605.00273"
 url_pdf = "//arxiv.org/pdf/2605.00273"
-url_rtai = "//researchtrend.ai/papers/2605.00273"
 
 [[authors]]
     name = "Yujin Jeong"

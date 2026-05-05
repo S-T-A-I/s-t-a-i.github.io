@@ -9,7 +9,6 @@ title = "DISCO: Diversifying Sample Condensation for Efficient Model Evaluation"
 url_code = "//github.com/arubique/disco-public"
 url_arxiv = "//arxiv.org/abs/2510.07959"
 url_pdf = "//arxiv.org/pdf/2510.07959"
-url_rtai = "//researchtrend.ai/papers/2510.07959"
 url_project = "//arubique.github.io/disco-site/"
 
 [[workshops]]

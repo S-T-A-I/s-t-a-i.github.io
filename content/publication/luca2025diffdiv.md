@@ -7,7 +7,6 @@ publication_short = "SCSL @ ICLR"
 title = "Mitigating Shortcut Learning with Diffusion Counterfactuals and Diverse Ensembles"
 url_arxiv = "//arxiv.org/abs/2311.16176"
 url_pdf = "//arxiv.org/pdf/2311.16176"
-url_rtai = "//researchtrend.ai/papers/2311.16176"
 
 
 [[authors]]

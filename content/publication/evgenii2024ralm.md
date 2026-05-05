@@ -8,7 +8,6 @@ title = "Studying Large Language Model Behaviors Under Realistic Knowledge Confl
 url_code = "//github.com/kortukov/realistic_knowledge_conflicts"
 url_arxiv = "//arxiv.org/abs/2404.16032"
 url_pdf = "//arxiv.org/pdf/2404.16032"
-url_rtai = "//researchtrend.ai/papers/2404.16032"
 
 
 [[authors]]

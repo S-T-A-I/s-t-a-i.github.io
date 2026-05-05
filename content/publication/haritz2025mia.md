@@ -8,7 +8,6 @@ publication_short = "NAACL Findings"
 title = "Scaling Up Membership Inference: When and How Attacks Succeed on Large Language Models"
 url_arxiv = "//arxiv.org/abs/2411.00154"
 url_pdf = "//arxiv.org/pdf/2411.00154"
-url_rtai = "//researchtrend.ai/papers/2411.00154"
 
 
 [[authors]]

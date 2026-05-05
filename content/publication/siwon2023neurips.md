@@ -9,7 +9,6 @@ award = "Spotlight"
 title = "ProPILE: Probing Privacy Leakage in Large Language Models"
 url_arxiv = "//arxiv.org/abs/2307.01881"
 url_pdf = "//arxiv.org/pdf/2307.01881"
-url_rtai = "//researchtrend.ai/papers/2307.01881"
 
 
 [[authors]]

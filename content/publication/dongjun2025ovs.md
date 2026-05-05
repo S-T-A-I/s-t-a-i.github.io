@@ -8,7 +8,6 @@ publication_short = "NeurIPS"
 title = "OVS Meets Continual Learning: Towards Sustainable Open-Vocabulary Segmentation"
 url_arxiv = "//arxiv.org/abs/2410.11536"
 url_pdf = "//arxiv.org/pdf/2410.11536"
-url_rtai = "//researchtrend.ai/papers/2410.11536"
 
 [[authors]]
     name = "Dongjun Hwang"

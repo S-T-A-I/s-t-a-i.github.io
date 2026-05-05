@@ -9,7 +9,6 @@ title = "Diffusion Classifiers Understand Compositionality, but Conditions Apply
 url_code = "//github.com/eugene6923/Diffusion-Classifiers-Compositionality"
 url_arxiv = "//arxiv.org/abs/2505.17955"
 url_pdf = "//arxiv.org/pdf/2505.17955"
-url_rtai = "//researchtrend.ai/papers/2505.17955"
 
 [[authors]]
     name = "Yujin Jeong"

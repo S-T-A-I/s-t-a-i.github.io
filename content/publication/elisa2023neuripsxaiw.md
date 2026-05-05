@@ -7,7 +7,6 @@ publication_short = "NeurIPS XAI in Action Workshop"
 title = "Exploring Practitioner Perspectives On Training Data Attribution Explanations"
 url_arxiv = "//arxiv.org/abs/2310.20477"
 url_pdf = "//arxiv.org/pdf/2310.20477"
-url_rtai = "//researchtrend.ai/papers/2310.20477"
 
 
 [[authors]]

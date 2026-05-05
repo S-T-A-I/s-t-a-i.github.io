@@ -10,7 +10,6 @@ url_code = "//github.com/parameterlab/leaky_thoughts"
 url_dataset = "//huggingface.co/datasets/parameterlab/leaky_thoughts"
 url_arxiv = "//arxiv.org/abs/2506.15674"
 url_pdf = "//arxiv.org/pdf/2506.15674"
-url_rtai = "//researchtrend.ai/papers/2506.15674"
 
 
 [[authors]]

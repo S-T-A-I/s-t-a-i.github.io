@@ -8,7 +8,6 @@ title = "Probabilistic Contrastive Learning Recovers the Correct Aleatoric Uncer
 url_code = "https://github.com/mkirchhof/Probabilistic_Contrastive_Learning"
 url_arxiv = "//arxiv.org/abs/2302.02865"
 url_pdf = "//arxiv.org/pdf/2302.02865"
-url_rtai = "//researchtrend.ai/papers/2302.02865"
 
 [[authors]]
     name = "Michael Kirchhof"

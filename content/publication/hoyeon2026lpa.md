@@ -8,7 +8,6 @@ award = "Spotlight"
 title = "Dynamics Reveals Structure: Challenging the Linear Propagation Assumption"
 url_arxiv = "//arxiv.org/abs/2601.21601"
 url_pdf = "//arxiv.org/pdf/2601.21601"
-url_rtai = "//researchtrend.ai/papers/2601.21601"
 
 [[workshops]]
     name = "ICLR 2026 Workshop on Unifying Concept Representation Learning (Oral)"

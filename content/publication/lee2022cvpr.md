@@ -8,7 +8,6 @@ title = "Weakly Supervised Semantic Segmentation Using Out-of-Distribution Data"
 url_code = "//github.com/naver-ai/w-ood"
 url_arxiv = "//arxiv.org/abs/2203.03860"
 url_pdf = "//arxiv.org/pdf/2203.03860"
-url_rtai = "//researchtrend.ai/papers/2203.03860"
 
 [[authors]]
     name = "Jungbeom Lee"

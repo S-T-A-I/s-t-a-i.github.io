@@ -9,7 +9,6 @@ title = "Trustworthy Machine Learning"
 url_arxiv = "//arxiv.org/abs/2310.08215"
 url_pdf = "//arxiv.org/pdf/2310.08215"
 url_project = "https://trustworthyml.io/"
-url_rtai = "//researchtrend.ai/papers/2310.08215"
 
 [[authors]]
     name = "Bálint Mucsányi"
