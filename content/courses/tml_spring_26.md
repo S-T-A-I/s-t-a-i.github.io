@@ -42,9 +42,9 @@ The book will be useful for the course. However, the course materials are update
 <tr class="part-2"><td>L6</td><td>Apr 10</td><td><a href="https://docs.google.com/presentation/d/1Kh3TrQRI-YXgJkLnfJhsHWYm_i1527yQDGXJOgUoYYk/edit?usp=sharing">Attribution Methods</a> · <a href="https://drive.google.com/file/d/1VcJgB5AtwEWcUPQaTugGdOH5R8HwrNVe/view?usp=sharing">Video</a></td><td>—</td></tr>
 <tr class="part-2"><td>L7</td><td>Apr 17</td><td><a href="https://docs.google.com/presentation/d/1ps8cC1DUJI6es_54diWD2UQGDwBUcMW3loYC4yinMEY/edit?usp=sharing">Training Data Attribution</a> · <a href="https://drive.google.com/file/d/1M5qcnP5Zgu3s4eUV-5KTarm9r07fWUtg/view?usp=sharing">Video</a></td><td>—</td></tr>
 <tr class="part-5"><td>L8</td><td>Apr 24</td><td>Proposal Presentations (Midterm Week) · <a href="https://drive.google.com/file/d/19Z5zALJaU3pVoQndEnqogDedcAdKh52f/view?usp=sharing">Video</a></td><td><strong>Proposal report due (23:59); Proposal presentation</strong></td></tr>
-<tr class="part-2"><td>L9</td><td>May 08</td><td>Uncertainty I (Aleatoric)</td><td>—</td></tr>
-<tr class="part-2"><td>L10</td><td>May 15</td><td>Uncertainty II (Epistemic)</td><td>—</td></tr>
-<tr class="part-2"><td>L11</td><td>May 22</td><td>Uncertainty III (LLMs)</td><td>—</td></tr>
+<tr class="part-2"><td>L9</td><td>May 08</td><td><a href="https://docs.google.com/presentation/d/19ZC2Qo4yyaTzzQRSBRzYU5spTfy2N4RofggWivmxI8w/edit?usp=sharing">Uncertainty Estimation</a></td><td>—</td></tr>
+<tr class="part-2"><td>L10</td><td>May 15</td><td>Epistemic & Aleatoric Uncertainty</td><td>—</td></tr>
+<tr class="part-2"><td>L11</td><td>May 22</td><td>Uncertainty for Foundational Models</td><td>—</td></tr>
 <tr class="part-3"><td>L12</td><td>May 29</td><td><strong>III. Privacy & Security:</strong> Privacy & Data Protection</td><td>—</td></tr>
 <tr class="part-3"><td>L13</td><td>Jun 05</td><td>Security & Adversarial Robustness</td><td>—</td></tr>
 <tr class="part-4"><td>L14</td><td>Jun 12</td><td><strong>IV. Final Presentations (Part 1)</strong></td><td><strong>Final report due (11 June, 23:59)</strong></td></tr>
