@@ -88,29 +88,34 @@ tag = "tags"
       weight = 4
 
   [[menu.main]]
+      name = "Activities"
+      url = "/#activities"
+      weight = 5
+
+  [[menu.main]]
       name = "Publications"
       url = "/#publications"
-      weight = 5
+      weight = 6
 
   # [[menu.main]]
   #     name = "Blog"
   #     url = "/#posts"
-  #     weight = 5
+  #     weight = 6
 
   [[menu.main]]
       name = "Courses"
       url = "/#courses"
-      weight = 6
+      weight = 7
 
   [[menu.main]]
       name = "Openings"
       url = "/#openings"
-      weight = 7
+      weight = 8
 
   [[menu.main]]
       name = "Contact"
       url = "/#contact"
-      weight = 8
+      weight = 9
 
 # Allow raw HTML in markdown (for custom table styling)
 [markup]

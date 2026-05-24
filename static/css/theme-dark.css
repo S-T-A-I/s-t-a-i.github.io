@@ -309,3 +309,30 @@
 .dark-mode header .header-content-inner {
   color: rgba(255, 255, 255, 0.92);
 }
+
+/* Activities (Social + Invited Talks) */
+.dark-mode .activities-subheading {
+  color: #e8e8e8;
+  border-left-color: #5eb3f6;
+}
+
+.dark-mode .activity-date {
+  color: #9ca3a8;
+}
+
+.dark-mode .activity-title {
+  color: #e8e8e8;
+}
+
+.dark-mode .activity-title a {
+  color: #e8e8e8;
+  border-bottom-color: rgba(94, 179, 246, 0.5);
+}
+
+.dark-mode .activity-title a:hover {
+  border-bottom-color: #5eb3f6;
+}
+
+.dark-mode .activity-image {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}

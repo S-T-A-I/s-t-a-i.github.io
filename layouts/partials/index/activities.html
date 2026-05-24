@@ -1,0 +1,74 @@
+{{ $activities := where .Site.RegularPages "Type" "activity" }}
+{{ $talks := where .Site.RegularPages "Type" "talk" }}
+{{ if or (gt (len $activities) 0) (gt (len $talks) 0) }}
+<section id="activities" class="home-section">
+    <div class="container">
+
+        <!-- Section heading -->
+        <div class="row">
+            <div class="col-xs-12 col-md-4 section-heading">
+                <h1 class="section-heading"> Activities </h1>
+            </div>
+        </div>
+
+        {{ if gt (len $activities) 0 }}
+        <!-- Social Activities -->
+        <div class="row activities-block">
+            <div class="col-xs-12">
+                <h2 class="activities-subheading">Social Activities</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="activities-timeline">
+                    {{ range (sort $activities ".Date" "desc") }}
+                        {{ $page := . }}
+                        <div class="activity-item">
+                            <div class="activity-date">{{ $page.Date.Format "January 2, 2006" }}</div>
+                            <div class="activity-title">{{ $page.Title }}</div>
+                            {{ with $page.Params.image }}
+                                <img class="activity-image" src="/{{ . }}" alt="{{ $page.Title }}" loading="lazy">
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+        {{ if gt (len $talks) 0 }}
+        <!-- Invited Talks -->
+        <div class="row activities-block">
+            <div class="col-xs-12">
+                <h2 class="activities-subheading">Invited Talks</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="activities-timeline">
+                    {{ range (sort $talks ".Date" "desc") }}
+                        {{ $page := . }}
+                        {{ $speaker := $page.Params.speaker }}
+                        {{ $speaker_url := $page.Params.speaker_url }}
+                        <div class="activity-item">
+                            <div class="activity-date">{{ $page.Date.Format "January 2, 2006" }}</div>
+                            <div class="activity-title">
+                                {{ if $speaker_url }}
+                                    <a href="{{ $speaker_url }}" target="_blank" rel="noopener">{{ $speaker }}</a>
+                                {{ else }}
+                                    {{ $speaker }}
+                                {{ end }}
+                            </div>
+                            {{ with $page.Params.image }}
+                                <img class="activity-image" src="/{{ . }}" alt="{{ $speaker }}" loading="lazy">
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+    </div>
+</section>
+{{ end }}
