@@ -1,12 +1,13 @@
 +++
 bio = ""
 id = "seokwonjung"
-interests = ["Trustworthy Machine Learning", "Large Language Models", "AI Agents"]
+interests = ["Retrieval-Augmented Generation", "Memory Systems", "Knowledge Editing"]
 name = "Seokwon Jung"
 portrait = "/portraits/seokwonjung.jpg"
 short_bio = "MSc Student"
 short_name = "Jay"
 title = "MSc Student"
+personal_website = "https://seokwonjung-jay.github.io/"
 sort_position = 14
 
 [[social]] 
@@ -40,8 +41,10 @@ sort_position = 14
 
 +++
 
-I am an incoming MSc student at KAIST AI (Spring 2026) and I studied Computer Science and Chemistry at KAIST. My research interests are Trustworthy Machine Learning, Large Language Models, and AI Agents.
+I am an MSc student at KAIST AI. I am broadly interested in how LLMs can stay reliable and personalised as the knowledge they depend on keeps changing. My research interests are retrieval-augmented generation and retrieval methods, memory systems and personalisation for long-term agents, and knowledge editing through RAG to keep models' factual knowledge up to date.
 
-I previously co-founded a deep learning startup and have worked across research, engineering, and product roles in AI startups. My research experience includes speech synthesis and audio understanding, and I have published at ICASSP.
+Before my graduate studies, I spent six years co-founding and building a deep learning startup, working end-to-end across business, research, and engineering. That experience shaped how I think about research. It is not just a technical problem. It has to hold up in the messy, real-world systems where people actually rely on it.
 
-Recently, I have been working on evaluation frameworks for tool-using agents, focusing on how agents decompose tasks, acquire information from multiple sources, and integrate heterogeneous outputs in a reliable way.
+I would like to build LLM-based systems that can remember, retrieve, and update what they know in a way that is both trustworthy and personalised.
+
+My personal page is at [seokwonjung-jay.github.io](https://seokwonjung-jay.github.io/).
