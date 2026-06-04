@@ -6,6 +6,8 @@ publication = "International Conference on Machine Learning"
 publication_short = "ICML Spotlight"
 award = "Spotlight"
 title = "How can embedding models bind concepts?"
+url_arxiv = "//arxiv.org/abs/2605.31503"
+url_pdf = "//arxiv.org/pdf/2605.31503"
 
 [[authors]]
     name = "Arnas Uselis"
