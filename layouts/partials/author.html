@@ -7,21 +7,8 @@
   {{end}}
 {{end}}
 <span class="author-name">
-    {{if isset .context "id"}}
-    {{ range where site.RegularPages "Section" "member" }}
-        {{ if eq $current_author.id .Params.id }}
-            <a href="{{ .Permalink }}">{{ $name }}</a>{{ $suffix }}
-        {{end}}
-    {{end}}
-    {{ range where site.RegularPages "Section" "alumni" }}
-        {{ if eq $current_author.id .Params.id }}
-            {{if isset .Params "external_link"}}
-            <a  href="{{ .Params.external_link }}">{{ $name }}</a>{{ $suffix }}
-            {{else}}
-                {{ $name }}{{ $suffix }}
-            {{end}}
-        {{end}}
-    {{end}}
+    {{if isset .context "external_link"}}
+        <a href="{{ .context.external_link }}">{{ $name }}</a>{{ $suffix }}
     {{else}}
         {{ $name }}{{ $suffix }}
     {{end}}

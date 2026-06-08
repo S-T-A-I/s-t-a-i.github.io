@@ -21,6 +21,7 @@ tag = "tags"
 
   slogan = "Scalable Trustworthy AI"
   slogan_text = "Creating scalable and trustworthy AI with human guidance"
+  members_api_url = "https://stai-lab-assets.vercel.app/api/public/members.json"
 
   [params.logo]
     image = "img/stai-logos-bright.png"

@@ -26,7 +26,7 @@ description = "As machine learning technology gets applied to actual products an
 
 Last year's course materials are now a book. You can find it here: https://trustworthyml.io/. It's also on arXiv: https://arxiv.org/abs/2310.08215.
 
-Special thanks to [Bálint](../../member/balint/) for the majority of the work. Also, kudos to last year's tutors: [Alex](../../member/alex/), [Elisa](../../member/elisa/), and [Michael](../../member/michael/).
+Special thanks to [Bálint](/#members) for the majority of the work. Also, kudos to last year's tutors: [Alex](/#members), [Elisa](/#members), and [Michael](/#members).
 
 Note: The course materials are updated yearly to stay aligned with the latest research. The book will be useful for the TML24/25 course. However, it won't cover new topics added to the course.
 
@@ -112,13 +112,13 @@ Students may use language models for exercises. If you choose to do so, please f
 
 ### Lecturer
 
-- [Joon](../../member/joon/)
+- [Joon](/#members)
 
 ### Tutors
 
-- [Johannes](../../member/johannes/): OOD Generalisation
-- [Ankit](../../member/ankit/): Explainability
-- [Lennart](../../member/lennart/): Uncertainty
+- [Johannes](/#members): OOD Generalisation
+- [Ankit](/#members): Explainability
+- [Lennart](/#members): Uncertainty
 
 ### Central email
 
@@ -161,19 +161,19 @@ For those who're registered for the course, ask the lecturer or tutors to add yo
 {{<table "table table-striped table-bordered">}}
 |   #   |   Date    |   Lecture content     |   Exercises   | Tutorial session |
 |---    |---    |---    |---    |---    |
-|    -      |   30/09/2024   |   -      |   [Exercise 0](https://www.kaggle.com/code/seongjoonoh/0-prelim) (Due:23.10.2024) - [Joon](../../member/joon/)  | - |
+|    -      |   30/09/2024   |   -      |   [Exercise 0](https://www.kaggle.com/code/seongjoonoh/0-prelim) (Due:23.10.2024) - [Joon](/#members)  | - |
 |   L1      |   17/10/2024   |   [Introduction](https://docs.google.com/presentation/d/149sqUybRkRFL-MJ1AbX9c7LNUkwGvVmbcIChj-u5Ozw/edit) - [Video](https://youtu.be/OoLAafHghGQ)   |   -  | - |
-|   L2      |   24/10/2024   |   [OOD Generalisation (Definitions)](https://docs.google.com/presentation/d/1FZEfWI2PEAz6KlV68QrYxxURqJVqlpomoDLROGOYTEk/edit?usp=sharing) - [Video](https://youtu.be/ZSIJWl5wRM0)   |   [Exercise 1](https://www.kaggle.com/code/johannestml/1-ood) (Due:20.11.2024) - [Johannes](../../member/johannes/)  | [Johannes](../../member/johannes/): Introduce Exercise 1 |
-|   L3      |   31/10/2024   |   [OOD Generalisation (Cue selection)](https://docs.google.com/presentation/d/1Mofxlc3CrPp0grXg9zuHKjUB9hjyl8VTks85lsMJ2Sw/edit?usp=sharing) - [Video](https://youtu.be/0YtyyMhnR88)   |   -   | [Joon](../../member/joon/): [Recap Exercise 0](https://docs.google.com/presentation/d/18DC5RKri0FPSRKNuvkR2TErJuqH2rax-I-AgkQQu6UA/edit?usp=sharing) - [Video](https://youtu.be/pNioUXgTWGo) |
-|   L4      |   07/11/2024   |   [OOD Generalisation (Domain generalisation & adversarial ML)](https://docs.google.com/presentation/d/1bCFoe-OXPHhz0jkZpgBRHjbrT9OHYi43YNNowKn78xs/edit?usp=sharing) - [Video](https://youtu.be/Sp055N16dQ4)   |   -  | [Johannes](../../member/johannes/): Co-working / Q&A |
-|   L5      |   14/11/2024   |   [OOD Generalisation (Attacking LLMs) & Explainability (Definitions)](https://docs.google.com/presentation/d/1mE0Dpq_aZunyv1R__Nwiydx2XBWhsklDBFILduFENUI/edit?usp=sharing) - [Video](https://youtu.be/c-txRWzQRUY)   |   [Exercise 2](https://www.kaggle.com/code/aktsonthalia/tml2425-exercise-2-xai-public/) (Due:11.12.2024) - [Ankit](../../member/ankit/)   | [Ankit](../../member/ankit/): Introduce Exercise 2<br>[Johannes](../../member/johannes/): Co-working / Q&A  |
-|   L6      |   21/11/2024   |   [Explainability (Feature attribution)](https://docs.google.com/presentation/d/1CxLadXky7483gLOUF6EhhJFE2YjD3OH4K4ABLClToyw/edit?usp=sharing) - [Video](https://youtu.be/u5Rswryc0LI)   |   -  |  [Ankit](../../member/ankit/): Co-working / Q&A  |
-|   L7      |   28/11/2024   |   [Explainability (Feature attribution, Training data attribution)](https://docs.google.com/presentation/d/1ewbT4f6rhvjNKULqJ-DlAhjDHfZ9ecxo5kIA6K4vrrI/edit?usp=sharing) - [Video](https://youtu.be/gKkuNHv2agY)   |   -   | [Johannes](../../member/johannes/): Recap Exercise 1 |
-|   L8      |   05/12/2024   |   [Explainability (Training data attribution)](https://docs.google.com/presentation/d/13gWJNwhOOZbC2h3qMK5fHxwWrrohacKzBFzTKZs1_us/edit?usp=sharing) - [Video](https://youtu.be/ZfSSZx2CMco)   |   -   | [Ankit](../../member/ankit/): Co-working / Q&A |
-|   L9      |   09/01/2025   |   [Uncertainty (Definitions & evaluation)](https://docs.google.com/presentation/d/1LdgWekyM1CIRpQltfZZVjj61letwx4MAbbPk-Ox1pIc/edit?usp=sharing) - [Video](https://youtu.be/ypivms7e-Ug)   |   [Exercise 3](https://www.kaggle.com/code/lennartbramlage/3-uncertainty) (Due:30.01.2025) - [Lennart](../../member/lennart/)   | [Lennart](../../member/lennart/): Introduce Exercise 3 |
-|   L10     |   16/01/2025   |   [Uncertainty (Epistemic uncertainty)](https://docs.google.com/presentation/d/1YdiawEUMa4Qm5KMyJJEpZ1X3TFlfLmpjNPX4gfJeRJs/edit?usp=sharing) - [Video](https://youtu.be/XX57pTxTc9A)   |   -   | [Lennart](../../member/lennart/): Co-working / Q&A |
-|   L11     |   23/01/2025   |   [Uncertainty (Aleatoric uncertainty, Factorisation)](https://docs.google.com/presentation/d/1gfNhyglwAhxWFJWEheXn6Pw6-DeSo6gHhawwoaXQvus/edit?usp=sharing) - [Video](https://youtu.be/QStdPZVL45o)   |   -   | [Ankit](../../member/ankit/): Recap Exercise 2 |
-|   L12     |   30/01/2025   |   [Conclusion (Exam, Research at STAI, Project topics)](https://docs.google.com/presentation/d/1m1CTyXwX-bALBObXm6m4uMOMCWSFi2ZIqyvq24lKPuU/edit?usp=sharing) - [Video](https://youtu.be/2IqERLYNhJA)   |   -   | [Lennart](../../member/lennart/): Co-working / Q&A |
-|      -    |   06/02/2025   |   -   |   -   | [Lennart](../../member/lennart/): Recap Exercise 3 |
+|   L2      |   24/10/2024   |   [OOD Generalisation (Definitions)](https://docs.google.com/presentation/d/1FZEfWI2PEAz6KlV68QrYxxURqJVqlpomoDLROGOYTEk/edit?usp=sharing) - [Video](https://youtu.be/ZSIJWl5wRM0)   |   [Exercise 1](https://www.kaggle.com/code/johannestml/1-ood) (Due:20.11.2024) - [Johannes](/#members)  | [Johannes](/#members): Introduce Exercise 1 |
+|   L3      |   31/10/2024   |   [OOD Generalisation (Cue selection)](https://docs.google.com/presentation/d/1Mofxlc3CrPp0grXg9zuHKjUB9hjyl8VTks85lsMJ2Sw/edit?usp=sharing) - [Video](https://youtu.be/0YtyyMhnR88)   |   -   | [Joon](/#members): [Recap Exercise 0](https://docs.google.com/presentation/d/18DC5RKri0FPSRKNuvkR2TErJuqH2rax-I-AgkQQu6UA/edit?usp=sharing) - [Video](https://youtu.be/pNioUXgTWGo) |
+|   L4      |   07/11/2024   |   [OOD Generalisation (Domain generalisation & adversarial ML)](https://docs.google.com/presentation/d/1bCFoe-OXPHhz0jkZpgBRHjbrT9OHYi43YNNowKn78xs/edit?usp=sharing) - [Video](https://youtu.be/Sp055N16dQ4)   |   -  | [Johannes](/#members): Co-working / Q&A |
+|   L5      |   14/11/2024   |   [OOD Generalisation (Attacking LLMs) & Explainability (Definitions)](https://docs.google.com/presentation/d/1mE0Dpq_aZunyv1R__Nwiydx2XBWhsklDBFILduFENUI/edit?usp=sharing) - [Video](https://youtu.be/c-txRWzQRUY)   |   [Exercise 2](https://www.kaggle.com/code/aktsonthalia/tml2425-exercise-2-xai-public/) (Due:11.12.2024) - [Ankit](/#members)   | [Ankit](/#members): Introduce Exercise 2<br>[Johannes](/#members): Co-working / Q&A  |
+|   L6      |   21/11/2024   |   [Explainability (Feature attribution)](https://docs.google.com/presentation/d/1CxLadXky7483gLOUF6EhhJFE2YjD3OH4K4ABLClToyw/edit?usp=sharing) - [Video](https://youtu.be/u5Rswryc0LI)   |   -  |  [Ankit](/#members): Co-working / Q&A  |
+|   L7      |   28/11/2024   |   [Explainability (Feature attribution, Training data attribution)](https://docs.google.com/presentation/d/1ewbT4f6rhvjNKULqJ-DlAhjDHfZ9ecxo5kIA6K4vrrI/edit?usp=sharing) - [Video](https://youtu.be/gKkuNHv2agY)   |   -   | [Johannes](/#members): Recap Exercise 1 |
+|   L8      |   05/12/2024   |   [Explainability (Training data attribution)](https://docs.google.com/presentation/d/13gWJNwhOOZbC2h3qMK5fHxwWrrohacKzBFzTKZs1_us/edit?usp=sharing) - [Video](https://youtu.be/ZfSSZx2CMco)   |   -   | [Ankit](/#members): Co-working / Q&A |
+|   L9      |   09/01/2025   |   [Uncertainty (Definitions & evaluation)](https://docs.google.com/presentation/d/1LdgWekyM1CIRpQltfZZVjj61letwx4MAbbPk-Ox1pIc/edit?usp=sharing) - [Video](https://youtu.be/ypivms7e-Ug)   |   [Exercise 3](https://www.kaggle.com/code/lennartbramlage/3-uncertainty) (Due:30.01.2025) - [Lennart](/#members)   | [Lennart](/#members): Introduce Exercise 3 |
+|   L10     |   16/01/2025   |   [Uncertainty (Epistemic uncertainty)](https://docs.google.com/presentation/d/1YdiawEUMa4Qm5KMyJJEpZ1X3TFlfLmpjNPX4gfJeRJs/edit?usp=sharing) - [Video](https://youtu.be/XX57pTxTc9A)   |   -   | [Lennart](/#members): Co-working / Q&A |
+|   L11     |   23/01/2025   |   [Uncertainty (Aleatoric uncertainty, Factorisation)](https://docs.google.com/presentation/d/1gfNhyglwAhxWFJWEheXn6Pw6-DeSo6gHhawwoaXQvus/edit?usp=sharing) - [Video](https://youtu.be/QStdPZVL45o)   |   -   | [Ankit](/#members): Recap Exercise 2 |
+|   L12     |   30/01/2025   |   [Conclusion (Exam, Research at STAI, Project topics)](https://docs.google.com/presentation/d/1m1CTyXwX-bALBObXm6m4uMOMCWSFi2ZIqyvq24lKPuU/edit?usp=sharing) - [Video](https://youtu.be/2IqERLYNhJA)   |   -   | [Lennart](/#members): Co-working / Q&A |
+|      -    |   06/02/2025   |   -   |   -   | [Lennart](/#members): Recap Exercise 3 |
 {{</table>}}
 

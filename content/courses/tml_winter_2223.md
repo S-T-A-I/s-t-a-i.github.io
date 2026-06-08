@@ -164,13 +164,13 @@ we award bonus boosts on the final grade based on the exercise performance.
 
 ### Lecturer
 
-- [Seong Joon Oh](../../member/joon/)
+- [Seong Joon Oh](/#members)
 
 ### Tutors
 
-- [Alexander Rubinstein](../../member/alex/)
-- [Elif Akata](../../member/elif/)
-- [Elisa Nguyen](../../member/elisa/)
+- [Alexander Rubinstein](/#members)
+- [Elif Akata](/#members)
+- [Elisa Nguyen](/#members)
 - [Michael Kirchhof](https://www.eml-unitue.de/people/michael-kirchhof)
 
 ### Central email

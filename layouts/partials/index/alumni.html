@@ -8,13 +8,14 @@
             </div>
         </div>
 
-        <!-- Members -->
-        <div class="row">
-            {{ range (sort (where .Site.RegularPages "Type" "member") ".Params.sort_position")}}
-                {{ if .Params.is_former_member }}
-                    {{ partial "member_simple" . }}
-                {{ end }}
-            {{ end }}
+        <!-- Alumni -->
+        <div
+            id="alumni-dynamic"
+            class="row"
+            data-members-api="{{ .Site.Params.members_api_url }}"
+            data-image-base="{{ .Site.BaseURL }}/img"
+            data-members-kind="alumni">
+            <p class="text-muted">Loading alumni...</p>
         </div>
 
     </div>

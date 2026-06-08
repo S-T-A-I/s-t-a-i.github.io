@@ -162,7 +162,7 @@ We do not tolerate very similar creative work among class members. AI tends to p
 
 **Language:** English
 
-**Lecturer:** [Seong Joon Oh](../../member/joon/)
+**Lecturer:** [Seong Joon Oh](/#members)
 
 **Tutors:** Myungkyu Koo (`jameskoo0503@kaist.ac.kr`), Gyouk Chu (`kyouwook@kaist.ac.kr`), Kyuyoung Kim (`kykim@kaist.ac.kr`), Sangwon Jang (`sangwon.jang@kaist.ac.kr`)
 

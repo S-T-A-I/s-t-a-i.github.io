@@ -9,13 +9,115 @@
         </div>
 
         <!-- Members -->
-        <div class="row">
-            {{ range (sort (where .Site.RegularPages "Type" "member") ".Params.sort_position")}}
-                {{ if not .Params.is_former_member }}
-                    {{ partial "member_simple" . }}
-                {{ end }}
-            {{ end }}
+        <div
+            id="members-dynamic"
+            class="row"
+            data-members-api="{{ .Site.Params.members_api_url }}"
+            data-image-base="{{ .Site.BaseURL }}/img"
+            data-members-kind="current">
+            <p class="text-muted">Loading members...</p>
         </div>
 
     </div>
 </section>
+
+{{ if .Site.Params.members_api_url }}
+<script>
+(function () {
+  function esc(value) {
+    return String(value || "").replace(/[&<>"']/g, function (ch) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch];
+    });
+  }
+  function imageUrl(path, imageBase) {
+    if (!path) return imageBase + "/portraits/portrait.jpg";
+    if (/^https?:\/\//.test(path)) return path;
+    return imageBase.replace(/\/$/, "") + "/" + path.replace(/^\/+/, "");
+  }
+  function socialIcon(link) {
+    if (!link || !link.url || !link.icon) return "";
+    var pack = link.iconPack === "ai" ? "ai ai-" : "fa fa-";
+    return '<li><a href="' + esc(link.url) + '" title="' + esc(link.label || "") + '"><i class="' + pack + esc(link.icon) + ' small-icon" aria-hidden="true"></i></a></li>';
+  }
+  function memberCard(member, imageBase) {
+    var links = "";
+    if (member.email) links += '<li><a href="mailto:' + esc(member.email) + '"><i class="fa fa-envelope small-icon" aria-hidden="true"></i></a></li>';
+    if (Array.isArray(member.socialLinks)) {
+      links += member.socialLinks.map(socialIcon).join("");
+    } else if (member.websiteUrl) {
+      links += '<li><a href="' + esc(member.websiteUrl) + '"><i class="fa fa-globe small-icon" aria-hidden="true"></i></a></li>';
+    }
+    return '' +
+      '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">' +
+        '<div id="profile">' +
+          '<img class="portrait" itemprop="image" src="' + esc(imageUrl(member.portraitPath, imageBase)) + '" alt="' + esc(member.name) + '" />' +
+          '<div class="portrait-title">' +
+            '<h2 itemprop="name">' + esc(member.name) + '</h2>' +
+            (member.title ? '<h4>' + esc(member.title) + '</h4>' : '') +
+            (links ? '<ul class="social-icon-main-page">' + links + '</ul>' : '') +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+  function shouldShow(member, kind) {
+    if (kind === "alumni") return !!member.isAlumni;
+    return !member.isAlumni && member.status !== "archived";
+  }
+  function renderSection(root, members) {
+    var kind = root.getAttribute("data-members-kind") || "current";
+    var imageBase = root.getAttribute("data-image-base") || "";
+    var visibleMembers = members.filter(function (member) { return shouldShow(member, kind); });
+    if (visibleMembers.length === 0) {
+      root.innerHTML = '<p class="text-muted">No public ' + (kind === "alumni" ? "alumni" : "members") + ' listed yet.</p>';
+      return;
+    }
+    root.innerHTML = visibleMembers.map(function (member) { return memberCard(member, imageBase); }).join("");
+  }
+  function apiCandidates(api) {
+    var candidates = [api];
+    if (api === "https://stai-lab-assets.vercel.app/api/public/members.json") {
+      candidates.push("https://stai-lab-assets-umber.vercel.app/api/public/members.json");
+    }
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      candidates.push("http://127.0.0.1:4322/api/public/members.json");
+      candidates.push("http://127.0.0.1:4323/api/public/members.json");
+    }
+    return candidates.filter(function (candidate, index) {
+      return candidate && candidates.indexOf(candidate) === index;
+    });
+  }
+  function fetchMembers(candidates) {
+    var api = candidates.shift();
+    if (!api) return Promise.reject(new Error("No members API available"));
+    return fetch(api)
+      .then(function (res) {
+        if (!res.ok) throw new Error("Members API returned " + res.status);
+        return res.json();
+      })
+      .then(function (payload) {
+        var members = payload && payload.members;
+        if (!Array.isArray(members)) throw new Error("Invalid members response");
+        return members;
+      })
+      .catch(function () {
+        return fetchMembers(candidates);
+      });
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    var roots = Array.prototype.slice.call(document.querySelectorAll("[data-members-api][data-members-kind]"));
+    if (roots.length === 0) return;
+    var api = roots[0].getAttribute("data-members-api");
+    if (!api) return;
+    fetchMembers(apiCandidates(api))
+      .then(function (members) {
+        roots.forEach(function (root) { renderSection(root, members); });
+      })
+      .catch(function () {
+        roots.forEach(function (root) {
+          root.innerHTML = '<p class="text-muted">Member list is temporarily unavailable.</p>';
+        });
+      });
+  });
+})();
+</script>
+{{ end }}

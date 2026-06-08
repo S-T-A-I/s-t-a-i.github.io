@@ -26,7 +26,7 @@ description = "As machine learning technology gets applied to actual products an
 
 Last year's course materials are now a book. You can find it here: https://trustworthyml.io/. It's also on arXiv: https://arxiv.org/abs/2310.08215.
 
-Special thanks to [Bálint](../../member/balint/) for the majority of the work. Also, kudos to last year's tutors: [Alex](../../member/alex/), [Elisa](../../member/elisa/), and [Michael](../../member/michael/).
+Special thanks to [Bálint](/#members) for the majority of the work. Also, kudos to last year's tutors: [Alex](/#members), [Elisa](/#members), and [Michael](/#members).
 
 Note: The course materials are updated yearly to stay aligned with the latest research. The book will be useful for the TML23/24 course. However, it won't cover new topics added to the course.
 
@@ -113,13 +113,13 @@ Students may use language models for exercises. If you choose to do so, please f
 
 ### Lecturer
 
-- [Seong Joon Oh](../../member/joon/)
+- [Seong Joon Oh](/#members)
 
 ### Tutors
 
-- [Arnas Uselis](../../member/arnas/)
-- [Bálint Mucsányi](../../member/balint/)
-- [Evgenii Kortukov](../../member/evgenii/)
+- [Arnas Uselis](/#members)
+- [Bálint Mucsányi](/#members)
+- [Evgenii Kortukov](/#members)
 
 ### Central email
 
@@ -165,19 +165,19 @@ For those who're registered for the course, ask the lecturer or tutors to add yo
 {{<table "table table-striped table-bordered">}}
 |   #  	|   Date  	|   Lecture content  	|   Exercises  	| Tutorial session |
 |---	|---	|---	|---	|---	|
-|    -      |   29/09/2023   |   -      |   [Exercise 0](https://colab.research.google.com/drive/12xV5k34x1BDbDraBy563JuBGTsIhroAr?usp=sharing) (Due:22.10.2023) - [Joon](../../member/joon/)  | No session |
-|   L1      |   16/10/2023   |   [Introduction, OOD Generalisation (Definitions & evaluation)](https://docs.google.com/presentation/d/12k9e6BCWittBJF6AdswIi7_2rYOC9D3X3PhmPXAbkTg/edit?usp=sharing) - [Video](https://youtu.be/ob7KTM2llNc&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   [Exercise 1](https://drive.google.com/file/d/1uVfKHdcjwYxNc0ANd1ZuG0yGT9ZMOoJJ/view?usp=sharing) (Due:12.11.2023) - [Arnas](../../member/arnas/)  | No session |
+|    -      |   29/09/2023   |   -      |   [Exercise 0](https://colab.research.google.com/drive/12xV5k34x1BDbDraBy563JuBGTsIhroAr?usp=sharing) (Due:22.10.2023) - [Joon](/#members)  | No session |
+|   L1      |   16/10/2023   |   [Introduction, OOD Generalisation (Definitions & evaluation)](https://docs.google.com/presentation/d/12k9e6BCWittBJF6AdswIi7_2rYOC9D3X3PhmPXAbkTg/edit?usp=sharing) - [Video](https://youtu.be/ob7KTM2llNc&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   [Exercise 1](https://drive.google.com/file/d/1uVfKHdcjwYxNc0ANd1ZuG0yGT9ZMOoJJ/view?usp=sharing) (Due:12.11.2023) - [Arnas](/#members)  | No session |
 |   L2      |   23/10/2023   |   [OOD Generalisation (Definitions & evaluation, Cue selection)](https://docs.google.com/presentation/d/1UsKNPjUe9lTnGoftnf_O4aoSrq2wE7rAET1TF8txLPI/edit?usp=sharing) - [Video](https://youtu.be/9aY9e31nIWg&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -  | Q&A session |
-|   L3      |   30/10/2023   |   [OOD Generalisation (Cue selection)](https://docs.google.com/presentation/d/1LWnWhUqxpE1Qa0Fy-qO_rS5IsLOlUIXclInt8x42jME/edit?usp=sharing) - [Video](https://youtu.be/nh1yi9Z_sFU&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Session for recap of Exercise 0 ([Bálint](../../member/balint/)) - [Video](https://youtu.be/dTsxlWlOyqc)|
+|   L3      |   30/10/2023   |   [OOD Generalisation (Cue selection)](https://docs.google.com/presentation/d/1LWnWhUqxpE1Qa0Fy-qO_rS5IsLOlUIXclInt8x42jME/edit?usp=sharing) - [Video](https://youtu.be/nh1yi9Z_sFU&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Session for recap of Exercise 0 ([Bálint](/#members)) - [Video](https://youtu.be/dTsxlWlOyqc)|
 |   L4      |   06/11/2023   |   [OOD Generalisation (Adversarial attacks)](https://docs.google.com/presentation/d/1LUX0ZkKpVBef9S0ZxvvDrAsFALtrjNH7hoT3eGHrelI/edit?usp=sharing) - [Video](https://youtu.be/hl0tftRD9oA&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -  | Q&A session|
-|   L5      |   13/11/2023   |   [OOD Generalisation (Adversarial defenses), Explainability (Definitions)](https://docs.google.com/presentation/d/14JsfcScfRPb8U1cbBXm6Sxu09HsyEOYgxYXiYCTy6Ew/edit?usp=sharing) - [Video](https://youtu.be/nE9La-lOOcw&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   [Exercise 2](https://colab.research.google.com/drive/1Of7slDrLhP9I4pchMXxiBhYQujCQPQ0g?usp=sharing) (Due:10.12.2023) - [Evgenii](../../member/evgenii/)   | Exercise 2 introduction |
-|   L6      |   20/11/2023   |   [Explainability (Feature attribution)](https://docs.google.com/presentation/d/1kcXeHPtLWJ4QCfVQYymGeoF73wrb_nTE0TcDHp4sQO8/edit?usp=sharing) - [Video](https://youtu.be/0iTsEOpo7B4&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Session for recap of Exercise 1 ([Arnas](../../member/arnas/)) - [Video](https://www.youtube.com/watch?v=GyccTtnPN0Y), [Slides](https://docs.google.com/presentation/d/1OYzjzFamw94Y5i6ZKWQhPJVusOCpgIBfRmStzLIqx7w/edit?usp=sharing) |
+|   L5      |   13/11/2023   |   [OOD Generalisation (Adversarial defenses), Explainability (Definitions)](https://docs.google.com/presentation/d/14JsfcScfRPb8U1cbBXm6Sxu09HsyEOYgxYXiYCTy6Ew/edit?usp=sharing) - [Video](https://youtu.be/nE9La-lOOcw&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   [Exercise 2](https://colab.research.google.com/drive/1Of7slDrLhP9I4pchMXxiBhYQujCQPQ0g?usp=sharing) (Due:10.12.2023) - [Evgenii](/#members)   | Exercise 2 introduction |
+|   L6      |   20/11/2023   |   [Explainability (Feature attribution)](https://docs.google.com/presentation/d/1kcXeHPtLWJ4QCfVQYymGeoF73wrb_nTE0TcDHp4sQO8/edit?usp=sharing) - [Video](https://youtu.be/0iTsEOpo7B4&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Session for recap of Exercise 1 ([Arnas](/#members)) - [Video](https://www.youtube.com/watch?v=GyccTtnPN0Y), [Slides](https://docs.google.com/presentation/d/1OYzjzFamw94Y5i6ZKWQhPJVusOCpgIBfRmStzLIqx7w/edit?usp=sharing) |
 |   L7      |   27/11/2023   |   [Explainability (Feature attribution, Training data attribution)](https://docs.google.com/presentation/d/1_IEduwgVBAyrlc405ldONO_7ykchxALjRA6vhcG3Y_w/edit?usp=sharing) - [Video](https://youtu.be/Ubu9g6SySg8&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Co-working / Q&A |
 |   L8      |   04/12/2023   |   [Explainability (Training data attribution)](https://docs.google.com/presentation/d/1f4gF9iIHSE06XkUA4Q4ZJaT2hkFLmj_hm3LCNBPbII4/edit?usp=sharing) - [Video](https://youtu.be/unDA9yPjG68&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Co-working / Q&A |
-|   L9      |   11/12/2023   |   [Uncertainty (Definitions & evaluation)](https://docs.google.com/presentation/d/1KeCveMdVfdcVafMHjUWHbljCUmd1TY0M9aAVdipbqoo/edit?usp=sharing) - [Video](https://youtu.be/S727IUrELVE&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   [Exercise 3](https://colab.research.google.com/drive/16piAMx9AndNu9Wbxd4HhbeHRRnrr0uBu?usp=sharing) (Due:28.01.2024) - [Bálint](../../member/balint/)   | Exercise 3 introduction |
-|   L10     |   15/01/2024   |   [Uncertainty (Evaluation, Epistemic uncertainty)](https://docs.google.com/presentation/d/1hyJDURXDvHMATPsVXQcDcTspNdEFN-yk66ddqGAKLxI/edit?usp=sharing) - [Video](https://youtu.be/DxsT6QVRnY4&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Session for recap of Exercise 2 ([Evgenii](../../member/evgenii/))|
+|   L9      |   11/12/2023   |   [Uncertainty (Definitions & evaluation)](https://docs.google.com/presentation/d/1KeCveMdVfdcVafMHjUWHbljCUmd1TY0M9aAVdipbqoo/edit?usp=sharing) - [Video](https://youtu.be/S727IUrELVE&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   [Exercise 3](https://colab.research.google.com/drive/16piAMx9AndNu9Wbxd4HhbeHRRnrr0uBu?usp=sharing) (Due:28.01.2024) - [Bálint](/#members)   | Exercise 3 introduction |
+|   L10     |   15/01/2024   |   [Uncertainty (Evaluation, Epistemic uncertainty)](https://docs.google.com/presentation/d/1hyJDURXDvHMATPsVXQcDcTspNdEFN-yk66ddqGAKLxI/edit?usp=sharing) - [Video](https://youtu.be/DxsT6QVRnY4&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Session for recap of Exercise 2 ([Evgenii](/#members))|
 |   L11     |   22/01/2024   |   [Uncertainty (Aleatoric uncertainty, Factorisation)](https://docs.google.com/presentation/d/1wl6MOG_6oADm0jH1r4SKtr696iTD_mlpwE6YFWU-MUw/edit?usp=sharing) - [Video](https://youtu.be/watch?v=crQWmACgdqg&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Co-working / Q&A |
 |   L12     |   29/01/2024   |   [Conclusion (Exam, Final topics, Research at STAI)](https://docs.google.com/presentation/d/1nQ8gGb3usF1JJ2Z8gj_vO-mkLpl0tx690r_HCxzSA5U/edit?usp=sharing) - [Video](https://youtu.be/0dITP_wGwAw&list=PL05umP7R6ij0FDHxle4CQLkzOfN-PAt7b)   |   -   | Co-working / Q&A |
-|      -    |   05/02/2024   |   -   |   -   | Session for recap of Exercise 3 ([Bálint](../../member/balint/))|
+|      -    |   05/02/2024   |   -   |   -   | Session for recap of Exercise 3 ([Bálint](/#members))|
 {{</table>}}
 

@@ -37,6 +37,9 @@ The site is then available at <http://localhost:1313/>.
 | `static/` | Static assets served as-is (images, PDFs, files). |
 | `.github/workflows/` | GitHub Actions deploy pipeline. |
 
+Set `params.members_api_url` in `config.toml` to the public
+`stai-lab-assets` members endpoint to render the members tab from the central DB.
+
 ## Adding content
 
 Use `hugo new` with the relevant archetype:
