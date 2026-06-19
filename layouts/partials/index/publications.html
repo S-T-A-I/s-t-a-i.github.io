@@ -1,3 +1,5 @@
+{{ $pubs_len := len (where .Site.RegularPages "Type" "publication") }}
+{{ if gt $pubs_len 0 }}
 <section id="publications" class="home-section">
     <div class="container">
         <div class="row">
@@ -6,98 +8,19 @@
                 {{ with .Site.Params.publications.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
             <div class="col-xs-12 col-md-9">
-                <div id="publications-dynamic"
-                    data-publications-api="{{ .Site.Params.publications_api_url }}"
-                    data-image-base="{{ .Site.BaseURL }}/img">
-                    <p class="text-muted">Loading publications...</p>
-                </div>
+                {{ range first .Site.Params.publications.count (where .Site.RegularPages "Type" "publication") }}
+                    {{ partial "publication_li_detailed" . }}
+                {{ end }}
+                {{ if gt $pubs_len .Site.Params.publications.count }}
+                <p class="view-all">
+                    <a href="{{ .Site.BaseURL }}/publication/{{if .Site.Params.uglyURLs}}index.html{{end}}">
+                        {{ with .Site.Params.publications.str_all }}{{ . | markdownify }}{{ end }}
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </p>
+                {{ end }}
             </div>
         </div>
     </div>
 </section>
-
-{{ if .Site.Params.publications_api_url }}
-<script>
-(function () {
-  function esc(value) {
-    return String(value || "").replace(/[&<>"']/g, function (ch) {
-      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch];
-    });
-  }
-  function imageUrl(path, imageBase) {
-    if (!path) return "";
-    if (/^https?:\/\//.test(path)) return path;
-    return imageBase.replace(/\/$/, "") + "/" + path.replace(/^\/+/, "");
-  }
-  function authorsHtml(authors) {
-    return (authors || []).map(function (a) {
-      var name = esc(a.name) + (a.star ? "*" : "");
-      return a.isMember ? '<span style="font-weight:500">' + name + "</span>" : name;
-    }).join(", ");
-  }
-  function linksHtml(links) {
-    return (links || []).map(function (l) {
-      return '<a class="btn btn-primary btn-outline btn-xs" href="' + esc(l.url) + '">' + esc(l.name) + "</a>";
-    }).join(" ");
-  }
-  function primaryLink(links) {
-    var arr = links || [];
-    var find = function (re) { return arr.filter(function (l) { return re.test(l.name); })[0]; };
-    return find(/arxiv/i) || find(/pdf/i) || arr[0];
-  }
-  function card(p, imageBase) {
-    var primary = primaryLink(p.links);
-    var titleHtml = primary ? '<a href="' + esc(primary.url) + '">' + esc(p.title) + "</a>" : esc(p.title);
-    var img = imageUrl(p.image, imageBase);
-    var venue = esc(p.publicationShort || p.publication || "");
-    var meta = venue + (p.year ? " " + esc(p.year) : "") + (p.award ? "<br>" + esc(p.award) : "");
-    return "" +
-      '<div class="pub-list-item" itemscope itemtype="http://schema.org/CreativeWork">' +
-        '<div class="row pub-row">' +
-          (img ? '<div class="col-xs-12 col-sm-3 pub-thumbnail-col"><img src="' + img + '" class="pub-banner" itemprop="image"></div>' : "") +
-          '<div class="col-xs-12 col-sm-' + (img ? "9" : "12") + '">' +
-            '<h3 class="article-title" itemprop="name">' + titleHtml + "</h3>" +
-            '<div class="pub-authors" itemprop="author">' + authorsHtml(p.authors) + "</div>" +
-            '<div class="pub-publication">' + meta + "</div>" +
-            '<div class="pub-links">' + linksHtml(p.links) + "</div>" +
-          "</div>" +
-        "</div>" +
-      "</div>";
-  }
-  function apiCandidates(api) {
-    var candidates = [api];
-    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-      candidates.push("http://localhost:4321/api/public/publications.json");
-      candidates.push("http://127.0.0.1:4321/api/public/publications.json");
-    }
-    return candidates.filter(function (c, i) { return c && candidates.indexOf(c) === i; });
-  }
-  function fetchPublications(candidates) {
-    var api = candidates.shift();
-    if (!api) return Promise.reject(new Error("No publications API available"));
-    return fetch(api)
-      .then(function (res) { if (!res.ok) throw new Error("API returned " + res.status); return res.json(); })
-      .then(function (payload) {
-        if (!payload || !Array.isArray(payload.publications)) throw new Error("Invalid response");
-        return payload.publications;
-      })
-      .catch(function () { return fetchPublications(candidates); });
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var root = document.getElementById("publications-dynamic");
-    if (!root) return;
-    var api = root.getAttribute("data-publications-api");
-    var imageBase = root.getAttribute("data-image-base") || "";
-    if (!api) return;
-    fetchPublications(apiCandidates(api))
-      .then(function (pubs) {
-        if (!pubs.length) { root.innerHTML = '<p class="text-muted">No publications listed yet.</p>'; return; }
-        root.innerHTML = pubs.map(function (p) { return card(p, imageBase); }).join("");
-      })
-      .catch(function () {
-        root.innerHTML = '<p class="text-muted">Publications are temporarily unavailable.</p>';
-      });
-  });
-})();
-</script>
 {{ end }}
