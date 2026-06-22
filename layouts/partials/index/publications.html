@@ -31,8 +31,7 @@
   }
   function authorsHtml(authors) {
     return (authors || []).map(function (a) {
-      var name = esc(a.name) + (a.star ? "*" : "");
-      return a.isMember ? '<span style="font-weight:500">' + name + "</span>" : name;
+      return esc(a.name) + (a.star ? "*" : "");
     }).join(", ");
   }
   function linksHtml(links) {
@@ -66,6 +65,9 @@
   }
   function apiCandidates(api) {
     var candidates = [api];
+    if (api === "https://stai-lab-assets.vercel.app/api/public/publications.json") {
+      candidates.push("https://stai-lab-assets-umber.vercel.app/api/public/publications.json");
+    }
     if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
       candidates.push("http://localhost:4321/api/public/publications.json");
       candidates.push("http://127.0.0.1:4321/api/public/publications.json");
