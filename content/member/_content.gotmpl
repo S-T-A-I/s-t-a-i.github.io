@@ -1,0 +1,40 @@
+{{/* Generate one page per public member from the central profile API. */}}
+{{ $url := site.Params.members_api_url }}
+{{ if not $url }}
+  {{ errorf "members_api_url is not set in config.toml" }}
+{{ end }}
+{{ with try (resources.GetRemote $url) }}
+  {{ with .Err }}
+    {{ errorf "Failed to fetch members API %s: %s" $url . }}
+  {{ else with .Value }}
+    {{ $payload := . | transform.Unmarshal }}
+    {{ range $payload.members }}
+      {{ if .handle }}
+        {{ $content := dict "mediaType" "text/markdown" "value" (or .bio "") }}
+        {{ $params := dict
+          "name" .name
+          "role" .title
+          "email" .email
+          "affiliation" .affiliation
+          "is_alumni" .isAlumni
+          "portrait" .portraitPath
+          "website_url" .websiteUrl
+          "research_interests" .researchInterests
+          "social_links" .socialLinks
+        }}
+        {{ $page := dict
+          "kind" "page"
+          "path" .handle
+          "title" .name
+          "content" $content
+          "params" $params
+        }}
+        {{ $.AddPage $page }}
+      {{ else }}
+        {{ warnf "Member %q has no handle; skipping member page" .name }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ errorf "Unable to fetch members API %s" $url }}
+  {{ end }}
+{{ end }}

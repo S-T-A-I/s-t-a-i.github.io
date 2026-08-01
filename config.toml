@@ -22,8 +22,8 @@ tag = "tags"
   description = "Scalable Trustworthy AI (STAI) is a research group at KAIST AI led by Seong Joon Oh, working on Knowledge-Intelligence Separation: retrieval and RAG, memory-augmented architectures, agentic AI, training data attribution, privacy, and data ownership."
   slogan = "Scalable Trustworthy AI"
   slogan_text = "Creating scalable and trustworthy AI with human guidance"
-  members_api_url = "https://stai-lab-assets-umber.vercel.app/api/public/members.json"
-  publications_api_url = "https://stai-lab-assets-umber.vercel.app/api/public/publications.json"
+  members_api_url = "https://internal.stai-lab.org/api/public/members.json"
+  publications_api_url = "https://internal.stai-lab.org/api/public/publications.json"
 
   [params.logo]
     image = "img/stai-logos-bright.png"

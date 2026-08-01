@@ -19,9 +19,19 @@
 {{- $role = strings.TrimPrefix (printf "%s | " $name) $role -}}
 {{- $role = replace $role "MSc student" "MSc Student" -}}
 
+{{- /* Members with a handle get a generated page at /member/<handle>/ (see
+       content/member/_content.gotmpl). Hugo lowercases that path, so lowercase
+       here too or a capitalised handle 404s on case-sensitive GitHub Pages. */ -}}
+{{- $page := "" -}}
+{{- with $m.handle }}{{ $page = printf "/member/%s/" (urlize (lower .)) }}{{ end -}}
+
 <div class="person">
+  {{ if $page }}<a href="{{ $page }}" class="phl">{{ end }}
   <img class="ph" src="{{ $img }}" alt="{{ $name }}" loading="lazy" width="104" height="104">
-  <p class="nm" itemprop="name">{{ $name }}</p>
+  {{ if $page }}</a>{{ end }}
+  <p class="nm" itemprop="name">
+    {{ if $page }}<a href="{{ $page }}">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}
+  </p>
   {{ with $role }}<p class="rl">{{ . }}</p>{{ end }}
   {{- $links := slice -}}
   {{- with $m.email }}{{ $links = $links | append (dict "url" (printf "mailto:%s" .) "cls" "fa fa-envelope" "lab" "Email") }}{{ end -}}

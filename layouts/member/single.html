@@ -1,0 +1,65 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<main id="main">
+<section class="blk" id="member">
+  <div class="shell">
+    <div class="hd">
+      <div>
+        <h2><a href="{{ "members/" | absURL }}">&larr; Members</a></h2>
+      </div>
+    </div>
+
+    <div class="prof" itemscope itemtype="http://schema.org/Person">
+      <aside class="prof-side">
+        {{- $portrait := .Params.portrait | default "/portraits/portrait.jpg" -}}
+        {{- if not (hasPrefix $portrait "http") -}}
+          {{- $portrait = printf "%simg/%s" .Site.BaseURL (strings.TrimPrefix "/" $portrait) -}}
+        {{- end -}}
+        <img class="prof-ph" itemprop="image" src="{{ $portrait }}" alt="{{ .Params.name }}"
+             width="200" height="200">
+
+        <h1 class="prof-nm" itemprop="name">{{ .Params.name }}</h1>
+        {{ with .Params.role }}<p class="prof-rl" itemprop="jobTitle">{{ . }}</p>{{ end }}
+
+        {{- $links := slice -}}
+        {{- with .Params.email }}{{ $links = $links | append (dict "url" (printf "mailto:%s" .) "cls" "fa fa-envelope" "lab" "Email") }}{{ end -}}
+        {{- range .Params.social_links -}}
+          {{- if .url -}}
+            {{- $pack := cond (eq .iconPack "ai") "ai ai-" "fa fa-" -}}
+            {{- $links = $links | append (dict "url" .url "cls" (printf "%s%s" $pack .icon) "lab" (.label | default "Link")) -}}
+          {{- end -}}
+        {{- end -}}
+        {{ with $links }}
+        <div class="soc">
+          {{ range . }}
+          <a href="{{ .url }}" rel="noopener"><i class="{{ .cls }}" aria-hidden="true"></i><span class="sr">{{ .lab }}</span></a>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ with .Params.website_url }}
+        <p class="prof-web"><a href="{{ . }}" rel="noopener" itemprop="url">Personal website &nearr;</a></p>
+        {{ end }}
+      </aside>
+
+      <div class="prof-main" itemprop="description">
+        {{ with .Params.research_interests }}
+        <h2>Interests</h2>
+        <ul class="ints">
+          {{ range split (replace . "\r\n" "\n") "\n" }}{{ with trim . " " }}<li>{{ . }}</li>{{ end }}{{ end }}
+        </ul>
+        {{ end }}
+
+        {{ with .Content }}
+        <h2>Biography</h2>
+        <div class="article-style">{{ . }}</div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
