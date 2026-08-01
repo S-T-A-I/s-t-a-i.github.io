@@ -47,12 +47,15 @@
     } else if (member.websiteUrl) {
       links += '<li><a href="' + esc(member.websiteUrl) + '"><i class="fa fa-globe small-icon" aria-hidden="true"></i></a></li>';
     }
+    var pageUrl = member.handle ? "/member/" + encodeURIComponent(member.handle) + "/" : null;
+    var portraitImg = '<img class="portrait" itemprop="image" src="' + esc(imageUrl(member.portraitPath, imageBase)) + '" alt="' + esc(member.name) + '" />';
+    var nameText = esc(member.name);
     return '' +
       '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">' +
         '<div id="profile">' +
-          '<img class="portrait" itemprop="image" src="' + esc(imageUrl(member.portraitPath, imageBase)) + '" alt="' + esc(member.name) + '" />' +
+          (pageUrl ? '<a href="' + esc(pageUrl) + '">' + portraitImg + '</a>' : portraitImg) +
           '<div class="portrait-title">' +
-            '<h2 itemprop="name">' + esc(member.name) + '</h2>' +
+            '<h2 itemprop="name">' + (pageUrl ? '<a href="' + esc(pageUrl) + '">' + nameText + '</a>' : nameText) + '</h2>' +
             (member.title ? '<h4>' + esc(member.title) + '</h4>' : '') +
             (links ? '<ul class="social-icon-main-page">' + links + '</ul>' : '') +
           '</div>' +
@@ -75,7 +78,7 @@
   }
   function apiCandidates(api) {
     var candidates = [api];
-    if (api === "https://stai-lab-assets.vercel.app/api/public/members.json") {
+    if (api === "https://internal.stai-lab.org/api/public/members.json") {
       candidates.push("https://stai-lab-assets-umber.vercel.app/api/public/members.json");
     }
     if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {

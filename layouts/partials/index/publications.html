@@ -65,7 +65,7 @@
   }
   function apiCandidates(api) {
     var candidates = [api];
-    if (api === "https://stai-lab-assets.vercel.app/api/public/publications.json") {
+    if (api === "https://internal.stai-lab.org/api/public/publications.json") {
       candidates.push("https://stai-lab-assets-umber.vercel.app/api/public/publications.json");
     }
     if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {

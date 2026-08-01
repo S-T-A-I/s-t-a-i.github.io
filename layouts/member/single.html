@@ -1,0 +1,86 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div>
+  <br>
+</div>
+<div class="container">
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="col-xs-12 col-md-4">
+        <div id="profile">
+
+            {{ $portrait := .Params.portrait | default "/portraits/portrait.jpg" }}
+            {{ if not (hasPrefix $portrait "http") }}
+                {{ $portrait = printf "%simg/%s" .Site.BaseURL (strings.TrimPrefix "/" $portrait) }}
+            {{ end }}
+            <img class="portrait" itemprop="image" src="{{ $portrait }}" alt="{{ .Params.name }}" />
+
+            <div class="portrait-title">
+                <h2 itemprop="name">{{ .Params.name }}</h2>
+                {{ with .Params.role }}<h3 itemprop="jobTitle">{{ . }}</h3>{{ end }}
+            </div>
+
+            <ul class="social-icon">
+                {{ with .Params.email }}
+                <li>
+                    <a href="mailto:{{ . }}">
+                        <i class="fa fa-envelope big-icon" aria-hidden="true"></i>
+                    </a>
+                </li>
+                {{ end }}
+                {{ range .Params.social_links }}
+                <li>
+                    <a href="{{ .url }}" title="{{ .label }}">
+                    {{ if eq .iconPack "ai" }}
+                        <i class="ai ai-{{ .icon }} big-icon" aria-hidden="true"></i>
+                    {{ else }}
+                        <i class="fa fa-{{ .icon }} big-icon" aria-hidden="true"></i>
+                    {{ end }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+
+            <div class="row">
+                {{ with .Params.website_url }}
+                    <a href="{{ . }}">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        Personal website
+                    </a>
+                {{ end }}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="visible-sm visible-xs"></div>
+    <div class="col-xs-12 col-md-8" itemprop="description">
+        <div class="row">
+
+            {{ with .Params.research_interests }}
+            <div class="col-sm-12">
+                <h3>Interests</h3>
+                <ul class="ul-int">
+                    {{ range split (replace . "\r\n" "\n") "\n" }}
+                    {{ if . }}
+                    <li><div class="description"><p>{{ . }}</p></div></li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Biography</h3>
+                 <div class="article-style">{{ .Content }}</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
