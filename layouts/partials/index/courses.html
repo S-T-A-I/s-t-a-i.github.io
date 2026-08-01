@@ -1,26 +1,27 @@
-{{ $opens_len := len (where .Site.RegularPages "Type" "courses") }}
-{{ if gt $opens_len 0 }}
-<section id="courses" class="home-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-3 section-heading">
-                <h1>{{ with .Site.Params.courses.title }}{{ . | markdownify }}{{ end }}</h1>
-                {{ with .Site.Params.courses.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-            </div>
-            <div class="col-xs-12 col-md-9">
-                {{ range first .Site.Params.courses.count (sort (where .Site.RegularPages "Type" "courses") ".Params.sort_position" "desc") }}
-                    {{ partial "course_li_detailed" . }}
-                {{ end }}
-                {{ if gt $opens_len .Site.Params.courses.count }}
-                <p class="view-all">
-                    <a href="{{ .Site.BaseURL }}/courses/{{if .Site.Params.uglyURLs}}index.html{{end}}">
-                        {{ with .Site.Params.courses.str_all }}{{ . | markdownify }}{{ end }}
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </p>
-                {{ end }}
-            </div>
-        </div>
+{{ $courses := where .Site.RegularPages "Type" "courses" }}
+{{ if $courses }}
+<section class="blk" id="courses">
+  <div class="shell">
+    <div class="hd">
+      <div>
+        <h2>{{ .Site.Params.courses.title | default "Courses" }}</h2>
+      </div>
     </div>
+    <div class="rows">
+      {{ range (sort $courses ".Params.sort_position" "desc") }}
+      <div class="row2" itemscope itemtype="http://schema.org/Course">
+        <div class="side">
+          {{ with .Params.semester }}<span class="term">{{ . }}</span>{{ end }}
+          {{ with .Params.university }}<span class="org">{{ . }}</span>{{ end }}
+        </div>
+        <div>
+          <p class="ttl" itemprop="name"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+          {{ with (.Params.subtitle | default (.Params.description | truncate 180)) }}<div class="ds">{{ . }}</div>{{ end }}
+        </div>
+        <div class="go"><a href="{{ .Permalink }}">Syllabus</a></div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
 </section>
 {{ end }}

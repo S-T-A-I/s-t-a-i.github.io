@@ -1,57 +1,22 @@
-<section id="overview" class="home-section">
-    <div class="container">
-
-        <!-- Section heading -->
-        <div class="row" style="display:flex;flex-wrap: wrap;">
-            <div class="col-xs-12 col-md-4 section-heading">
-                <h1 class="section-heading"> Overview </h1>
-            </div>
-        </div>
-
-        <!-- Announcement banner -->
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="alert alert-info" role="alert" style="margin-bottom: 20px;">
-                    <strong>Announcement:</strong> The STAI group is moving to 
-                    <a href="https://gsai.kaist.ac.kr/">KAIST AI</a> 
-                    in February 2026.
-                </div>
-            </div>
-        </div>
-
-        <!-- Overview -->
-        <p>
-          {{ range (where .Site.RegularPages "Type" "overview")}}
-              {{ .Content }}
-          {{ end }}
-        </p>
-
-        <div class="row logos-row">
-          <div class="col-xs-4 col-sm-2 affiliate-logos affiliate-logos-stai">
-            <a href="https://scalabletrustworthyai.github.io/">
-              {{ if isset .Site.Params.logo "image_dark" }}
-              <img class="affiliate-logos logo-light" src="/{{ .Site.Params.logo.image }}" alt="STAI logo">
-              <img class="affiliate-logos logo-dark" src="/{{ .Site.Params.logo.image_dark }}" alt="STAI logo">
-              {{ else }}
-              <img class="affiliate-logos" src="/{{ .Site.Params.logo.image }}" alt="STAI logo">
-              {{ end }}
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2 affiliate-logos">
-            <a href="https://gsai.kaist.ac.kr/"><img class="affiliate-logos" src="img/logo_kaist.png" alt="KAIST logo"></a>
-          </div>
-          <div class="col-xs-4 col-sm-2 affiliate-logos">
-            <a href="https://tuebingen.ai/"><img class="affiliate-logos" src="img/tueai_logo_black_text.svg" alt="Tübingen AI logo"></a>
-          </div>
-          <div class="col-xs-4 col-sm-2 affiliate-logos">
-            <a href="https://uni-tuebingen.de/"><img class="affiliate-logos" src="img/logo_uni_tue.svg" alt="Uni Tübingen logo"></a>
-          </div>
-          <div class="col-xs-4 col-sm-2 affiliate-logos">
-            <a href="https://imprs.is.mpg.de/"><img class="affiliate-logos" src="img/imprs_is_logo.png" alt="IMPRS-IS logo"></a>
-          </div>
-          <div class="col-xs-4 col-sm-2 affiliate-logos">
-            <a href="https://ellis.eu/"><img class="affiliate-logos" src="img/ellis_logo.png" alt="ELLIS logo"></a>
-          </div>
-        </div>
+<section class="blk" id="overview">
+  <div class="shell">
+    <div class="prose">
+      {{ range (where .Site.RegularPages "Type" "overview") }}{{ .Content }}{{ end }}
     </div>
+
+    <div class="affils">
+      <div class="lb">Affiliations</div>
+      <div class="affil-row">
+        <a class="stai" href="https://scalabletrustworthyai.github.io/">
+          <img class="logo-lt" src="/{{ .Site.Params.logo.image }}" alt="STAI">
+          {{ with .Site.Params.logo.image_dark }}<img class="logo-dk" src="/{{ . }}" alt="STAI">{{ end }}
+        </a>
+        <a class="kaist" href="https://gsai.kaist.ac.kr/"><img src="/img/logo_kaist.png" alt="KAIST"></a>
+        <a class="tueai" href="https://tuebingen.ai/"><img src="/img/tueai_logo_black_text.svg" alt="Tübingen AI Center"></a>
+        <a class="unitue" href="https://uni-tuebingen.de/"><img src="/img/logo_uni_tue.svg" alt="University of Tübingen"></a>
+        <a class="imprs" href="https://imprs.is.mpg.de/"><img src="/img/imprs_is_logo.png" alt="IMPRS-IS"></a>
+        <a class="ellis" href="https://ellis.eu/"><img src="/img/ellis_logo.png" alt="ELLIS"></a>
+      </div>
+    </div>
+  </div>
 </section>

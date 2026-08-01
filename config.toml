@@ -6,7 +6,7 @@ baseurl = "https://s-t-a-i.github.io/"
 canonifyurls = true
 title = "Scalable Trustworthy AI"
 math = true
-copyright = "&copy; Seong Joon Oh, 2024"
+copyright = "&copy; Seong Joon Oh, 2026"
 
 
 [taxonomies]
@@ -19,6 +19,7 @@ tag = "tags"
   email = "coallaoh@gmail.com"
   address = "Seoul AI Hub, 108 Taebong-ro, Seocho-gu, Seoul 06764, South Korea<br>서울 AI 허브, 서울특별시 서초구 태봉로 108"
 
+  description = "Scalable Trustworthy AI (STAI) is a research group at KAIST AI led by Seong Joon Oh, working on Knowledge-Intelligence Separation: retrieval and RAG, memory-augmented architectures, agentic AI, training data attribution, privacy, and data ownership."
   slogan = "Scalable Trustworthy AI"
   slogan_text = "Creating scalable and trustworthy AI with human guidance"
   members_api_url = "https://stai-lab-assets-umber.vercel.app/api/public/members.json"
@@ -69,55 +70,43 @@ tag = "tags"
     subtitle = ""
     autolink = false  # Automatically link email and phone?
 
+  # One page per entry. Publications, Courses and Openings are the list pages
+  # of their content sections, so their URLs stay singular to match the detail
+  # pages that live underneath them (/publication/<slug>/ etc.).
   [[menu.main]]
       name = "Home"
-      url = "/#top"
+      url = "/"
       weight = 1
 
   [[menu.main]]
-      name = "Overview"
-      url = "/#overview"
+      name = "Members"
+      url = "/members/"
       weight = 2
 
   [[menu.main]]
-      name = "Members"
-      url = "/#members"
+      name = "Activities"
+      url = "/activities/"
       weight = 3
 
   [[menu.main]]
-      name = "Alumni"
-      url = "/#alumni"
+      name = "Publications"
+      url = "/publication/"
       weight = 4
 
   [[menu.main]]
-      name = "Activities"
-      url = "/#activities"
+      name = "Courses"
+      url = "/courses/"
       weight = 5
 
   [[menu.main]]
-      name = "Publications"
-      url = "/#publications"
-      weight = 6
-
-  # [[menu.main]]
-  #     name = "Blog"
-  #     url = "/#posts"
-  #     weight = 6
-
-  [[menu.main]]
-      name = "Courses"
-      url = "/#courses"
-      weight = 7
-
-  [[menu.main]]
       name = "Openings"
-      url = "/#openings"
-      weight = 8
+      url = "/opening/"
+      weight = 6
 
   [[menu.main]]
       name = "Contact"
-      url = "/#contact"
-      weight = 9
+      url = "/contact/"
+      weight = 7
 
 # Allow raw HTML in markdown (for custom table styling)
 [markup]

@@ -1,6 +1,19 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 
+<main id="main" class="page">
+  <div class="shell">
+    <p class="crumb">
+      <a href="{{ .Site.BaseURL }}#openings">Openings</a>
+      {{ with .Params.status }} &middot; {{ . }}{{ end }}
+      {{ with .Params.date }} &middot; posted {{ dateFormat "2 January 2006" . }}{{ end }}
+    </p>
+    <h1>{{ .Title }}</h1>
+    <div class="article-style">
+      {{ .Content }}
+    </div>
+  </div>
+</main>
 
 {{ partial "footer_container.html" . }}
-{{ partial "footer.html" }}
+{{ partial "footer.html" . }}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF7RQJFKWW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RF7RQJFKWW');
+    </script>
+    <meta charset="utf-8">
+    <script>
+      (function() {
+        var theme = localStorage.getItem('theme-preference') || 'system';
+        var dark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark-mode', dark);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic-group">
+
+    
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/old/js/hugo-academic-group.js"></script>
+
+    <link rel="stylesheet" href="/old/css/bootstrap.min.css">
+    <script src="/old/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+
+    
+    <script src="/old/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+    <link rel="stylesheet" href="/old/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/old/css/academicons.min.css">
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,300,400,700|Merriweather:100,400,700|Roboto+Mono">
+    <link rel="stylesheet" href="/old/css/hugo-academic-group.css">
+    <link rel="stylesheet" href="/old/css/theme-dark.css">
+
+    
+
+
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="canonical" href="/old/publication/elisa2024tda/">
+
+    <title>Towards User-Focused Research in Training Data Attribution for Human-Centered Explainable AI | Scalable Trustworthy AI</title>
+
+</head>
+
+<body>
+<div class="home-anchor" id="home"></div>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="navbar-brand">
+                
+                    <a class="logo" href="/old/">
+                        <img class="logo-light" src="/img/stai-logos-bright.png" alt="Research group logo">
+                        
+                        <img class="logo-dark" src="/img/stai-logos-dark.png" alt="Research group logo">
+                        
+                    </a>
+                
+                
+            </div>
+            <div class="theme-toggle-navbar-mobile">
+                <div class="dropdown theme-toggle-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Theme">
+                        <i class="fa fa-adjust" aria-hidden="true"></i> <span class="theme-label">Theme</span> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#" data-theme-choice="light"><i class="fa fa-sun-o" aria-hidden="true"></i> Light</a></li>
+                        <li><a href="#" data-theme-choice="dark"><i class="fa fa-moon-o" aria-hidden="true"></i> Dark</a></li>
+                        <li><a href="#" data-theme-choice="system"><i class="fa fa-desktop" aria-hidden="true"></i> System</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#top">Home</a></li>
+                    
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#overview">Overview</a></li>
+                    
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#members">Members</a></li>
+                    
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#alumni">Alumni</a></li>
+                    
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#activities">Activities</a></li>
+                    
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#publications">Publications</a></li>
+                    
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#courses">Courses</a></li>
+                    
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#openings">Openings</a></li>
+                    
+                
+                    
+                        <li class="nav-item"><a data-scroll href="/old/#contact">Contact</a></li>
+                    
+                
+                <li class="dropdown theme-toggle-dropdown theme-toggle-desktop">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Theme">
+                        <i class="fa fa-adjust" aria-hidden="true"></i> <span class="theme-label">Theme</span> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#" data-theme-choice="light"><i class="fa fa-sun-o" aria-hidden="true"></i> Light</a></li>
+                        <li><a href="#" data-theme-choice="dark"><i class="fa fa-moon-o" aria-hidden="true"></i> Dark</a></li>
+                        <li><a href="#" data-theme-choice="system"><i class="fa fa-desktop" aria-hidden="true"></i> System</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pub-title">
+                    <h1 itemprop="name">Towards User-Focused Research in Training Data Attribution for Human-Centered Explainable AI</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pub-authors" itemprop="author">
+                    
+<div itemprop="author">
+        
+            
+                
+
+
+
+<span class="author-name">
+    
+        Elisa Nguyen,
+    
+</span>
+
+            
+                
+
+
+
+<span class="author-name">
+    
+        Johannes Betram,
+    
+</span>
+
+            
+                
+
+
+
+<span class="author-name">
+    
+        Evgenii Kortukov,
+    
+</span>
+
+            
+                
+
+
+
+<span class="author-name">
+    
+        Jean Y. Song,
+    
+</span>
+
+            
+            
+                 
+
+
+
+<span class="author-name">
+    
+        Seong Joon Oh
+    
+</span>
+
+            
+        
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <img src="/img/elisa2024tda.png" class="pub-banner" itemprop="image">
+        
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Abstract</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="pub-abstract" itemprop="text">While Explainable AI (XAI) aims to make AI understandable and useful to humans, it has been criticised for relying too much on formalism and solutionism, focusing more on mathematical soundness than user needs. We propose an alternative to this bottom-up approach inspired by design thinking: the XAI research community should adopt a top-down, user-focused perspective to ensure user relevance. We illustrate this with a relatively young subfield of XAI, Training Data Attribution (TDA). With the surge in TDA research and growing competition, the field risks repeating the same patterns of solutionism. We conducted a needfinding study with a diverse group of AI practitioners to identify potential user needs related to TDA. Through interviews (N=10) and a systematic survey (N=31), we uncovered new TDA tasks that are currently largely overlooked. We invite the TDA and XAI communities to consider these novel tasks and improve the user relevance of their research outcomes.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 pub-row-heading">Publication</div>
+                    <div class="col-xs-12 col-sm-9">arXiv 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="visible-xs space-below"></div>
+
+        
+
+
+        <div class="visible-xs space-below"></div>
+
+        <div class="row" style="padding-top: 10px">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 pub-row-heading" style="line-height:34px;">Links</div>
+                    <div class="col-xs-12 col-sm-9">
+
+                        
+
+
+<a class="btn btn-primary btn-outline" href="//arxiv.org/abs/2409.16978">arXiv</a>
+<a class="btn btn-primary btn-outline" href="//arxiv.org/pdf/2409.16978">PDF</a>
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visible-xs space-below"></div>
+
+        <div class="space-below"></div>
+
+        <div class="article-style"></div>
+
+    </div>
+
+
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            © Seong Joon Oh, 2024 &middot; 
+
+            Partially powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#home" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+<script src="/old/js/theme-toggle.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+</script>
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+</body>
+</html>
+
