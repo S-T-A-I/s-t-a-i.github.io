@@ -47,7 +47,9 @@
     } else if (member.websiteUrl) {
       links += '<li><a href="' + esc(member.websiteUrl) + '"><i class="fa fa-globe small-icon" aria-hidden="true"></i></a></li>';
     }
-    var pageUrl = member.handle ? "/member/" + encodeURIComponent(member.handle) + "/" : null;
+    // Hugo lowercases the generated page path, so lowercase the handle here too
+    // or a capitalised handle would link to a 404 on case-sensitive GitHub Pages.
+    var pageUrl = member.handle ? "/member/" + encodeURIComponent(String(member.handle).toLowerCase()) + "/" : null;
     var portraitImg = '<img class="portrait" itemprop="image" src="' + esc(imageUrl(member.portraitPath, imageBase)) + '" alt="' + esc(member.name) + '" />';
     var nameText = esc(member.name);
     return '' +
