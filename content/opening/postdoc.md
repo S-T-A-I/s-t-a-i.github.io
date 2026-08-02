@@ -14,7 +14,7 @@ We expect postdocs to be independent researchers who can manage multiple researc
 
 ![Postdoc application process](/img/flowcharts/flowchart-postdoc-public.png)
 
-1. Email [stai.there@gmail.com](mailto:stai.there@gmail.com) with your CV and research statement attached
+1. Apply via the [STAI application form](https://internal.stai-lab.org/apply) with your CV and research statement attached
 2. Coffee chat with Seong Joon to figure out initial fit
 3. On-site interview day (we support travel for on-site visits; remote interview possible if travel is not feasible)
    - *Job talk*: Present your prior work to the entire lab (30 minutes + discussion)
