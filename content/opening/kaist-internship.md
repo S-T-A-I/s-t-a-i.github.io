@@ -18,7 +18,7 @@ Your day-to-day supervisor is the PhD student you apply to work with. They defin
 
 ![Internship application process](/img/flowcharts/flowchart-intern-public.png)
 
-1. Send an email to the relevant PhD student (cc: [recruiting@stai-lab.org](mailto:recruiting@stai-lab.org)) with your CV and research statement attached
+1. Apply via the [STAI application form](https://internal.stai-lab.org/apply), selecting your preferred PhD supervisor, with your CV and research statement attached
 2. Coffee chat with the PhD student
 3. Interview: 30 min + 30 min with the PhD student
    - *First half*: Present your prior work (aim for 10 minutes, leaving 20 minutes for discussion)
