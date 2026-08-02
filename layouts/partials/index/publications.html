@@ -30,6 +30,10 @@
       <div>
         {{ range $group }}
         {{- $venue := .publicationShort | default .publication -}}
+        {{- /* "(Poster)" is the default outcome, so it carries no information --
+               drop it and let Oral / Spotlight be the things that stand out.
+               Matched literally so "NeurIPS D&B (Spotlight)" keeps its parens. */ -}}
+        {{- $venue = trim (replaceRE `(?i)\s*\(\s*poster\s*\)` "" $venue) " " -}}
         {{- $primary := "" -}}
         {{- range .links }}{{ if and (not $primary) (in (lower .name) "arxiv") }}{{ $primary = .url }}{{ end }}{{ end -}}
         {{- if not $primary }}{{ range .links }}{{ if and (not $primary) (in (lower .name) "pdf") }}{{ $primary = .url }}{{ end }}{{ end }}{{ end -}}

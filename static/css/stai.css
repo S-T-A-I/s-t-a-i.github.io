@@ -7,20 +7,25 @@
 
 :root{
   --paper:#F8F9FB; --paper-2:#FFFFFF; --ink:#111014; --ink-2:#38343F;
-  --mut:#6E6A75; --rule:#E4E0E8; --rule-2:#CFC9D6; --acc:#A6249D;
-  --info-bg:#FAF2F9; --info-bd:#E9CDE6; --accent-wash:#F8EDF7;
+  --mut:#6E6A75; --rule:#E4E0E8; --rule-2:#CFC9D6; --acc:#C2521C;
+  /* Link blue, distinct from the magenta accent -- magenta is the browser's
+     default *visited* colour, so accent-coloured links read as already read. */
+  --link:#1B5FD9;
+  --info-bg:#FDF4EE; --info-bd:#EFD4C0; --accent-wash:#FBEFE6;
   --serif:"Iowan Old Style","Charter","Bitstream Charter","Source Serif Pro",Georgia,"Times New Roman",serif;
   --ui:"Avenir Next","Avenir","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
   --mono:"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;
   --grad:linear-gradient(90deg,#A6249D 0%,#C2417A 34%,#E0603F 66%,#FF9A1F 100%);
   --shell:1240px;
   --bar-h:78px;
+  --pubnav-h:64px;
 }
 
 html.dark-mode{
   --paper:#121016; --paper-2:#191620; --ink:#F0ECF4; --ink-2:#C9C2D3;
-  --mut:#948C9F; --rule:#2A2532; --rule-2:#3C3548; --acc:#E483DC;
-  --info-bg:#231A26; --info-bd:#3D2A40; --accent-wash:#2A1B29;
+  --mut:#948C9F; --rule:#2A2532; --rule-2:#3C3548; --acc:#FFA45C;
+  --link:#7FB2FF;
+  --info-bg:#261B12; --info-bd:#43301F; --accent-wash:#2C1E13;
 }
 
 *,*::before,*::after{box-sizing:border-box;}
@@ -68,7 +73,16 @@ html.dark-mode .logo-dk{display:block;}
 /*************************************************
  *  Hero — the slogan is the page
  *************************************************/
-.hero{padding:96px 0 76px;border-bottom:1px solid var(--rule);}
+/* No rule under the hero -- the announcement and the opening line read as one
+   block, so the section below it also carries less top padding than usual. */
+.hero{padding:96px 0 34px;}
+section.blk#overview{padding-top:20px;}
+/* Eyebrow above the masthead: a short accent rule then a tracked label, rather
+   than a pill -- keeps the flat, rule-based vocabulary the rest of the page uses. */
+.hero .eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 20px;
+  font-family:var(--ui);font-size:15px;font-weight:600;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--acc);}
+.hero .eyebrow::before{content:"";flex:0 0 auto;width:36px;height:2px;background:var(--acc);}
 .hero h1{font-family:var(--ui);font-weight:600;font-size:clamp(43.2px,5.4vw,79.2px);
   line-height:1.02;letter-spacing:-.037em;margin:0;text-wrap:balance;}
 .hero .dek{font-family:var(--ui);font-weight:400;font-size:clamp(21.6px,2vw,27.6px);
@@ -79,9 +93,9 @@ html.dark-mode .logo-dk{display:block;}
 /*************************************************
  *  Section frame
  *************************************************/
-section.blk{padding:66px 0;border-bottom:1px solid var(--rule);}
+section.blk{padding:44px 0 60px;border-bottom:1px solid var(--rule);}
 section.blk:last-of-type{border-bottom:none;}
-@media (max-width:640px){section.blk{padding:46px 0;}}
+@media (max-width:640px){section.blk{padding:32px 0 42px;}}
 .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;
   padding-bottom:15px;border-bottom:1px solid var(--rule);margin-bottom:36px;}
 .hd h2{font-family:var(--ui);font-size:19.8px;letter-spacing:.1em;text-transform:uppercase;
@@ -97,7 +111,7 @@ section.blk:last-of-type{border-bottom:none;}
 .notice{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
   background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;
   padding:15px 20px;margin:0 0 44px;}
-.hero .notice{margin:54px 0 0;}
+.hero .notice{margin:34px 0 0;}
 .notice .tag{font-family:var(--ui);font-size:12px;font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;color:var(--acc);background:var(--accent-wash);
   padding:5px 10px;border-radius:100px;white-space:nowrap;}
@@ -119,17 +133,19 @@ section.blk:last-of-type{border-bottom:none;}
 .prose ul li strong{font-family:var(--ui);font-weight:600;font-size:18.6px;}
 .prose ol{padding-left:22px;margin:4px 0 26px;}
 .prose ol li{padding:5px 0;font-size:19.2px;color:var(--ink-2);}
-/* Research areas: a numbered grid rather than a bullet list. Overrides the
-   generic .prose ul rules above, so it needs the extra class specificity. */
-.prose ul.areas{display:grid;grid-template-columns:repeat(3,1fr);
-  column-gap:34px;margin:10px 0 30px;counter-reset:area;}
-.prose ul.areas li{counter-increment:area;padding:15px 0 17px;
-  border-top:1px solid var(--rule);font-family:var(--ui);font-size:18.6px;
-  line-height:1.34;color:var(--ink);letter-spacing:-.008em;text-wrap:balance;}
-.prose ul.areas li::before{content:counter(area,decimal-leading-zero);
-  position:static;width:auto;height:auto;border-radius:0;background:none;
-  display:block;font-family:var(--mono);font-size:12.6px;letter-spacing:.1em;
-  color:var(--acc);margin-bottom:8px;}
+/* Research areas: a grid rather than a bullet list. Overrides the generic
+   .prose ul rules above, so it needs the extra class specificity. Marked with
+   a dot rather than a number -- these are areas we work in, not a numbered
+   set, and an enumeration reads as a closed list. */
+.prose ul.areas{display:grid;grid-template-columns:repeat(2,1fr);
+  column-gap:48px;margin:22px 0 34px;}
+.prose ul.areas li{display:flex;align-items:baseline;gap:14px;
+  padding:14px 0;border-bottom:1px solid var(--rule);
+  font-family:var(--ui);font-size:20.4px;font-weight:500;line-height:1.34;
+  color:var(--ink);letter-spacing:-.01em;text-wrap:balance;}
+.prose ul.areas li::before{content:"";position:static;flex:0 0 auto;
+  width:6px;height:6px;border-radius:50%;background:var(--acc);
+  transform:translateY(-.16em);}
 @media (max-width:860px){.prose ul.areas{grid-template-columns:repeat(2,1fr);column-gap:26px;}}
 @media (max-width:520px){.prose ul.areas{grid-template-columns:1fr;}}
 .prose h2,.prose h3{font-family:var(--ui);font-weight:600;letter-spacing:-.015em;
@@ -160,21 +176,20 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .mgrp > h3{font-family:var(--ui);font-size:19.8px;letter-spacing:.11em;
   text-transform:uppercase;color:var(--mut);font-weight:600;margin:0 0 22px;
   padding-bottom:9px;border-bottom:1px solid var(--rule);}
-.people{display:grid;grid-template-columns:repeat(5,1fr);gap:38px 26px;}
-@media (max-width:1000px){.people{grid-template-columns:repeat(4,1fr);}}
-@media (max-width:760px){.people{grid-template-columns:repeat(3,1fr);gap:28px 18px;}}
-@media (max-width:460px){.people{grid-template-columns:repeat(2,1fr);}}
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:46px 32px;}
+@media (max-width:1000px){.people{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:760px){.people{grid-template-columns:repeat(2,1fr);gap:32px 20px;}}
 .person{text-align:center;}
-.person .ph{width:104px;height:104px;border-radius:50%;object-fit:cover;margin:0 auto 13px;
+.person .ph{width:140px;height:140px;border-radius:50%;object-fit:cover;margin:0 auto 16px;
   background:var(--paper-2);border:1px solid var(--rule);}
-.person .nm{font-family:var(--ui);font-weight:600;font-size:18px;letter-spacing:-.014em;line-height:1.28;color:var(--ink);margin:0 0 4px;}
-.person .nm a{border-bottom:1px solid transparent;transition:color .15s,border-color .15s;}
-.person .nm a:hover{color:var(--acc);border-bottom-color:var(--acc);}
+.person .nm{font-family:var(--ui);font-weight:600;font-size:20.4px;letter-spacing:-.016em;line-height:1.28;color:var(--ink);margin:0 0 5px;}
+.person .nm a{color:var(--link);border-bottom:1px solid transparent;transition:border-color .15s;}
+.person .nm a:hover{border-bottom-color:var(--link);}
 .person .phl{display:block;}
 .person .phl .ph{transition:border-color .15s;}
-.person .phl:hover .ph{border-color:var(--acc);}
-.person .rl{font-family:var(--ui);font-size:13.8px;color:var(--mut);line-height:1.3;margin:0;}
-.person .soc{display:flex;justify-content:center;gap:11px;margin-top:9px;font-size:16.8px;}
+.person .phl:hover .ph{border-color:var(--link);}
+.person .rl{font-family:var(--ui);font-size:15px;color:var(--mut);line-height:1.32;margin:0;}
+.person .soc{display:flex;justify-content:center;gap:13px;margin-top:11px;font-size:18px;}
 .person .soc a{color:var(--mut);}
 .person .soc a:hover{color:var(--acc);}
 /*************************************************
@@ -222,7 +237,14 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 /*************************************************
  *  Publications index
  *************************************************/
-.pubnav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:30px;}
+/* The year jump-links stick under the masthead so you can switch years from
+   anywhere in a 55-entry list without scrolling back to the top. --pubnav-h
+   is what the sticky year label below offsets itself by, so the two never
+   overlap; keep it in step with this element's real height. */
+.pubnav{position:sticky;top:var(--bar-h);z-index:50;
+  display:flex;gap:6px;flex-wrap:wrap;
+  background:var(--paper);padding:14px 0 15px;margin-bottom:14px;
+  border-bottom:1px solid var(--rule);}
 .pubnav a{font-family:var(--mono);font-size:13.8px;letter-spacing:.04em;padding:5px 11px;
   border:1px solid var(--rule);border-radius:3px;color:var(--ink-2);
   font-variant-numeric:tabular-nums;transition:border-color .15s,color .15s;}
@@ -232,7 +254,7 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .yblk + .yblk{margin-top:26px;}
 .yblk .yr{font-family:var(--ui);font-size:36px;font-weight:500;letter-spacing:-.03em;
   color:var(--mut);line-height:1;font-variant-numeric:tabular-nums;
-  position:sticky;top:calc(var(--bar-h) + 22px);align-self:start;}
+  position:sticky;top:calc(var(--bar-h) + var(--pubnav-h) + 22px);align-self:start;}
 @media (max-width:800px){
   .yblk{grid-template-columns:1fr;gap:14px;}
   .yblk .yr{position:static;font-size:28.8px;}
@@ -241,12 +263,12 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .pub:last-child{border-bottom:none;}
 .pub .t{font-family:var(--ui);font-weight:600;font-size:20.4px;line-height:1.34;
   letter-spacing:-.016em;margin:0 0 6px;color:var(--ink);}
-.pub .t a{border-bottom:1px solid rgba(166,36,157,.32);}
+.pub .t a{border-bottom:1px solid color-mix(in srgb, var(--acc) 32%, transparent);}
 .pub .t a:hover{color:var(--acc);border-bottom-color:var(--acc);}
 .pub .au{font-size:17.4px;font-style:italic;color:var(--ink-2);line-height:1.4;}
 .pub .mt{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:7px;}
 .pub .vn{font-family:var(--ui);font-size:13.8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-left:2px solid var(--acc);padding-left:9px;}
-.pub .vn b{color:var(--acc);font-weight:600;}
+.pub .vn b{display:inline-block;color:var(--acc);font-weight:700;background:var(--accent-wash);border:1px solid var(--info-bd);padding:1px 9px;border-radius:100px;margin:0 1px;letter-spacing:.1em;}
 .pub .lnk{display:flex;gap:7px;flex-wrap:wrap;}
 .pub .lnk a{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:2px 7px;
   border:1px solid var(--rule);border-radius:3px;color:var(--mut);}
@@ -273,7 +295,7 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
   .row2 .side .term{font-size:16.2px;}}
 .row2 .ttl{font-family:var(--ui);font-weight:600;font-size:20.4px;letter-spacing:-.016em;
   color:var(--ink);margin:0 0 5px;}
-.row2 .ttl a{border-bottom:1px solid rgba(166,36,157,.32);}
+.row2 .ttl a{border-bottom:1px solid color-mix(in srgb, var(--acc) 32%, transparent);}
 .row2 .ttl a:hover{color:var(--acc);border-bottom-color:var(--acc);}
 .row2 .ds{font-size:18px;color:var(--ink-2);max-width:62ch;line-height:1.5;}
 .row2 .ds p{margin:0 0 8px;}
@@ -284,15 +306,20 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 /*************************************************
  *  Contact & footer
  *************************************************/
-.cl{list-style:none;padding:0;margin:0;max-width:56ch;}
-.cl li{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:13px 0;
-  border-bottom:1px solid var(--rule);font-size:19.2px;color:var(--ink-2);}
+/* Contact is a three-line page, so the values carry it -- they are set at
+   reading size rather than as list rows, with the labels demoted to markers. */
+.cl{list-style:none;padding:0;margin:0;max-width:74ch;}
+.cl li{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:22px 0;
+  border-bottom:1px solid var(--rule);font-family:var(--ui);font-size:20.4px;
+  line-height:1.42;letter-spacing:-.01em;color:var(--ink);}
 .cl li:first-child{border-top:1px solid var(--rule);}
-.cl li b{font-family:var(--ui);font-size:12.6px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--mut);font-weight:600;padding-top:4px;}
-.cl li a{border-bottom:1px solid var(--acc);}
-.cl li a:hover{color:var(--acc);}
-@media (max-width:560px){.cl li{grid-template-columns:1fr;gap:4px;}}
+.cl li b{font-family:var(--ui);font-size:18px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-2);font-weight:600;}
+.cl li a{border-bottom:1px solid color-mix(in srgb, var(--acc) 45%, transparent);
+  transition:color .15s,border-color .15s;}
+.cl li a:hover{color:var(--acc);border-bottom-color:var(--acc);}
+@media (max-width:700px){.cl li{grid-template-columns:1fr;gap:6px;font-size:19.2px;padding:18px 0;}
+  .cl li b{font-size:16.2px;}}
 footer.st{border-top:1px solid var(--rule);padding:26px 0 46px;}
 footer.st .shell{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   font-family:var(--ui);font-size:13.8px;color:var(--mut);}
