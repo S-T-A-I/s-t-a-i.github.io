@@ -14,7 +14,7 @@ We expect MSc students to run their own first-author projects, with possible col
 
 ![MSc application process](/img/flowcharts/flowchart-msc-public.png)
 
-1. Email [recruiting@stai-lab.org](mailto:recruiting@stai-lab.org) with your CV and research statement attached
+1. Apply via the [STAI application form](https://internal.stai-lab.org/apply) with your CV and research statement attached
 2. Coffee chat with Seong Joon to figure out initial fit
 3. Interview: 30 min + 30 min with Seong Joon
    - *First half*: Present your prior work (aim for 10 minutes, leaving 20 minutes for discussion)

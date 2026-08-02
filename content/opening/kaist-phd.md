@@ -14,7 +14,7 @@ We expect PhD students to run their own first-author projects, with possible col
 
 ![PhD application process](/img/flowcharts/flowchart-phd-public.png)
 
-1. Email [recruiting@stai-lab.org](mailto:recruiting@stai-lab.org) with your CV and research statement attached
+1. Apply via the [STAI application form](https://internal.stai-lab.org/apply) with your CV and research statement attached
 2. Coffee chat with Seong Joon to figure out initial fit
 3. Half-day interview
    - *Job talk*: Present your prior work to the entire lab (30 minutes + discussion)
