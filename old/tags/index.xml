@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on Scalable Trustworthy AI</title>
+		<link>/old/tags/</link>
+		<description>Recent content in Tags on Scalable Trustworthy AI</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+			<copyright>&amp;copy; Seong Joon Oh, 2024</copyright>
+		
+		
+			<atom:link href="/old/tags/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>
