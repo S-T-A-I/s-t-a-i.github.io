@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<main id="main">
+<section class="blk" id="contact">
+  <div class="shell">
+    <div class="hd">
+      <div>
+        <h2>{{ .Site.Params.contact.title | default "Contact" }}</h2>
+      </div>
+    </div>
+    {{ partial "index/contact.html" . }}
+  </div>
+</section>
+</main>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}

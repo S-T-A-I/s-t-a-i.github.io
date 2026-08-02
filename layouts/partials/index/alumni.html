@@ -1,22 +1,17 @@
-<section id="alumni" class="home-section">
-    <div class="container">
+{{- $members := partialCached "data/members.html" . "members" -}}
+{{- $alumni := where $members "isAlumni" true -}}
 
-        <!-- Section heading -->
-        <div class="row">
-            <div class="col-xs-12 col-md-4 section-heading">
-                <h1 class="section-heading"> Alumni </h1>
-            </div>
-        </div>
-
-        <!-- Alumni -->
-        <div
-            id="alumni-dynamic"
-            class="row"
-            data-members-api="{{ .Site.Params.members_api_url }}"
-            data-image-base="{{ .Site.BaseURL }}/img"
-            data-members-kind="alumni">
-            <p class="text-muted">Loading alumni...</p>
-        </div>
-
+{{ if $alumni }}
+<section class="blk" id="alumni">
+  <div class="shell">
+    <div class="hd">
+      <div>
+        <h2>Alumni</h2>
+      </div>
     </div>
+    <div class="people">
+      {{ range $alumni }}{{ partial "person.html" (dict "m" .) }}{{ end }}
+    </div>
+  </div>
 </section>
+{{ end }}

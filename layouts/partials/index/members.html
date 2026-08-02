@@ -1,128 +1,71 @@
-<section id="members" class="home-section">
-    <div class="container">
+{{- $members := partialCached "data/members.html" . "members" -}}
+{{- $current := where (where $members "isAlumni" "!=" true) "status" "!=" "archived" -}}
 
-        <!-- Section heading -->
-        <div class="row">
-            <div class="col-xs-12 col-md-4 section-heading">
-                <h1 class="section-heading"> Members </h1>
-            </div>
-        </div>
+{{- /* Group by role. Matching is on a lowercased title so the known data
+       glitches ("MSc student", "Arnas Uselis | PhD Student") land in the
+       right bucket; person.html tidies them up for display. Anything that
+       matches nothing falls through to "Others" so no one is dropped. */ -}}
+{{- $groups := slice
+      (dict "label" "Faculty"          "match" (slice "group leader" "professor" "faculty"))
+      (dict "label" "Ph.D. Students"   "match" (slice "phd" "ph.d"))
+      (dict "label" "M.S. Students"    "match" (slice "msc" "m.s." "master"))
+      (dict "label" "Interns"          "match" (slice "intern"))
+-}}
 
-        <!-- Members -->
-        <div
-            id="members-dynamic"
-            class="row"
-            data-members-api="{{ .Site.Params.members_api_url }}"
-            data-image-base="{{ .Site.BaseURL }}/img"
-            data-members-kind="current">
-            <p class="text-muted">Loading members...</p>
-        </div>
+{{- /* Within a group, longest-serving first. startedOn is semester/month
+       granularity so a whole intake ties; sortPosition (hand-maintained in
+       the members DB) breaks the tie, and name breaks it again for anyone
+       without a sortPosition -- otherwise those would order arbitrarily.
+       If the API is serving an older payload without startedOn we leave the
+       incoming order alone rather than sorting on nothing. */ -}}
+{{- $hasDates := false -}}
+{{- range $current }}{{ if .startedOn }}{{ $hasDates = true }}{{ end }}{{ end -}}
 
+{{- $seen := slice -}}
+{{- $buckets := slice -}}
+{{- range $g := $groups -}}
+  {{- $in := slice -}}
+  {{- range $m := $current -}}
+    {{- $t := lower ($m.title | default "") -}}
+    {{- $hit := false -}}
+    {{- range $g.match }}{{ if in $t . }}{{ $hit = true }}{{ end }}{{ end -}}
+    {{- if and $hit (not (in $seen $m.id)) -}}
+      {{- if $hasDates -}}
+        {{- $sp := 999999 -}}
+        {{- with $m.sortPosition }}{{ $sp = int . }}{{ end -}}
+        {{- $key := printf "%s %06d %s" ($m.startedOn | default "9999-12-31") $sp $m.name -}}
+        {{- $m = merge $m (dict "seniority" $key) -}}
+      {{- end -}}
+      {{- $in = $in | append $m -}}
+      {{- $seen = $seen | append $m.id -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $hasDates }}{{ $in = sort $in "seniority" "asc" }}{{ end -}}
+  {{- if $in }}{{ $buckets = $buckets | append (dict "label" $g.label "people" $in) }}{{ end -}}
+{{- end -}}
+{{- $rest := slice -}}
+{{- range $m := $current }}{{ if not (in $seen $m.id) }}{{ $rest = $rest | append $m }}{{ end }}{{ end -}}
+{{- if $rest }}{{ $buckets = $buckets | append (dict "label" "Others" "people" $rest) }}{{ end -}}
+
+<section class="blk" id="members">
+  <div class="shell">
+    <div class="hd">
+      <div>
+        <h2>Members</h2>
+      </div>
     </div>
-</section>
 
-{{ if .Site.Params.members_api_url }}
-<script>
-(function () {
-  function esc(value) {
-    return String(value || "").replace(/[&<>"']/g, function (ch) {
-      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch];
-    });
-  }
-  function imageUrl(path, imageBase) {
-    if (!path) return imageBase + "/portraits/portrait.jpg";
-    if (/^https?:\/\//.test(path)) return path;
-    return imageBase.replace(/\/$/, "") + "/" + path.replace(/^\/+/, "");
-  }
-  function socialIcon(link) {
-    if (!link || !link.url || !link.icon) return "";
-    var pack = link.iconPack === "ai" ? "ai ai-" : "fa fa-";
-    return '<li><a href="' + esc(link.url) + '" title="' + esc(link.label || "") + '"><i class="' + pack + esc(link.icon) + ' small-icon" aria-hidden="true"></i></a></li>';
-  }
-  function memberCard(member, imageBase) {
-    var links = "";
-    if (member.email) links += '<li><a href="mailto:' + esc(member.email) + '"><i class="fa fa-envelope small-icon" aria-hidden="true"></i></a></li>';
-    if (Array.isArray(member.socialLinks)) {
-      links += member.socialLinks.map(socialIcon).join("");
-    } else if (member.websiteUrl) {
-      links += '<li><a href="' + esc(member.websiteUrl) + '"><i class="fa fa-globe small-icon" aria-hidden="true"></i></a></li>';
-    }
-    // Hugo lowercases the generated page path, so lowercase the handle here too
-    // or a capitalised handle would link to a 404 on case-sensitive GitHub Pages.
-    var pageUrl = member.handle ? "/member/" + encodeURIComponent(String(member.handle).toLowerCase()) + "/" : null;
-    var portraitImg = '<img class="portrait" itemprop="image" src="' + esc(imageUrl(member.portraitPath, imageBase)) + '" alt="' + esc(member.name) + '" />';
-    var nameText = esc(member.name);
-    return '' +
-      '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">' +
-        '<div id="profile">' +
-          (pageUrl ? '<a href="' + esc(pageUrl) + '">' + portraitImg + '</a>' : portraitImg) +
-          '<div class="portrait-title">' +
-            '<h2 itemprop="name">' + (pageUrl ? '<a href="' + esc(pageUrl) + '">' + nameText + '</a>' : nameText) + '</h2>' +
-            (member.title ? '<h4>' + esc(member.title) + '</h4>' : '') +
-            (links ? '<ul class="social-icon-main-page">' + links + '</ul>' : '') +
-          '</div>' +
-        '</div>' +
-      '</div>';
-  }
-  function shouldShow(member, kind) {
-    if (kind === "alumni") return !!member.isAlumni;
-    return !member.isAlumni && member.status !== "archived";
-  }
-  function renderSection(root, members) {
-    var kind = root.getAttribute("data-members-kind") || "current";
-    var imageBase = root.getAttribute("data-image-base") || "";
-    var visibleMembers = members.filter(function (member) { return shouldShow(member, kind); });
-    if (visibleMembers.length === 0) {
-      root.innerHTML = '<p class="text-muted">No public ' + (kind === "alumni" ? "alumni" : "members") + ' listed yet.</p>';
-      return;
-    }
-    root.innerHTML = visibleMembers.map(function (member) { return memberCard(member, imageBase); }).join("");
-  }
-  function apiCandidates(api) {
-    var candidates = [api];
-    if (api === "https://internal.stai-lab.org/api/public/members.json") {
-      candidates.push("https://stai-lab-assets-umber.vercel.app/api/public/members.json");
-    }
-    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-      candidates.push("http://127.0.0.1:4322/api/public/members.json");
-      candidates.push("http://127.0.0.1:4323/api/public/members.json");
-    }
-    return candidates.filter(function (candidate, index) {
-      return candidate && candidates.indexOf(candidate) === index;
-    });
-  }
-  function fetchMembers(candidates) {
-    var api = candidates.shift();
-    if (!api) return Promise.reject(new Error("No members API available"));
-    return fetch(api)
-      .then(function (res) {
-        if (!res.ok) throw new Error("Members API returned " + res.status);
-        return res.json();
-      })
-      .then(function (payload) {
-        var members = payload && payload.members;
-        if (!Array.isArray(members)) throw new Error("Invalid members response");
-        return members;
-      })
-      .catch(function () {
-        return fetchMembers(candidates);
-      });
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var roots = Array.prototype.slice.call(document.querySelectorAll("[data-members-api][data-members-kind]"));
-    if (roots.length === 0) return;
-    var api = roots[0].getAttribute("data-members-api");
-    if (!api) return;
-    fetchMembers(apiCandidates(api))
-      .then(function (members) {
-        roots.forEach(function (root) { renderSection(root, members); });
-      })
-      .catch(function () {
-        roots.forEach(function (root) {
-          root.innerHTML = '<p class="text-muted">Member list is temporarily unavailable.</p>';
-        });
-      });
-  });
-})();
-</script>
-{{ end }}
+    {{ if $buckets }}
+      {{ range $buckets }}
+      <div class="mgrp">
+        <h3>{{ .label }}</h3>
+        <div class="people">
+          {{ range .people }}{{ partial "person.html" (dict "m" .) }}{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    {{ else }}
+    <p class="text-muted">Member list is temporarily unavailable.</p>
+    {{ end }}
+  </div>
+</section>

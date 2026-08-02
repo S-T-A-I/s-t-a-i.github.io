@@ -1,12 +1,12 @@
-<header class="space-below ">
-    <div class="header-content">
-        <div class="header-content-inner">
-            <h1>
-                {{.Site.Params.slogan | safeHTML}}
-            </h1>
-            <p class="slogan-text">
-                {{.Site.Params.slogan_text}}
-            </p>
-        </div>
+<header class="hero">
+  <div class="shell">
+    <p class="eyebrow">Research Group</p>
+    <h1>{{ .Site.Params.slogan | safeHTML }}</h1>
+    <p class="dek">{{ .Site.Params.slogan_text }}</p>
+
+    <div class="notice">
+      <span class="tag">Announcement</span>
+      <p>STAI group has moved to <a href="https://gsai.kaist.ac.kr/">KAIST AI</a> in February 2026.</p>
     </div>
+  </div>
 </header>

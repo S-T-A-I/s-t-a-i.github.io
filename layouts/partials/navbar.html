@@ -1,85 +1,24 @@
-{{ $baseUrl := .Site.BaseURL }}
-<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
-    <div class="container">
+<div class="bar" id="top">
+  <div class="shell">
+    <a class="brand" href="{{ .Site.BaseURL }}">
+      {{ with .Site.Params.logo }}
+        <img class="logo-lt" src="/{{ .image }}" alt="{{ $.Site.Title }}">
+        {{ with .image_dark }}<img class="logo-dk" src="/{{ . }}" alt="{{ $.Site.Title }}">{{ end }}
+      {{ end }}
+    </a>
 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+    <button class="navtoggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="sitenav">
+      Menu
+    </button>
 
-            <div class="navbar-brand">
-                {{ if isset .Site.Params "logo"}}
-                    <a class="logo" href="/">
-                        <img class="logo-light" src="/{{.Site.Params.logo.image}}" alt="Research group logo">
-                        {{ if isset .Site.Params.logo "image_dark"}}
-                        <img class="logo-dark" src="/{{.Site.Params.logo.image_dark}}" alt="Research group logo">
-                        {{ end }}
-                    </a>
-                {{ end }}
-                {{ if isset .Site.Params "navbar_hierarchy" }}
-                {{ $hierarchy_len := len .Site.Params.navbar_hierarchy }}
-                    {{if gt $hierarchy_len 1}}
-                        {{ range first (sub $hierarchy_len 1) (sort .Site.Params.navbar_hierarchy ".position") }}
-                            <a href="{{.link}}">{{.name}}</a>
-                            /
-                        {{ end }}
-                    {{ end }}
-                    {{ range last 1 (sort .Site.Params.navbar_hierarchy ".position") }}
-                        <a href="{{.link}}">{{.name | safeHTML }}</a>
-                    {{ end }}
-
-                {{end}}
-            </div>
-            <div class="theme-toggle-navbar-mobile">
-                <div class="dropdown theme-toggle-dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Theme">
-                        <i class="fa fa-adjust" aria-hidden="true"></i> <span class="theme-label">Theme</span> <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#" data-theme-choice="light"><i class="fa fa-sun-o" aria-hidden="true"></i> Light</a></li>
-                        <li><a href="#" data-theme-choice="dark"><i class="fa fa-moon-o" aria-hidden="true"></i> Dark</a></li>
-                        <li><a href="#" data-theme-choice="system"><i class="fa fa-desktop" aria-hidden="true"></i> System</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
-
-            <!-- Left Nav Bar -->
-            <ul class="nav navbar-nav navbar-right">
-                {{ range .Site.Menus.main }}
-                    {{ if .HasChildren }}
-                        <!-- <li class="dropdown"><a data-scroll href="{{ $baseUrl }}{{ .URL }}"> test </a></li> -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{.Name}} <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                              {{ range .Children }}
-                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                              {{end}}
-                            </ul>
-                          </li>
-                    {{else}}
-                        <li class="nav-item"><a data-scroll href="{{ .URL }}">{{ .Name }}</a></li>
-                    {{ end }}
-                {{ end }}
-                <li class="dropdown theme-toggle-dropdown theme-toggle-desktop">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Theme">
-                        <i class="fa fa-adjust" aria-hidden="true"></i> <span class="theme-label">Theme</span> <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#" data-theme-choice="light"><i class="fa fa-sun-o" aria-hidden="true"></i> Light</a></li>
-                        <li><a href="#" data-theme-choice="dark"><i class="fa fa-moon-o" aria-hidden="true"></i> Dark</a></li>
-                        <li><a href="#" data-theme-choice="system"><i class="fa fa-desktop" aria-hidden="true"></i> System</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container -->
-</nav>
+    <nav id="sitenav" aria-label="Sections">
+      {{- $cur := .RelPermalink -}}
+      {{ range .Site.Menus.main }}
+        {{- $u := .URL | relURL -}}
+        {{- /* Home matches only itself; section pages also match their children. */ -}}
+        {{- $active := cond (eq $u "/") (eq $cur "/") (hasPrefix $cur $u) -}}
+        <a href="{{ .URL }}"{{ if $active }} class="on" aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</div>

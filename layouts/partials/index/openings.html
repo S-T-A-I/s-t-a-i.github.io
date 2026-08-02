@@ -1,28 +1,27 @@
-{{ $opens_len := len (where .Site.RegularPages "Type" "opening") }}
-{{ if gt $opens_len 0 }}
-<section id="openings" class="home-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-3 section-heading">
-                <h1>{{ with .Site.Params.openings.title }}{{ . | markdownify }}{{ end }}</h1>
-                {{ with .Site.Params.openings.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-            </div>
-            <div class="col-xs-12 col-md-9">
-                {{ range first .Site.Params.openings.count (where .Site.RegularPages "Type" "opening") }}
-                    {{ if eq .Params.status "Open" }}
-                        {{ partial "opening_li_detailed" . }}
-                    {{ end }}
-                {{ end }}
-                {{ if gt $opens_len .Site.Params.openings.count }}
-                <p class="view-all">
-                    <a href="{{ .Site.BaseURL }}/opening/{{if .Site.Params.uglyURLs}}index.html{{end}}">
-                        {{ with .Site.Params.openings.str_all }}{{ . | markdownify }}{{ end }}
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </p>
-                {{ end }}
-            </div>
-        </div>
+{{ $open := sort (where (where .Site.RegularPages "Type" "opening") ".Params.status" "Open") ".Params.weight" }}
+{{ if $open }}
+<section class="blk" id="openings">
+  <div class="shell">
+    <div class="hd">
+      <div>
+        <h2>{{ .Site.Params.openings.title | default "Openings" }}</h2>
+      </div>
     </div>
+    <div class="rows">
+      {{ range $open }}
+      <div class="row2" itemscope itemtype="http://schema.org/JobPosting">
+        <div class="side">
+          <span class="term">{{ with .Params.institution }}{{ . }}{{ else }}KAIST AI{{ end }}</span>
+          {{ with .Params.date }}<span class="org">{{ dateFormat "Jan 2006" . }}</span>{{ end }}
+        </div>
+        <div>
+          <p class="ttl" itemprop="title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+          {{ with .Params.short_description }}<div class="ds">{{ . }}</div>{{ end }}
+        </div>
+        <div class="go"><a href="{{ .Permalink }}">Details</a></div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
 </section>
 {{ end }}

@@ -1,105 +1,85 @@
-<section id="publications" class="home-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-3 section-heading">
-                <h1>{{ with .Site.Params.publications.title }}{{ . | markdownify }}{{ end }}</h1>
-                {{ with .Site.Params.publications.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-            </div>
-            <div class="col-xs-12 col-md-9">
-                <div id="publications-dynamic"
-                    data-publications-api="{{ .Site.Params.publications_api_url }}"
-                    data-image-base="{{ .Site.BaseURL }}/img">
-                    <p class="text-muted">Loading publications...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{- $pubs := partialCached "data/publications.html" . "publications" -}}
 
-{{ if .Site.Params.publications_api_url }}
-<script>
-(function () {
-  function esc(value) {
-    return String(value || "").replace(/[&<>"']/g, function (ch) {
-      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch];
-    });
-  }
-  function imageUrl(path, imageBase) {
-    if (!path) return "";
-    if (/^https?:\/\//.test(path)) return path;
-    return imageBase.replace(/\/$/, "") + "/" + path.replace(/^\/+/, "");
-  }
-  function authorsHtml(authors) {
-    return (authors || []).map(function (a) {
-      return esc(a.name) + (a.star ? "*" : "");
-    }).join(", ");
-  }
-  function linksHtml(links) {
-    return (links || []).map(function (l) {
-      return '<a class="btn btn-primary btn-outline btn-xs" href="' + esc(l.url) + '">' + esc(l.name) + "</a>";
-    }).join(" ");
-  }
-  function primaryLink(links) {
-    var arr = links || [];
-    var find = function (re) { return arr.filter(function (l) { return re.test(l.name); })[0]; };
-    return find(/arxiv/i) || find(/pdf/i) || arr[0];
-  }
-  function card(p, imageBase) {
-    var primary = primaryLink(p.links);
-    var titleHtml = primary ? '<a href="' + esc(primary.url) + '">' + esc(p.title) + "</a>" : esc(p.title);
-    var img = imageUrl(p.image, imageBase);
-    var venue = esc(p.publicationShort || p.publication || "");
-    var meta = venue + (p.year ? " " + esc(p.year) : "") + (p.award ? "<br>" + esc(p.award) : "");
-    return "" +
-      '<div class="pub-list-item" itemscope itemtype="http://schema.org/CreativeWork">' +
-        '<div class="row pub-row">' +
-          (img ? '<div class="col-xs-12 col-sm-3 pub-thumbnail-col"><img src="' + img + '" class="pub-banner" itemprop="image"></div>' : "") +
-          '<div class="col-xs-12 col-sm-' + (img ? "9" : "12") + '">' +
-            '<h3 class="article-title" itemprop="name">' + titleHtml + "</h3>" +
-            '<div class="pub-authors" itemprop="author">' + authorsHtml(p.authors) + "</div>" +
-            '<div class="pub-publication">' + meta + "</div>" +
-            '<div class="pub-links">' + linksHtml(p.links) + "</div>" +
-          "</div>" +
-        "</div>" +
-      "</div>";
-  }
-  function apiCandidates(api) {
-    var candidates = [api];
-    if (api === "https://internal.stai-lab.org/api/public/publications.json") {
-      candidates.push("https://stai-lab-assets-umber.vercel.app/api/public/publications.json");
-    }
-    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-      candidates.push("http://localhost:4321/api/public/publications.json");
-      candidates.push("http://127.0.0.1:4321/api/public/publications.json");
-    }
-    return candidates.filter(function (c, i) { return c && candidates.indexOf(c) === i; });
-  }
-  function fetchPublications(candidates) {
-    var api = candidates.shift();
-    if (!api) return Promise.reject(new Error("No publications API available"));
-    return fetch(api)
-      .then(function (res) { if (!res.ok) throw new Error("API returned " + res.status); return res.json(); })
-      .then(function (payload) {
-        if (!payload || !Array.isArray(payload.publications)) throw new Error("Invalid response");
-        return payload.publications;
-      })
-      .catch(function () { return fetchPublications(candidates); });
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var root = document.getElementById("publications-dynamic");
-    if (!root) return;
-    var api = root.getAttribute("data-publications-api");
-    var imageBase = root.getAttribute("data-image-base") || "";
-    if (!api) return;
-    fetchPublications(apiCandidates(api))
-      .then(function (pubs) {
-        if (!pubs.length) { root.innerHTML = '<p class="text-muted">No publications listed yet.</p>'; return; }
-        root.innerHTML = pubs.map(function (p) { return card(p, imageBase); }).join("");
-      })
-      .catch(function () {
-        root.innerHTML = '<p class="text-muted">Publications are temporarily unavailable.</p>';
-      });
-  });
-})();
-</script>
-{{ end }}
+<section class="blk" id="publications">
+  <div class="shell">
+    {{- /* distinct years, newest first */ -}}
+    {{- $years := slice -}}
+    {{- range $pubs }}{{ if not (in $years .year) }}{{ $years = $years | append .year }}{{ end }}{{ end -}}
+    {{- $years = collections.Reverse (sort $years) -}}
+
+    <div class="hd">
+      <div>
+        <h2>{{ .Site.Params.publications.title | default "Publications" }}</h2>
+      </div>
+    </div>
+
+    {{ if not $pubs }}
+      <p class="text-muted">Publications are temporarily unavailable.</p>
+    {{ else }}
+
+    <div class="pubnav">
+      {{ range $years }}
+      <a href="#y{{ . }}">{{ . }}</a>
+      {{ end }}
+    </div>
+
+    {{ range $y := $years }}
+    {{ $group := where $pubs "year" $y }}
+    <div class="yblk" id="y{{ $y }}">
+      <div class="yr">{{ $y }}</div>
+      <div>
+        {{ range $group }}
+        {{- $venue := .publicationShort | default .publication -}}
+        {{- /* "(Poster)" is the default outcome, so it carries no information --
+               drop it and let Oral / Spotlight be the things that stand out.
+               Matched literally so "NeurIPS D&B (Spotlight)" keeps its parens. */ -}}
+        {{- $venue = trim (replaceRE `(?i)\s*\(\s*poster\s*\)` "" $venue) " " -}}
+        {{- $primary := "" -}}
+        {{- range .links }}{{ if and (not $primary) (in (lower .name) "arxiv") }}{{ $primary = .url }}{{ end }}{{ end -}}
+        {{- if not $primary }}{{ range .links }}{{ if and (not $primary) (in (lower .name) "pdf") }}{{ $primary = .url }}{{ end }}{{ end }}{{ end -}}
+        {{- if not $primary }}{{ with index (.links | default slice) 0 }}{{ $primary = .url }}{{ end }}{{ end -}}
+        <div class="pub" itemscope itemtype="http://schema.org/ScholarlyArticle">
+          <p class="t" itemprop="name">
+            {{ if $primary }}<a href="{{ $primary }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+          </p>
+          <div class="au" itemprop="author">
+            {{- $names := slice -}}
+            {{- range .authors -}}
+              {{- $names = $names | append (printf "%s%s" .name (cond (eq .star true) "*" "")) -}}
+            {{- end -}}
+            {{ delimit $names ", " | safeHTML }}
+          </div>
+          <div class="mt">
+            <span class="vn">
+              {{- /* Emphasise "Oral"/"Spotlight" wherever they appear in the venue string. */ -}}
+              {{- $out := slice -}}
+              {{- range (split $venue " ") -}}
+                {{- $bare := lower (trim . "()") -}}
+                {{- if or (eq $bare "oral") (eq $bare "spotlight") -}}
+                  {{- $out = $out | append (printf "<b>%s</b>" .) -}}
+                {{- else -}}
+                  {{- $out = $out | append . -}}
+                {{- end -}}
+              {{- end -}}
+              {{ delimit $out " " | safeHTML }}
+            </span>
+            {{- /* Only show the award separately when the venue does not already say it. */ -}}
+            {{ with .award }}{{ if not (in (lower $venue) (lower .)) }}<span class="vn"><b>{{ . }}</b></span>{{ end }}{{ end }}
+            {{ with .links }}
+            <span class="lnk">
+              {{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ end }}
+            </span>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <p class="more">
+      <a href="https://scholar.google.com/citations?user=kmXOOdsAAAAJ" rel="noopener">Google Scholar</a>
+    </p>
+    {{ end }}
+  </div>
+</section>

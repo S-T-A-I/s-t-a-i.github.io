@@ -1,0 +1,18 @@
+{{- /*
+  Fetches publications at BUILD time. See data/members.html for why.
+  Returns a slice; empty slice on any failure.
+*/ -}}
+{{- $out := slice -}}
+{{- $url := .Site.Params.publications_api_url -}}
+{{- if $url -}}
+  {{- $t := try (resources.GetRemote $url) -}}
+  {{- if $t.Err -}}
+    {{- warnf "STAI: publications API unreachable (%s): %s" $url $t.Err -}}
+  {{- else -}}
+    {{- with $t.Value -}}
+      {{- $j := . | transform.Unmarshal -}}
+      {{- with $j.publications }}{{ $out = . }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}
