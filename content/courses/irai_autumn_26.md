@@ -465,6 +465,6 @@ The course registration system lists a classroom at 양재산학캠퍼스 agains
 
 **Email:** `coallaoh@stai-lab.org` for submissions, questions, and feedback.
 
-**Slack:** A workspace for the course carries announcements, the weekly roster, and questions. Joining details are circulated before the first session.
+**Slack:** The course workspace carries announcements, the weekly roster, and questions. [Join here](https://join.slack.com/t/irai2026/shared_invite/zt-469u9zuz7-mMki5OXgvpkOKAsidUITHw).
 
 **A note on time zones.** The Wednesday session cannot be missed and is not recorded. If 09:00 KST is unreasonable where you are, say so on the first-day survey, before groups are formed.
