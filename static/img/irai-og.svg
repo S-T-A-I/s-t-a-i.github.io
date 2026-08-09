@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E9B8BE"/><stop offset="45%" stop-color="#C9CFE8"/><stop offset="100%" stop-color="#A9C6E4"/>
+    </linearGradient>
+    <linearGradient id="bars" gradientUnits="userSpaceOnUse" x1="0" y1="246" x2="0" y2="555">
+      <stop offset="0%" stop-color="#3D8FD1"/><stop offset="30%" stop-color="#3E4C9A"/>
+      <stop offset="62%" stop-color="#D34B36"/><stop offset="100%" stop-color="#F0952F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#F8F9FB"/>
+  <rect x="0" y="0" width="1200" height="7" fill="#C2521C"/>
+
+  <g transform="translate(96,140) scale(0.44)">
+    <circle cx="400" cy="400" r="252" fill="none" stroke="url(#ring)" stroke-width="11"
+            stroke-linecap="round" stroke-dasharray="620 90 380 90" stroke-dashoffset="60"/>
+    <circle cx="232" cy="400" r="15" fill="#3D8FD1"/>
+    <path d="M247 400 H292" stroke="#3D8FD1" stroke-width="5" stroke-linecap="round"/>
+    <g fill="none" stroke="#6E86BE" stroke-width="3.2" stroke-linecap="round">
+      <path d="M292 400 C 322 400, 320 260, 350 260"/>
+      <path d="M292 400 C 322 400, 320 330, 350 330"/>
+      <path d="M292 400 H 350"/>
+      <path d="M292 400 C 322 400, 320 470, 350 470"/>
+      <path d="M292 400 C 322 400, 320 540, 350 540"/>
+    </g>
+    <g fill="url(#bars)">
+      <rect x="350" y="246" width="214" height="29" rx="14.5"/>
+      <rect x="350" y="316" width="184" height="29" rx="14.5"/>
+      <rect x="350" y="386" width="154" height="29" rx="14.5"/>
+      <rect x="350" y="456" width="124" height="29" rx="14.5"/>
+      <rect x="350" y="526" width="94"  height="29" rx="14.5"/>
+    </g>
+  </g>
+
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" fill="#111014">
+    <text x="500" y="252" font-size="66" font-weight="700" letter-spacing="-1.5">Information</text>
+    <text x="500" y="326" font-size="66" font-weight="700" letter-spacing="-1.5">Retrieval for AI</text>
+    <text x="500" y="392" font-size="31" font-weight="500" fill="#6E6A75">KAIST AI - Autumn Semester 2026</text>
+    <text x="500" y="452" font-size="27" font-weight="400" fill="#C2521C">s-t-a-i.github.io/courses</text>
+  </g>
+</svg>
