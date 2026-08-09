@@ -371,7 +371,17 @@ footer.st a:hover{color:var(--acc);}
   color:var(--mut);margin:0 0 14px;}
 .crumb a{border-bottom:1px solid var(--rule-2);}
 .crumb a:hover{color:var(--acc);border-bottom-color:var(--acc);}
-.course-banner{width:280px;max-width:100%;height:auto;margin:0 auto;}
+/* Abstract and banner side by side. The generic .row rule below forces every
+   column to width:100%, which would wrap them onto separate lines. */
+.course-header-row{flex-wrap:nowrap;gap:16px;align-items:flex-start;}
+.course-header-row > .course-header-text{flex:1 1 auto;width:auto;min-width:0;}
+.course-header-row > .course-header-media{flex:0 0 260px;width:auto;}
+.course-banner{width:260px;max-width:100%;height:auto;margin:0 auto;}
+@media (max-width:760px){
+  .course-header-row{flex-wrap:wrap;}
+  .course-header-row > .course-header-text,
+  .course-header-row > .course-header-media{flex:1 1 100%;}
+}
 .pub-banner{width:100%;max-width:520px;height:auto;margin:24px 0;border:1px solid var(--rule);border-radius:4px;}
 .pub-title h1{margin-bottom:10px;}
 .pub-authors{font-style:italic;color:var(--ink-2);margin-bottom:6px;}
