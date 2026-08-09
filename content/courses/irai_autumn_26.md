@@ -413,7 +413,9 @@ Manning, Raghavan & Schütze, *Introduction to Information Retrieval* (Cambridge
 
 **When:** Mondays and Wednesdays, 09:00-10:00. Sessions 9, 19 and 29 run 09:00-10:30.
 
-**Where:** Online (Zoom). Joining details are circulated by email before the first session. Cameras are required in discussion groups and optional in plenary.
+**Where:** Online (Zoom), for every session. Joining details are circulated by email before the first session. Cameras are required in discussion groups and optional in plenary.
+
+The course registration system lists a classroom at 양재산학캠퍼스 against both slots. **That room is not used.** Do not go there.
 
 **Enrolment:** Capped at 40.
 
