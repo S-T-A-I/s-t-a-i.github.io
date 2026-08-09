@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Courses on Scalable Trustworthy AI</title><link>https://s-t-a-i.github.io/courses/</link><description>Recent content in Courses on Scalable Trustworthy AI</description><generator>Hugo</generator><language>en</language><copyright>&amp;copy; Seong Joon Oh, 2026</copyright><atom:link href="https://s-t-a-i.github.io/courses/index.xml" rel="self" type="application/rss+xml"/><item><title>Trustworthy Machine Learning</title><link>https://s-t-a-i.github.io/courses/tml_spring_26/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://s-t-a-i.github.io/courses/tml_spring_26/</guid><description>&lt;h2 id="1-goal"&gt;1. Goal&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Courses on Scalable Trustworthy AI</title><link>https://s-t-a-i.github.io/courses/</link><description>Recent content in Courses on Scalable Trustworthy AI</description><generator>Hugo</generator><language>en</language><copyright>&amp;copy; Seong Joon Oh, 2026</copyright><atom:link href="https://s-t-a-i.github.io/courses/index.xml" rel="self" type="application/rss+xml"/><item><title>Information Retrieval for AI</title><link>https://s-t-a-i.github.io/courses/irai_autumn_26/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://s-t-a-i.github.io/courses/irai_autumn_26/</guid><description>&lt;h2 id="1-goal"&gt;1. Goal&lt;/h2&gt;
+&lt;p&gt;By December, students will be able to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Place a retrieval method on the spectrum from sparse to dense, and say when BM25 still beats it.&lt;/li&gt;
+&lt;li&gt;Say where an AI system&amp;rsquo;s knowledge sits when it runs, and what that choice costs.&lt;/li&gt;
+&lt;li&gt;Build a test collection, and state what nDCG measures and what it hides.&lt;/li&gt;
+&lt;li&gt;Find where a fluent, correct-sounding account of a paper is subtly wrong.&lt;/li&gt;
+&lt;li&gt;Report from their own records where language models fail on research reading.&lt;/li&gt;
+&lt;li&gt;Diagnose why a change to a retrieval system did or did not help.&lt;/li&gt;
+&lt;li&gt;Defend a technical position under challenge, and change it when given a reason.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Objectives 4, 5 and 7 matter most. Few students will ever build a search engine. All of them will read papers whose claims outrun their evidence, work with models that are fluent and wrong, and have to defend a position in a room.&lt;/p&gt;</description></item><item><title>Trustworthy Machine Learning</title><link>https://s-t-a-i.github.io/courses/tml_spring_26/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://s-t-a-i.github.io/courses/tml_spring_26/</guid><description>&lt;h2 id="1-goal"&gt;1. Goal&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Students will be able to critically read, assess, and discuss research work in Trustworthy Machine Learning (TML).&lt;/li&gt;
 &lt;li&gt;Students will gain the technical background to implement basic TML techniques in a deep learning framework.&lt;/li&gt;
