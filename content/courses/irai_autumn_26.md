@@ -8,6 +8,20 @@ subtitle = "How AI systems reach the knowledge they do not hold"
 description = "Model weights are a lossy, frozen compression of the world, so every serious AI system needs a way to reach the rest of it. This course teaches that path, from the inverted index of the 1970s to the research agents of 2026. The framing is information retrieval for AI, not AI for information retrieval. Classical retrieval is the toolkit rather than the subject, and BM25 earns its place not as history but because dense retrievers still lose to it out of domain. Monday is a lecture on the method. Wednesday is a structured discussion of a research paper that uses it. Alongside both, the class builds its own document collection, writes its own queries, judges relevance by hand, and measures a retrieval system against the judgements it produced itself."
 +++
 
+**In one line.** Mondays are lectures, Wednesdays are structured paper discussions in fixed groups of five, and the only weekly deadline is a half-page written review due Tuesday at 18:00. Four hours a week, two of them contact time. No exam.
+
+**Contents**
+
+- [1. Goal](#1-goal)
+- [2. Prerequisites](#2-prerequisites)
+- [3. How the course runs](#3-how-the-course-runs)
+- [4. Schedule](#4-schedule)
+- [5. The class test collection and the project](#5-the-class-test-collection-and-the-project)
+- [6. Assessment](#6-assessment)
+- [7. Generative AI policy](#7-generative-ai-policy)
+- [8. Reading list](#8-reading-list)
+- [9. Logistics](#9-logistics)
+
 ## 1. Goal
 
 By December, students will be able to:
@@ -22,14 +36,7 @@ By December, students will be able to:
 
 Objectives 4, 5 and 7 matter most. Few students will ever build a search engine. All of them will read papers whose claims outrun their evidence, work with models that are fluent and wrong, and have to defend a position in a room.
 
-## 2. Prerequisites
-
-- Familiarity with Python and PyTorch coding.
-- Working knowledge of transformers and standard deep learning.
-- Basic maths: linear algebra, probability, statistics.
-- No prior background in information retrieval is required, and none is expected. The classical material in September will be the new material for most of this audience.
-
-## 3. Two questions that run through the term
+{{< details "The two threads that run through the term" >}}
 
 **From sparse to dense.** TF-IDF, BM25, learned sparse retrieval, bi-encoders, late interaction. A spectrum, not a succession.
 
@@ -45,13 +52,34 @@ Objectives 4, 5 and 7 matter most. Few students will ever build a search engine.
 
 The course opens with attention itself as retrieval over the context, so the whole spectrum reads as one idea at different scales.
 
-## 4. How the course runs
+{{< /details >}}
+
+## 2. Prerequisites
+
+- Familiarity with Python and PyTorch coding.
+- Working knowledge of transformers and standard deep learning.
+- Basic maths: linear algebra, probability, statistics.
+- No prior background in information retrieval is required, and none is expected. The classical material in September will be the new material for most of this audience.
+
+## 3. How the course runs
 
 **Monday** is a lecture on the method. 45 minutes of content, 10 minutes of questions, 5 minutes on the following Wednesday.
 
-**Wednesday** is a discussion of a research paper that uses it. Four Wednesdays are lectures instead.
+**Wednesday** is a discussion of a research paper that uses it, in fixed groups of five. Four Wednesdays are lectures instead.
 
-### Groups and roles
+**The only weekly deadline is Tuesday 18:00**, when you submit a half-page written review of the assigned paper.
+
+| When | What | Time |
+|---|---|---|
+| Thu-Sun | Read the assigned paper properly | 1.2 h |
+| Mon 09:00-10:00 | The lecture teaching the method | 1 h |
+| Mon evening | Consult the supporting paper, run the model check | 30 min |
+| Tue | Write the half-page review, submit by 18:00 | 20 min |
+| Wed 09:00-10:00 | The session | 1 h |
+
+**Four hours a week, two of them contact time.** There is no project work in a normal week. Three weeks are heavier - sessions 9, 19 and 29 add about two hours each.
+
+{{< details "Groups and roles" >}}
 
 Students are divided into fixed discussion groups of five, held all semester. Each member takes a different role for the week, and roles rotate. Every student holds each role at least once over the term.
 
@@ -69,9 +97,11 @@ Everyone reads the assigned paper closely. Each student additionally consults on
 
 One Wednesday therefore puts six papers into circulation: the assigned paper, read by everyone, and five supporting papers.
 
-### The weekly written review
+{{< /details >}}
 
-**One review per student, half a page, due 18:00 on Tuesday.** That is the entire weekly obligation outside class. Four fields.
+{{< details "The weekly written review, and its four fields" >}}
+
+**One review per student, half a page, due 18:00 on Tuesday.** That is the entire weekly obligation outside class.
 
 **1. Model check.** Give a language model the assigned paper and the prompt for your role. Name the model and version, paste its answer in two or three lines, then say what it got wrong or missed.
 
@@ -91,7 +121,9 @@ One Wednesday therefore puts six papers into circulation: the assigned paper, re
 
 The half-page cap is deliberate. It holds the weekly load down and forces you to pick your best point rather than list five.
 
-### The Wednesday hour
+{{< /details >}}
+
+{{< details "The Wednesday hour, minute by minute" >}}
 
 | Time | What happens |
 |---|---|
@@ -120,7 +152,9 @@ The 17 minutes in groups are not open discussion. There is one forced decision a
 
 **During the open challenge, the member who answers is named at the moment the group is called.** Every member must therefore be able to defend the group's conclusion. There are no prepared presentations of the assigned paper. Everyone has read it, and a summary would waste eight minutes of sixty.
 
-### End-of-session questions
+{{< /details >}}
+
+{{< details "End-of-session questions" >}}
 
 Three questions, answered individually in the last two minutes.
 
@@ -130,19 +164,9 @@ Three questions, answered individually in the last two minutes.
 
 Question 2 can only be answered by someone who followed the argument. You read one supporting paper; the other four reach you only through the discussion. Question 3 is the only place the course pays for changing your mind.
 
-### One student's week
+{{< /details >}}
 
-| When | What | Time |
-|---|---|---|
-| Thu-Sun | Read the assigned paper properly | 1.2 h |
-| Mon 09:00-10:00 | The lecture teaching the method | 1 h |
-| Mon evening | Consult the supporting paper, run the model check | 30 min |
-| Tue | Write the half-page review, submit by 18:00 | 20 min |
-| Wed 09:00-10:00 | The session | 1 h |
-
-**Four hours a week, two of them contact time.** There is no project work in a normal week. Three weeks are heavier - sessions 9, 19 and 29 add about two hours each.
-
-## 5. Schedule
+## 4. Schedule
 
 Sessions run 09:00-10:00, except the three project workshops, which run 09:00-10:30.
 
@@ -182,9 +206,17 @@ Sessions run 09:00-10:00, except the three project workshops, which run 09:00-10
 
 Wednesday sessions are not recorded, so that criticism stays candid. Monday lectures are recorded.
 
-## 6. The class test collection and the project
+## 5. The class test collection and the project
 
-### Why the class builds its own test collection
+> You are given a BM25 baseline over the class collection, an evaluation harness, and the class relevance judgements. **Make one change to the retrieval pipeline.** Predict its effect before you write any code. Measure it. Explain the gap between what you predicted and what happened.
+
+| Fixed | Yours to change |
+|---|---|
+| The collection, the relevance judgements, the metrics, the harness | Anything between the query and the ranked list |
+
+**Compute is a laptop.** Fifty documents and sixty queries. Encoding with a small sentence transformer takes seconds on Colab's free CPU tier, and ColBERT inference over 48 documents runs on CPU. No compute credits are needed and no paid account is required, including for the weekly model check.
+
+{{< details "Why the class builds its own test collection" >}}
 
 To say that system A beats system B, you must know which documents are relevant for a set of queries. That list is a test collection, and a human made it by hand. Every number in every retrieval paper rests on one.
 
@@ -205,15 +237,11 @@ The numbers work out at roughly 60 queries, 480 query-document pairs, and two ju
 
 At 48 documents the metrics are noisy and rankings will flip on reruns. That is also part of the lesson.
 
-### The project
+{{< /details >}}
 
-> You are given a BM25 baseline over the class collection, an evaluation harness, and the class relevance judgements. **Make one change to the retrieval pipeline.** Predict its effect before you write any code. Measure it. Explain the gap between what you predicted and what happened.
+{{< details "The modification menu and what you hand in" >}}
 
-| Fixed | Yours to change |
-|---|---|
-| The collection, the relevance judgements, the metrics, the harness | Anything between the query and the ranked list |
-
-Groups claim one modification each at session 9, so that no two duplicate. The menu:
+Groups claim one modification each at session 9, so that no two duplicate.
 
 - Hybrid BM25 and dense retrieval, fused with reciprocal rank fusion
 - A different bi-encoder checkpoint
@@ -226,9 +254,9 @@ Groups claim one modification each at session 9, so that no two duplicate. The m
 
 **The relevance judgements freeze at session 19.** Groups may keep refining afterwards, and should report both their session-19 number and any later one.
 
-**Compute is a laptop.** Fifty documents and sixty queries. Encoding with a small sentence transformer takes seconds on Colab's free CPU tier, and ColBERT inference over 48 documents runs on CPU. No compute credits are needed and no paid account is required, including for the weekly model check.
+{{< /details >}}
 
-## 7. Assessment
+## 6. Assessment
 
 | Component | Weight |
 |---|---|
@@ -242,7 +270,9 @@ There is no exam and there are no quizzes.
 
 **Two participation requirements**: writing queries, and completing your relevance judgements. More than two missed obligations across the term drops the final grade by one band.
 
-### Weekly paper reviews (45%)
+**A student who does all of the work competently lands in the middle of the distribution, not at the top.** Grades are assigned by ranking the class and cutting bands, with a target of roughly even distribution across A+, A0, A-, B+ and B0. This is stated here rather than discovered in December.
+
+{{< details "Weekly paper reviews, 45%" >}}
 
 Eight reviews, one per discussion session. A random four are marked on the scale below and the rest on completion. You will not know in advance which count.
 
@@ -254,11 +284,17 @@ Eight reviews, one per discussion session. A random four are marked on the scale
 | 1 | Thin, or restates the model's output |
 | 0 | Missing, fabricated numbers, or undeclared model use |
 
-### End-of-session questions (20%)
+Note that "did the work adequately" is a 2, not a 4.
+
+{{< /details >}}
+
+{{< details "End-of-session questions, 20%" >}}
 
 Eight sets of three questions, scored against your group's filed conclusion. Question 1 and question 3 are checked mechanically. Question 2 passes if it names a point actually raised in your group.
 
-### Contribution to discussion (10%)
+{{< /details >}}
+
+{{< details "Contribution to discussion, 10%" >}}
 
 Scored 0-2 whenever you are named to speak in plenary, either to defend your group's conclusion or to answer a question during synthesis. Opportunities are tracked and allocated so that every student is called roughly three times.
 
@@ -270,7 +306,9 @@ Scored 0-2 whenever you are named to speak in plenary, either to defend your gro
 
 Marks go to the response to challenge. Not to fluency, and not to being right.
 
-### Project (25%)
+{{< /details >}}
+
+{{< details "Project, 25%" >}}
 
 Scored out of 10, then adjusted by peer evaluation within the group.
 
@@ -287,11 +325,9 @@ Position on the leaderboard is worth 10% of the project mark and 2.5% of the fin
 
 **Peer evaluation.** Each member distributes 100 points across all five members, including themselves. The mean of what the other four give you becomes a multiplier between 0.85 and 1.15.
 
-### Grades
+{{< /details >}}
 
-Grades are assigned by ranking the class and cutting bands, with a target of roughly even distribution across A+, A0, A-, B+ and B0.
-
-**A student who does all of the work competently lands in the middle of the distribution, not at the top.** On the review scale above, "did the work adequately" is a 2, not a 4. This is stated here rather than discovered in December.
+{{< details "What each grade looks like" >}}
 
 | Grade | Profile |
 |---|---|
@@ -303,7 +339,9 @@ Grades are assigned by ranking the class and cutting bands, with a target of rou
 | B- | Repeated gaps, or reviews showing the paper was not read |
 | F | Non-participation |
 
-## 8. Generative AI policy
+{{< /details >}}
+
+## 7. Generative AI policy
 
 **Use is expected, declared and marked.** The course does not defend against it. Detection does not work, and a ban would be absurd in a course about retrieval-augmented systems.
 
@@ -313,7 +351,9 @@ Grades are assigned by ranking the class and cutting bands, with a target of rou
 
 Undeclared model use scores zero on that submission.
 
-The weekly model check is where this becomes concrete. Each role's task needs a capability that is weak in a different way.
+{{< details "The class record of model failures" >}}
+
+The weekly model check is where the policy becomes concrete. Each role's task needs a capability that is weak in a different way.
 
 | What you ask for | What tends to come back |
 |---|---|
@@ -327,9 +367,9 @@ Every review contributes one line to a class record of model failures - model, v
 
 The instructor prepares lecture material with model assistance and adds the model's mistakes to the same record.
 
-## 9. Reading list
+{{< /details >}}
 
-### The eight assigned papers
+## 8. Reading list
 
 | # | Session | Paper |
 |---|---|---|
@@ -344,9 +384,9 @@ The instructor prepares lecture material with model assistance and adds the mode
 
 Three notes on the choices. Session 4 opens with a paper whose whole argument is that other people's baselines were weak, which sets the tone. Session 15 is the instructor's own paper, and that is deliberate - six students attacking it in front of the author settles the question of whether criticism is welcome. Sessions 21 and 25 pair a dead idea with the successor that beat it, given to the adversary, so the argument happens inside the groups.
 
-### Supporting papers
+{{< details "Supporting papers for the first four discussion sessions" >}}
 
-Supporting papers for the first four discussion sessions are below. The rest are published two weeks before each session. Extenders choose their own.
+The rest are published two weeks before each session. Extenders choose their own.
 
 | Session | Role | Paper |
 |---|---|---|
@@ -367,7 +407,9 @@ Supporting papers for the first four discussion sessions are below. The rest are
 | 13 | Replicator | Santhanam et al. (2022), *ColBERTv2* (NAACL) |
 | 13 | Applier | Santhanam et al. (2022), *PLAID* (CIKM) |
 
-### Pre-reading for project workshop 1
+{{< /details >}}
+
+{{< details "Pre-reading for project workshop 1, and reference texts" >}}
 
 Session 9 will produce low agreement between judges, and these explain why that is a result rather than a failure.
 
@@ -375,11 +417,11 @@ Session 9 will produce low agreement between judges, and these explain why that 
 - Zobel (1998), *How Reliable Are the Results of Large-Scale IR Experiments?* (SIGIR).
 - Buckley & Voorhees (2004), *Retrieval Evaluation with Incomplete Information* (SIGIR).
 
-### Reference texts
+**Reference text.** Manning, Raghavan & Schütze, *Introduction to Information Retrieval* (Cambridge University Press, 2008). Free online. The classical retrieval chapters cover sessions 2, 3, 5 and 7.
 
-Manning, Raghavan & Schütze, *Introduction to Information Retrieval* (Cambridge University Press, 2008). Free online. The classical retrieval chapters cover sessions 2, 3, 5 and 7.
+{{< /details >}}
 
-### Further reading by topic
+{{< details "Further reading by topic" >}}
 
 **Where knowledge sits.** Weston, Chopra & Bordes (2014) *Memory Networks*; Graves et al. (2014) *Neural Turing Machines*; Graves et al. (2016) *DNC* (Nature); Lample et al. (2019) *Large Memory Layers with Product Keys*; Shazeer et al. (2017) *Outrageously Large Neural Networks*; Fedus, Zoph & Shazeer (2022) *Switch Transformers* (JMLR); Jiang et al. (2024) *Mixtral of Experts*; He (2024) *Mixture of a Million Experts*; Berges et al. (2024) *Memory Layers at Scale*.
 
@@ -403,7 +445,9 @@ Manning, Raghavan & Schütze, *Introduction to Information Retrieval* (Cambridge
 
 **Scholarly search and AI for science.** Lo et al. (2020) *S2ORC* (ACL); Swanson (1986) on literature-based discovery; Wang et al. (2024) *SciMON* (ACL); Skarlinski et al. (2024) *PaperQA2*.
 
-## 10. Communication and logistics
+{{< /details >}}
+
+## 9. Logistics
 
 **Language:** English
 
@@ -413,10 +457,14 @@ Manning, Raghavan & Schütze, *Introduction to Information Retrieval* (Cambridge
 
 **When:** Mondays and Wednesdays, 09:00-10:00. Sessions 9, 19 and 29 run 09:00-10:30.
 
-**Where:** Online (Zoom). Joining details are circulated by email before the first session. Cameras are required in discussion groups and optional in plenary.
+**Where:** Online (Zoom), for every session. Joining details are circulated by email before the first session. Cameras are required in discussion groups and optional in plenary.
+
+The course registration system lists a classroom at 양재산학캠퍼스 against both slots. **That room is not used.** Do not go there.
 
 **Enrolment:** Capped at 40.
 
-**Email:** `stai.there@gmail.com` for submissions, questions, and feedback.
+**Email:** `coallaoh@stai-lab.org` for submissions, questions, and feedback.
+
+**Slack:** A workspace for the course carries announcements, the weekly roster, and questions. Joining details are circulated before the first session.
 
 **A note on time zones.** The Wednesday session cannot be missed and is not recorded. If 09:00 KST is unreasonable where you are, say so on the first-day survey, before groups are formed.
