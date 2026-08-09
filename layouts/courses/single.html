@@ -13,10 +13,10 @@
     </div>
 </div>
 <div class="row course-header-row" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <div class="col-sm-8" itemprop="description">
+    <div class="col-sm-8 course-header-text" itemprop="description">
         <div class="article-style">{{ .Params.description }}</div>
     </div>
-    <div class="col-sm-4" itemprop="description">
+    <div class="col-sm-4 course-header-media" itemprop="description">
         <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="course-banner" itemprop="image">
     </div>
 </div>
