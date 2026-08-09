@@ -419,6 +419,6 @@ The course registration system lists a classroom at 양재산학캠퍼스 agains
 
 **Enrolment:** Capped at 40.
 
-**Email:** `stai.there@gmail.com` for submissions, questions, and feedback.
+**Email:** `coallaoh@stai-lab.org` for submissions, questions, and feedback.
 
 **A note on time zones.** The Wednesday session cannot be missed and is not recorded. If 09:00 KST is unreasonable where you are, say so on the first-day survey, before groups are formed.
