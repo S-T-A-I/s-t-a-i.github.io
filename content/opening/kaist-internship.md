@@ -3,7 +3,7 @@ title = "Internship"
 date = "2026-01-20"
 short_description = ""
 status = "Open"
-weight = 4
+weight = 5
 +++
 
 **Expectations**
