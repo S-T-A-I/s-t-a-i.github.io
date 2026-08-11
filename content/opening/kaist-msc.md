@@ -3,7 +3,7 @@ title = "MSc"
 date = "2026-01-20"
 short_description = ""
 status = "Open"
-weight = 3
+weight = 4
 +++
 
 **Expectations**
