@@ -3,7 +3,8 @@
 {{- if and .IsPage .Summary }}{{ $desc = .Summary | plainify | truncate 180 }}{{ end -}}
 {{- $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) -}}
 {{- $ogimg := absURL "img/og-default.png" -}}
-{{- with .Params.image }}{{ $ogimg = absURL . }}{{ end -}}
+{{- $ogdefault := true -}}
+{{- with .Params.image }}{{ $ogimg = absURL . }}{{ $ogdefault = false }}{{ end -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Locale | default "en-US" }}">
 <head>
@@ -32,8 +33,8 @@
     <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:image" content="{{ $ogimg }}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    {{ if $ogdefault }}<meta property="og:image:width" content="2400">
+    <meta property="og:image:height" content="1260">{{ end }}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $desc }}">
