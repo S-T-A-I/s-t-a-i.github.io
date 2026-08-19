@@ -4,7 +4,11 @@
 {{- $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) -}}
 {{- $ogimg := absURL "img/og-default.png" -}}
 {{- $ogdefault := true -}}
-{{- with .Params.image }}{{ $ogimg = absURL . }}{{ $ogdefault = false }}{{ end -}}
+{{- /* Publication pages store a bare filename; activity and talk pages
+       store the img/ prefix already. Normalise both. */ -}}
+{{- with .Params.image }}
+{{- $ogimg = absURL (cond (hasPrefix . "img/") . (printf "img/%s" .)) }}{{ $ogdefault = false }}
+{{- end -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Locale | default "en-US" }}">
 <head>
