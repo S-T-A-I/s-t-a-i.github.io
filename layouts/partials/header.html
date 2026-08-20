@@ -2,7 +2,7 @@
 {{- with .Description }}{{ $desc = . }}{{ end -}}
 {{- if and .IsPage .Summary }}{{ $desc = .Summary | plainify | truncate 180 }}{{ end -}}
 {{- $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) -}}
-{{- $ogimg := absURL "img/og-default.png" -}}
+{{- $ogimg := absURL "img/og-default-v2.png" -}}
 {{- $ogdefault := true -}}
 {{- /* Publication pages store a bare filename; activity and talk pages
        store the img/ prefix already. Normalise both. */ -}}
