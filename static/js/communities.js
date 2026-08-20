@@ -72,7 +72,8 @@
     years.forEach(function (year, i) {
       var base = h - padB;
       var x = padL + i * band + (band - barW) / 2;
-      var stack = themes.filter(function (name) { return counts[year][name]; });
+      /* Reversed, so the last theme - Untagged - sits at the foot of the bar. */
+      var stack = themes.filter(function (name) { return counts[year][name]; }).reverse();
       stack.forEach(function (name, j) {
         var height = counts[year][name] * scale;
         base -= height;
