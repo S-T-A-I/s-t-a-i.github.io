@@ -3,9 +3,11 @@
 
 The publications API (internal.stai-lab.org) carries no community tags, so the
 tags come from coallaoh.github.io/data/publications.js, matched on title. The
-fine-grained tags are then folded into the themes below, which is what the
-chart on the publications page shows. A tag missing from THEMES falls into
-"Other" and is reported, so new ones do not disappear quietly.
+fine-grained tags are then folded into themes, which is what the chart on the
+publications page shows. The theme table lives on the personal site too
+(data/communities.js, communityThemes), so both charts cut the work the same
+way. A tag missing from it falls into the last theme and is reported, so new
+ones do not disappear quietly.
 
 Usage: python3 scripts/sync-communities.py [path-to-coallaoh.github.io]
 """
@@ -15,17 +17,6 @@ import re
 import sys
 import urllib.request
 from pathlib import Path
-
-# Theme order is fixed: it sets both the stacking order and the colour slot,
-# so adding a paper never repaints the others. "Other" is always last.
-THEMES = [
-    ("Generalisation and robustness", ["OOD", "CoGe", "TTA", "AAML"]),
-    ("Vision and multimodal", ["VLM", "SSeg", "WSOL", "OCL", "DiffM"]),
-    ("Privacy and data rights", ["PILM", "TDI", "MIALM", "MU", "SILM"]),
-    ("Uncertainty", ["UQCV", "UQLM", "UD", "BDL", "OODD"]),
-    ("Language models and agents", ["LLMAG", "RALM", "ReLM", "LRM", "KELM"]),
-    ("Evaluation and interpretability", ["ELM", "MLAU", "FAtt"]),
-]
 
 API = "https://internal.stai-lab.org/api/public/publications.json"
 DEFAULT_SOURCE = Path(__file__).resolve().parents[2] / "coallaoh.github.io"
@@ -39,6 +30,13 @@ def js_array(path, marker):
     return json.loads(text[text.index("["):text.rindex("]") + 1])
 
 
+def themes_from(source):
+    """The shared theme table, read from the personal site's data file."""
+    text = (source / "data" / "communities.js").read_text()
+    text = text[text.index("const communityThemes"):]
+    return json.loads(text[text.index("["):text.rindex("]") + 1])
+
+
 def key(title):
     return re.sub(r"[^a-z0-9]", "", title.lower())
 
@@ -46,6 +44,7 @@ def key(title):
 def main():
     source = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_SOURCE
     tagged = js_array(source / "data" / "publications.js", "const publicationsData")
+    table = themes_from(source)
 
     by_title = {key(p["title"]): p.get("rtai_tags") or [] for p in tagged}
 
@@ -63,12 +62,12 @@ def main():
         else:
             untagged += 1
 
-    mapped = {tag for _, members in THEMES for tag in members}
+    mapped = {tag for theme in table for tag in theme["tags"]}
     spare = sorted(used - mapped)
 
-    themes = [{"name": name, "slot": i + 1, "tags": [t for t in members if t in used]}
-              for i, (name, members) in enumerate(THEMES)]
-    themes.append({"name": "Other", "slot": 0, "tags": spare})
+    themes = [{"name": t["name"], "slot": t["slot"],
+               "tags": [tag for tag in t["tags"] if tag in used]} for t in table]
+    themes[-1]["tags"] = sorted(set(themes[-1]["tags"]) | set(spare))
 
     OUT.write_text(json.dumps({"themes": themes, "tags": tags},
                               indent=1, ensure_ascii=False) + "\n")
@@ -77,7 +76,7 @@ def main():
     for title in unmatched:
         print(f"  missing from the personal site: {title}")
     if spare:
-        print(f"  filed under Other: {', '.join(spare)}")
+        print(f"  not in the theme table, filed last: {', '.join(spare)}")
 
 
 if __name__ == "__main__":

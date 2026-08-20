@@ -19,7 +19,7 @@
   /* Chart series, validated for both surfaces (see scripts/sync-communities.py
      for the themes they belong to). s0 is the neutral "Other". */
   --s0:#8e8898; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
-  --s4:#eda100; --s5:#e87ba4; --s6:#008300;
+  --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7;
   --shell:1240px;
   --bar-h:78px;
   --pubnav-h:64px;
@@ -31,7 +31,7 @@ html.dark-mode{
   --link:#7FB2FF;
   --info-bg:#261B12; --info-bd:#43301F; --accent-wash:#2C1E13;
   --s0:#766f83; --s1:#3987e5; --s2:#d95926; --s3:#199e70;
-  --s4:#c98500; --s5:#d55181; --s6:#008300;
+  --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9;
 }
 
 *,*::before,*::after{box-sizing:border-box;}

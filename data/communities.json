@@ -64,13 +64,18 @@
    ]
   },
   {
-   "name": "Other",
-   "slot": 0,
+   "name": "Learning and optimisation",
+   "slot": 7,
    "tags": [
-    "DD",
     "MoMe",
+    "DD",
     "SyDa"
    ]
+  },
+  {
+   "name": "Untagged",
+   "slot": 0,
+   "tags": []
   }
  ],
  "tags": {
