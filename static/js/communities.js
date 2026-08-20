@@ -39,7 +39,7 @@
   }
 
   var total = data.publications.length;
-  var off = {};
+  var sel = [];   /* selected themes; empty means no filter, so everything shows */
   var plot = root.querySelector('.comm-plot');
   var tip = root.querySelector('.comm-tip');
   var svg;
@@ -138,25 +138,34 @@
 
   /* ---- state ---- */
 
+  function dimmed(name) {
+    return sel.length > 0 && sel.indexOf(name) === -1;
+  }
+
   function paint() {
-    each('.comm-bar', function (bar) { bar.classList.toggle('off', !!off[bar.getAttribute('data-comm')]); }, svg);
+    each('.comm-bar', function (bar) { bar.classList.toggle('off', dimmed(bar.getAttribute('data-comm'))); }, svg);
     each('.comm-row', function (row) {
       var name = row.getAttribute('data-comm');
-      row.classList.toggle('off', !!off[name]);
-      row.setAttribute('aria-pressed', off[name] ? 'false' : 'true');
+      row.classList.toggle('off', dimmed(name));
+      row.setAttribute('aria-pressed', dimmed(name) ? 'false' : 'true');
     }, root);
   }
 
-  function toggle(name, on) {
-    off[name] = !on;
+  /* The first pick narrows to that theme alone; later picks add to the
+     selection or drop out of it. Dropping the last one clears the filter. */
+  function pick(name) {
+    var at = sel.indexOf(name);
+    if (!sel.length) sel = [name];
+    else if (at === -1) sel.push(name);
+    else if (sel.length > 1) sel.splice(at, 1);
+    else sel = [];
     paint();
     filter();
   }
 
-  /* Nothing selected reads the same as everything selected: show the lot. */
   function filter() {
-    var active = themes.filter(function (name) { return !off[name]; });
-    var all = active.length === 0 || active.length === themes.length;
+    var active = sel.length ? sel : themes;
+    var all = !sel.length;
     var shown = 0;
 
     each('.pub[data-comm]', function (pub) {
@@ -190,7 +199,7 @@
     plot.addEventListener('mouseleave', function () { hover(null); });
     plot.addEventListener('click', function (e) {
       var bar = e.target.closest('.comm-bar');
-      if (bar) toggle(bar.getAttribute('data-comm'), !!off[bar.getAttribute('data-comm')]);
+      if (bar) pick(bar.getAttribute('data-comm'));
     });
 
     var key = root.querySelector('.comm-key');
@@ -201,23 +210,14 @@
     key.addEventListener('mouseleave', function () { hover(null); });
     key.addEventListener('click', function (e) {
       var row = e.target.closest('.comm-row');
-      if (row) toggle(row.getAttribute('data-comm'), row.classList.contains('off'));
+      if (row) pick(row.getAttribute('data-comm'));
     });
-
-    root.querySelector('[data-comm-all]').addEventListener('click', function () { setAll(true); });
-    root.querySelector('[data-comm-none]').addEventListener('click', function () { setAll(false); });
 
     var timer;
     window.addEventListener('resize', function () {
       clearTimeout(timer);
       timer = setTimeout(redraw, 150);
     });
-  }
-
-  function setAll(on) {
-    themes.forEach(function (name) { off[name] = !on; });
-    paint();
-    filter();
   }
 
   function hover(name) {

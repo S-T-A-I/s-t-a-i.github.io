@@ -305,11 +305,6 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .comm-tip{position:absolute;z-index:5;pointer-events:none;white-space:nowrap;
   background:var(--ink);color:var(--paper);font-family:var(--ui);font-size:13.8px;
   padding:5px 10px;border-radius:4px;}
-.comm-act{display:flex;gap:8px;margin-bottom:14px;}
-.comm-act button{font-family:var(--mono);font-size:12.6px;letter-spacing:.05em;padding:4px 10px;
-  border:1px solid var(--rule);border-radius:3px;background:none;color:var(--ink-2);cursor:pointer;
-  transition:border-color .15s,color .15s;}
-.comm-act button:hover{border-color:var(--acc);color:var(--acc);}
 .comm-key{display:flex;flex-wrap:wrap;gap:2px 20px;}
 .comm-row{display:inline-flex;align-items:baseline;gap:9px;padding:5px 7px;
   border:0;border-radius:3px;background:none;text-align:left;cursor:pointer;
