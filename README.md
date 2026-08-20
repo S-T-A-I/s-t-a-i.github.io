@@ -35,10 +35,27 @@ The site is then available at <http://localhost:1313/>.
 | `layouts/` | HTML templates (custom; no external theme). |
 | `archetypes/` | Templates for new content via `hugo new`. |
 | `static/` | Static assets served as-is (images, PDFs, files). |
+| `data/` | Build-time data. `communities.json` holds the research theme tags behind the chart on the publications page. |
+| `scripts/` | Maintenance scripts. `sync-communities.py` rebuilds `data/communities.json`. |
 | `.github/workflows/` | GitHub Actions deploy pipeline. |
 
 Set `params.members_api_url` in `config.toml` to the public
 `stai-lab-assets` members endpoint to render the members tab from the central DB.
+
+## Research themes
+
+The chart on the publications page groups papers into seven research themes.
+The publications API carries no tags, so the fine-grained ones come from the
+personal site, matched on title, and are folded into themes by the mapping at
+the top of `scripts/sync-communities.py`:
+
+```sh
+python3 scripts/sync-communities.py [path-to-coallaoh.github.io]
+```
+
+Run it after new papers land, otherwise they count as "Other". The script
+reports any tag it could not place. To change the themes, edit `THEMES` and run
+it again; the colour slots follow the order declared there.
 
 ## Adding content
 
