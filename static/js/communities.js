@@ -19,23 +19,21 @@
   /* A paper with n tags is split n, n-1, ... 1 across them and normalised, so
      the tag listed first counts most and every paper still counts once. Tags
      that share a theme add up. Untagged papers count as Other. */
-  var years = [], counts = {}, totals = {}, tagsIn = {};
+  var years = [], counts = {}, totals = {};
   data.publications.forEach(function (pub) {
     var tags = pub.tags && pub.tags.length ? pub.tags : [];
     var span = tags.length * (tags.length + 1) / 2;
-    if (!counts[pub.year]) { counts[pub.year] = {}; tagsIn[pub.year] = {}; years.push(pub.year); }
-    if (!tags.length) return add(pub.year, OTHER, 1, null);
+    if (!counts[pub.year]) { counts[pub.year] = {}; years.push(pub.year); }
+    if (!tags.length) return add(pub.year, OTHER, 1);
     tags.forEach(function (tag, i) {
-      add(pub.year, theme[tag] || OTHER, (tags.length - i) / span, tag);
+      add(pub.year, theme[tag] || OTHER, (tags.length - i) / span);
     });
   });
   years.sort();
 
-  function add(year, name, share, tag) {
+  function add(year, name, share) {
     counts[year][name] = (counts[year][name] || 0) + share;
     totals[name] = (totals[name] || 0) + share;
-    if (!tagsIn[year][name]) tagsIn[year][name] = [];
-    if (tag && tagsIn[year][name].indexOf(tag) === -1) tagsIn[year][name].push(tag);
   }
 
   var total = data.publications.length;
@@ -232,9 +230,7 @@
   function showTip(e, bar) {
     var name = bar.getAttribute('data-comm');
     var year = bar.getAttribute('data-year');
-    var tags = tagsIn[year][name] || [];
-    tip.textContent = name + ', ' + counts[year][name].toFixed(1) + ' in ' + year +
-      (tags.length ? ' (' + tags.join(', ') + ')' : '');
+    tip.textContent = name + ', ' + counts[year][name].toFixed(1) + ' in ' + year;
     tip.hidden = false;
     var box = plot.getBoundingClientRect();
     var x = e.clientX - box.left;
