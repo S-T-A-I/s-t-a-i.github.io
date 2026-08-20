@@ -2,7 +2,7 @@
 title = "Postdoc"
 date = "2026-01-20"
 short_description = ""
-status = "Closed"
+status = "Open"
 weight = 1
 +++
 
