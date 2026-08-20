@@ -2,6 +2,7 @@
  "themes": [
   {
    "name": "Generalisation and robustness",
+   "short": "Generalisation",
    "slot": 1,
    "tags": [
     "OOD",
@@ -12,6 +13,7 @@
   },
   {
    "name": "Vision and multimodal",
+   "short": "Vision",
    "slot": 2,
    "tags": [
     "VLM",
@@ -23,6 +25,7 @@
   },
   {
    "name": "Privacy and data rights",
+   "short": "Privacy",
    "slot": 3,
    "tags": [
     "PILM",
@@ -34,6 +37,7 @@
   },
   {
    "name": "Uncertainty",
+   "short": "Uncertainty",
    "slot": 4,
    "tags": [
     "UQCV",
@@ -45,6 +49,7 @@
   },
   {
    "name": "Language models and agents",
+   "short": "Language models",
    "slot": 5,
    "tags": [
     "LLMAG",
@@ -56,6 +61,7 @@
   },
   {
    "name": "Evaluation and interpretability",
+   "short": "Evaluation",
    "slot": 6,
    "tags": [
     "ELM",
@@ -65,6 +71,7 @@
   },
   {
    "name": "Learning and optimisation",
+   "short": "Learning",
    "slot": 7,
    "tags": [
     "MoMe",
@@ -74,6 +81,7 @@
   },
   {
    "name": "Untagged",
+   "short": "Untagged",
    "slot": 0,
    "tags": []
   }

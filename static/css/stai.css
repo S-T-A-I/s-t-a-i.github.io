@@ -276,6 +276,12 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .pub .vn{font-family:var(--ui);font-size:13.8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-left:2px solid var(--acc);padding-left:9px;}
 .pub .vn b{display:inline-block;color:var(--acc);font-weight:700;background:var(--accent-wash);border:1px solid var(--info-bd);padding:1px 9px;border-radius:100px;margin:0 1px;letter-spacing:.1em;}
 .pub .lnk{display:flex;gap:7px;flex-wrap:wrap;}
+/* Which research theme a paper sits in -- the dot is the colour the chart
+   above uses for that theme. */
+.pub-tags{display:flex;gap:12px;flex-wrap:wrap;}
+.pub-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--ui);
+  font-size:13.2px;color:var(--mut);white-space:nowrap;}
+.pub-tag::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--c);}
 .pub .lnk a{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:2px 7px;
   border:1px solid var(--rule);border-radius:3px;color:var(--mut);}
 .pub .lnk a:hover{border-color:var(--acc);color:var(--acc);}

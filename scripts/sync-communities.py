@@ -65,7 +65,7 @@ def main():
     mapped = {tag for theme in table for tag in theme["tags"]}
     spare = sorted(used - mapped)
 
-    themes = [{"name": t["name"], "slot": t["slot"],
+    themes = [{"name": t["name"], "short": t.get("short", t["name"]), "slot": t["slot"],
                "tags": [tag for tag in t["tags"] if tag in used]} for t in table]
     themes[-1]["tags"] = sorted(set(themes[-1]["tags"]) | set(spare))
 
