@@ -16,6 +16,10 @@
   --ui:"Avenir Next","Avenir","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
   --mono:"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;
   --grad:linear-gradient(90deg,#A6249D 0%,#C2417A 34%,#E0603F 66%,#FF9A1F 100%);
+  /* Chart series, validated for both surfaces (see scripts/sync-communities.py
+     for the themes they belong to). s0 is the neutral "Other". */
+  --s0:#8e8898; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7;
   --shell:1240px;
   --bar-h:78px;
   --pubnav-h:64px;
@@ -26,6 +30,8 @@ html.dark-mode{
   --mut:#948C9F; --rule:#2A2532; --rule-2:#3C3548; --acc:#FFA45C;
   --link:#7FB2FF;
   --info-bg:#261B12; --info-bd:#43301F; --accent-wash:#2C1E13;
+  --s0:#766f83; --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9;
 }
 
 *,*::before,*::after{box-sizing:border-box;}
@@ -270,12 +276,60 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .pub .vn{font-family:var(--ui);font-size:13.8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-left:2px solid var(--acc);padding-left:9px;}
 .pub .vn b{display:inline-block;color:var(--acc);font-weight:700;background:var(--accent-wash);border:1px solid var(--info-bd);padding:1px 9px;border-radius:100px;margin:0 1px;letter-spacing:.1em;}
 .pub .lnk{display:flex;gap:7px;flex-wrap:wrap;}
+/* Which research theme a paper sits in -- the dot is the colour the chart
+   above uses for that theme. */
+.pub-tags{display:flex;gap:12px;flex-wrap:wrap;}
+.pub-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--ui);
+  font-size:13.2px;color:var(--mut);white-space:nowrap;}
+.pub-tag::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--c);}
 .pub .lnk a{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:2px 7px;
   border:1px solid var(--rule);border-radius:3px;color:var(--mut);}
 .pub .lnk a:hover{border-color:var(--acc);color:var(--acc);}
 .more{margin-top:24px;font-family:var(--ui);font-size:16.2px;color:var(--mut);}
 .more a{border-bottom:1px solid var(--acc);color:var(--ink-2);}
 .more a:hover{color:var(--acc);}
+
+/*************************************************
+ *  Research themes -- the chart above the list
+ *  Bars and key chips take their colour from --c, set inline to a series
+ *  token, so the off and hover states are plain CSS and dark mode is free.
+ *************************************************/
+.comm{margin:0 0 30px;}
+.comm-hd h3{font-family:var(--ui);font-size:19.8px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--mut);font-weight:600;margin:0 0 10px;}
+.comm-hd p{font-family:var(--ui);font-size:16.2px;color:var(--mut);margin:0;max-width:74ch;line-height:1.42;}
+.comm-plot{position:relative;margin:16px 0 14px;}
+.comm-svg{display:block;width:100%;height:auto;}
+.comm-grid{stroke:var(--rule-2);}
+.comm-ax{font-family:var(--mono);font-size:12px;fill:var(--mut);}
+.comm-ax-y{text-anchor:end;}
+.comm-ax-x{text-anchor:middle;}
+.comm-bar{fill:var(--c);cursor:pointer;}
+.comm-bar.off{fill:var(--rule-2);}
+.comm-svg.is-hover .comm-bar:not(.on){fill:var(--rule-2);}
+.comm-svg.is-hover .comm-bar.on{fill:var(--c);}
+.comm-tip{position:absolute;z-index:5;pointer-events:none;white-space:nowrap;
+  background:var(--ink);color:var(--paper);font-family:var(--ui);font-size:13.8px;
+  padding:5px 10px;border-radius:4px;}
+.comm-key{display:flex;flex-wrap:wrap;gap:2px 20px;}
+.comm-row{display:inline-flex;align-items:baseline;gap:9px;padding:5px 7px;
+  border:0;border-radius:3px;background:none;text-align:left;cursor:pointer;
+  transition:opacity .15s,background .15s;}
+.comm-row:hover{background:var(--paper-2);}
+.comm-key.is-hover .comm-row:not(.on){opacity:.45;}
+.comm-chip{flex:0 0 auto;width:12px;height:12px;border-radius:3px;background:var(--c);
+  transform:translateY(1px);}
+.comm-row.off .comm-chip{background:var(--rule-2);}
+.comm-nm{font-family:var(--ui);font-size:16.2px;color:var(--ink);}
+.comm-row.off .comm-nm{color:var(--mut);}
+.comm-num{font-family:var(--mono);font-size:12.6px;color:var(--mut);font-variant-numeric:tabular-nums;}
+@media (max-width:560px){
+  .comm-key{gap:0 14px;}
+  .comm-hd p{font-size:15px;}
+}
+/* Filtering hides list rows, the year blocks left empty, and their jump links.
+   Both carry a display rule of their own, so [hidden] needs saying again. */
+.yblk[hidden],.pub[hidden],.pubnav a[hidden]{display:none;}
 
 /*************************************************
  *  Courses & openings
