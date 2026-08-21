@@ -11,11 +11,14 @@
       <div>
         <h2>{{ .Site.Params.publications.title | default "Publications" }}</h2>
       </div>
+      {{ with $pubs }}<div class="cnt" data-comm-count>{{ len . }} papers</div>{{ end }}
     </div>
 
     {{ if not $pubs }}
       <p class="text-muted">Publications are temporarily unavailable.</p>
     {{ else }}
+
+    {{ partial "index/publication_communities.html" . }}
 
     <div class="pubnav">
       {{ range $years }}
@@ -30,6 +33,15 @@
       <div>
         {{ range $group }}
         {{- $venue := .publicationShort | default .publication -}}
+        {{- /* Community tags for the chart filter above. */ -}}
+        {{- $key := replaceRE `[^a-z0-9]` "" (lower .title) -}}
+        {{- $tags := index site.Data.communities.tags $key | default slice -}}
+        {{- $pubThemes := slice -}}
+        {{- range $theme := site.Data.communities.themes -}}
+          {{- $hit := false -}}
+          {{- range $tag := $tags }}{{ if in $theme.tags $tag }}{{ $hit = true }}{{ end }}{{ end -}}
+          {{- if $hit }}{{ $pubThemes = $pubThemes | append $theme }}{{ end -}}
+        {{- end -}}
         {{- /* "(Poster)" is the default outcome, so it carries no information --
                drop it and let Oral / Spotlight be the things that stand out.
                Matched literally so "NeurIPS D&B (Spotlight)" keeps its parens. */ -}}
@@ -38,7 +50,7 @@
         {{- range .links }}{{ if and (not $primary) (in (lower .name) "arxiv") }}{{ $primary = .url }}{{ end }}{{ end -}}
         {{- if not $primary }}{{ range .links }}{{ if and (not $primary) (in (lower .name) "pdf") }}{{ $primary = .url }}{{ end }}{{ end }}{{ end -}}
         {{- if not $primary }}{{ with index (.links | default slice) 0 }}{{ $primary = .url }}{{ end }}{{ end -}}
-        <div class="pub" itemscope itemtype="http://schema.org/ScholarlyArticle">
+        <div class="pub" data-comm="{{ delimit $tags " " }}" itemscope itemtype="http://schema.org/ScholarlyArticle">
           <p class="t" itemprop="name">
             {{ if $primary }}<a href="{{ $primary }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
           </p>
@@ -68,6 +80,11 @@
             {{ with .links }}
             <span class="lnk">
               {{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ end }}
+            </span>
+            {{ end }}
+            {{ with $pubThemes }}
+            <span class="pub-tags">
+              {{ range . }}<span class="pub-tag" style="--c:var(--s{{ .slot }})">{{ .short }}</span>{{ end }}
             </span>
             {{ end }}
           </div>

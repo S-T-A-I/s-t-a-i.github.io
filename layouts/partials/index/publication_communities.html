@@ -1,0 +1,25 @@
+{{- /*
+  Papers per year, split by research theme. Tags come from
+  data/communities.json, keyed on a normalised title, and are folded into
+  themes there -- see scripts/sync-communities.py. The chart itself is drawn by js/communities.js;
+  without JavaScript the block renders nothing and the list below stands alone.
+*/ -}}
+{{- $data := site.Data.communities -}}
+{{- $pubs := partialCached "data/publications.html" . "publications" -}}
+{{- if and $data $pubs -}}
+{{- $items := slice -}}
+{{- range $pubs -}}
+  {{- $key := replaceRE `[^a-z0-9]` "" (lower .title) -}}
+  {{- $items = $items | append (dict "year" .year "tags" (index $data.tags $key | default slice)) -}}
+{{- end -}}
+<div class="comm" hidden>
+  <div class="comm-hd">
+    <h3>Research themes</h3>
+    <p>Papers per year. A paper spanning several themes is split across them, so counts are fractional. Pick a theme to filter the list, and pick again to widen or clear it.</p>
+  </div>
+  <div class="comm-plot"><div class="comm-tip" hidden></div></div>
+  <div class="comm-key"></div>
+</div>
+<script src="{{ "js/" | absURL }}communities.js" defer></script>
+<script type="application/json" id="comm-data">{{ dict "themes" $data.themes "publications" $items | jsonify | safeJS }}</script>
+{{- end -}}
