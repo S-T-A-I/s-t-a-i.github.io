@@ -10,7 +10,7 @@
 {{- $ogimg = absURL (cond (hasPrefix . "img/") . (printf "img/%s" .)) }}{{ $ogdefault = false }}
 {{- end -}}
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Locale | default "en-US" }}">
+<html lang="{{ .Site.LanguageCode | default "en-US" }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
