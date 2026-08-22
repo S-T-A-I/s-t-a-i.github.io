@@ -5,7 +5,7 @@ university = "KAIST AI"
 image = "irai-2026.png"
 sort_position = 5
 subtitle = "How AI systems reach the knowledge they do not hold"
-description = "Model weights are a lossy, frozen compression of the world, so every serious AI system needs a way to reach the rest of it. This course teaches that path, from the inverted index of the 1970s to the research agents of 2026. The framing is information retrieval for AI, not AI for information retrieval. Classical retrieval is the toolkit rather than the subject, and BM25 earns its place not as history but because dense retrievers still lose to it out of domain. Monday is a lecture on the method. Wednesday is a structured discussion of a research paper that uses it. Alongside both, the class builds its own document collection, writes its own queries, judges relevance by hand, and measures a retrieval system against the judgements it produced itself."
+description = "Model weights are a lossy, frozen compression of the world, so every serious AI system needs a way to reach the rest of it. This course teaches that path, from the inverted index of the 1970s to the research agents of 2026. Half the assigned papers were published in the last eighteen months, and one of them has no venue yet. The framing is information retrieval for AI, not AI for information retrieval. Classical retrieval is the toolkit rather than the subject, and BM25 earns its place not as history but because dense retrievers still lose to it out of domain. Monday is a lecture on the method. Wednesday is a structured discussion of a research paper that uses it. Alongside both, the class builds its own document collection, writes its own queries, judges relevance by hand, and measures a retrieval system against the judgements it produced itself."
 +++
 
 **In one line.** Mondays are lectures, Wednesdays are structured paper discussions in fixed groups of five, and the only weekly deadline is a half-page written review due Tuesday at 18:00. Four hours a week, two of them contact time. No exam.
@@ -45,12 +45,16 @@ Objectives 4, 5 and 7 matter most. Few students will ever build a search engine.
 | Regime | Mechanism | Example |
 |---|---|---|
 | Parametric | All knowledge in weights, fixed compute | A dense LLM |
-| Conditionally parametric | A router selects parameter blocks | Mixture of experts, memory layers |
+| Conditionally parametric, by compute | A router selects which parameters to run | Mixture of experts |
+| Conditionally parametric, by lookup | A hash selects which parameters to read | Product-key memory, memory layers, Engram |
+| Written at inference | The memory is learned while the model runs | Titans, cartridges, sparse memory finetuning |
 | Semi-parametric | An index wired into the forward pass | kNN-LM, RETRO, memory networks |
 | Non-parametric | A corpus placed into the prompt | Retrieval-augmented generation |
 | Open world | A policy decides what to fetch | Search agents, deep research |
 
 The course opens with attention itself as retrieval over the context, so the whole spectrum reads as one idea at different scales.
+
+The middle three rows are where the figure changed in 2026. Routing computation and routing a lookup used to be one row, until a result that year found them complementary rather than alternative, with an optimum between them. The row above them did not exist at all.
 
 {{< /details >}}
 
@@ -88,8 +92,13 @@ Students are divided into fixed discussion groups of five, held all semester. Ea
 | Adversary | Attack the experiments, find the missing baseline | A paper that contradicts the assigned one |
 | Historian | What came before, and what this paper quietly discards | The predecessor it builds on |
 | Replicator | Check that the numbers support the claims, and measure something | A reproduction or a rerun |
+| Referee | On a paper too new to have been reproduced: would you accept it? | The paper's public review thread, or none |
 | Extender | Propose the next paper and say what it would test | The successor, chosen by the extenders themselves |
 | Applier | Would you deploy this, at what index size, latency and cost | A systems or deployment paper |
+
+**There are five roles, not six.** On the four assigned papers published in the last eighteen months, the Replicator becomes the Referee, because no reproduction study exists for a paper that new. The role keeps the same question - should this be believed - and changes the evidence. Where the paper has a public review thread, you read what four reviewers decided and compare it with what your group decided. Where it does not, you write the first review yourself.
+
+Sessions 13 and 27 have threads. Session 21 does not, so the Referee reads the reviews of the *contradicting* paper as a worked example and then reviews the anchor cold. Session 25 has neither, and that Referee writes a review with no model to follow at all.
 
 Note-taking is a duty rather than a role. Rotate it inside the group.
 
@@ -110,6 +119,7 @@ One Wednesday therefore puts six papers into circulation: the assigned paper, re
 | Adversary | "What are the three weakest points in this paper's experimental evidence?" |
 | Historian | "What prior work does this build on, and what does it discard from that work?" |
 | Replicator | "Do the numbers in the results tables support the claim in the abstract? What would I need to rerun this?" |
+| Referee | "Write the four weakest points a conference reviewer would raise about this paper, and give it a score out of 10 with reasons." |
 | Extender | "What experiment should come next, and what would it settle?" |
 | Applier | "What would it cost to deploy this - index size, latency, serving?" |
 
@@ -176,32 +186,32 @@ Sessions run 09:00-10:00, except the three project workshops, which run 09:00-10
 | 2 | Wed 02 Sep | The inverted index. Tokenisation, postings, compression. TF-IDF and the vector space model | - |
 | 3 | Mon 07 Sep | BM25 and probabilistic ranking. Query likelihood, smoothing, relevance feedback | - |
 | 4 | Wed 09 Sep | **Discussion.** Critically Examining the "Neural Hype" | Review, Tue 18:00 |
-| 5 | Mon 14 Sep | Evaluation. MAP, MRR, nDCG. Pooling and its biases. TREC, BEIR, online evaluation | - |
+| 5 | Mon 14 Sep | Evaluation, and how benchmarks lie. MAP, MRR, nDCG. Pooling and its biases. TREC, BEIR, and the same failure recurring in 2026 | - |
 | 6 | Wed 16 Sep | **Discussion.** BEIR. Launch of the class collection and judging protocol | Review, Tue 18:00 |
 | - | 21-23 Sep | No class - Chuseok week | - |
-| 7 | Mon 28 Sep | Web search anatomy. Crawling, freshness, indexing at scale, PageRank, HITS | - |
-| 8 | Wed 30 Sep | **Discussion.** The Anatomy of a Large-Scale Hypertextual Web Search Engine | Review, Tue 18:00 |
+| 7 | Mon 28 Sep | Web search, and what is wrong with it today. Crawling, indexing at scale, PageRank, HITS. The modern commercial stack, who owns an index, eleven weaknesses | Three-engine query comparison, before class |
+| 8 | Wed 30 Sep | Bi-encoders, and one space for both jobs. SentenceBERT, DPR, hard negatives, distillation. LLM embedders. Generating and retrieving in a single pass | - |
 | - | Mon 05 Oct | No class - substitute holiday | - |
 | 9 | Wed 07 Oct | **Project workshop 1, 90 min.** Building a test collection. Protocol design, live judging, disagreement analysis. Project kickoff | Two queries per student, in session |
-| 10 | Mon 12 Oct | Commercial search today, and what is wrong with it. The modern stack, who owns an index, eleven weaknesses | Three-engine query comparison, before class |
-| 11 | Wed 14 Oct | Bi-encoders. SentenceBERT, DPR. Contrastive objectives, hard negatives, distillation | - |
-| 12 | Mon 19 Oct | Late interaction and learned sparse retrieval. ColBERT, SPLADE. Hybrid retrieval and fusion. When semantic search hurts | - |
-| 13 | Wed 21 Oct | **Discussion.** ColBERT | Review, Tue 18:00 |
+| 10 | Mon 12 Oct | Late interaction, and multi-vector made servable. ColBERT, SPLADE, hybrid retrieval and fusion. MUVERA, CRISP, ColPali | - |
+| 11 | Wed 14 Oct | **Discussion.** ColBERT | Review, Tue 18:00 |
+| 12 | Mon 19 Oct | Retrieval that needs reasoning. Reasoning-intensive queries, synthetic training data, rerankers that reason | - |
+| 13 | Wed 21 Oct | **Discussion.** BRIGHT | Review, Tue 18:00 |
 | 14 | Mon 26 Oct | Retrieval uncertainty. Probabilistic embeddings. Ambiguity as underspecification. Cross-modal retrieval | - |
 | 15 | Wed 28 Oct | **Discussion.** Probabilistic Embeddings for Cross-Modal Retrieval | Review, Tue 18:00 |
 | 16 | Mon 02 Nov | Approximate nearest neighbour search. HNSW, IVF-PQ, product quantisation. Vector databases. The recall-latency curve | - |
-| 17 | Wed 04 Nov | Attention as retrieval. Memory networks, Neural Turing Machines, DNC. Product-key memory layers | - |
-| 18 | Mon 09 Nov | Mixture of experts, and where routing resembles retrieval. Where the analogy holds and where it breaks | - |
+| 17 | Wed 04 Nov | Attention as retrieval. Retrieval heads, attention as associative memory, and the memory-network lineage | - |
+| 18 | Mon 09 Nov | Memory as an architectural axis. Product-key memory, memory layers at scale, mixture of experts, and Engram's second axis of sparsity | - |
 | 19 | Wed 11 Nov | **Project workshop 2, 90 min.** Complete the judging pass, analyse judge agreement, implement and measure your group's modification | Relevance judgements complete |
-| 20 | Mon 16 Nov | Language models with an index attached. kNN-LM, RETRO. Where the gradient stops. Long context versus retrieval | - |
-| 21 | Wed 18 Nov | **Discussion.** End-To-End Memory Networks | Review, Tue 18:00 |
-| 22 | Mon 23 Nov | Retrieval-augmented generation. Pipelines and failure modes. Chunking, reranking. Corpus poisoning and prompt injection | - |
-| 23 | Wed 25 Nov | Multi-turn retrieval. Query rewriting, clarifying questions. Answer engines and citation faithfulness | - |
-| 24 | Mon 30 Nov | Agentic retrieval and deep research. IRCoT, Self-RAG, ReAct. Search-augmented reinforcement learning. Report synthesis | - |
-| 25 | Wed 02 Dec | **Discussion.** Nearest Neighbor Language Models | Review, Tue 18:00 |
-| 26 | Mon 07 Dec | AI for science. Literature-based discovery. Citation recommendation. Hypothesis generation. Novelty versus correctness | - |
-| 27 | Wed 09 Dec | **Discussion.** OpenScholar | Review, Tue 18:00 |
-| 28 | Mon 14 Dec | Privacy, personalisation and unlearning. Adversarial retrieval and SEO. Why an index can forget and weights cannot | - |
+| 20 | Mon 16 Nov | Memory learned at test time. Titans, nested learning, cartridges. Weights that can be edited without forgetting | - |
+| 21 | Wed 18 Nov | **Discussion.** Engram | Review, Tue 18:00 |
+| 22 | Mon 23 Nov | Language models with an index attached. kNN-LM, RETRO. Where the gradient stops. Long context versus retrieval | - |
+| 23 | Wed 25 Nov | Retrieval-augmented generation. Pipelines and failure modes. Chunking, reranking. Graph and memory RAG. Corpus poisoning and prompt injection | - |
+| 24 | Mon 30 Nov | Agentic retrieval and deep research. IRCoT, Self-RAG, ReAct. Search-augmented reinforcement learning. Report synthesis, citation faithfulness, literature synthesis | - |
+| 25 | Wed 02 Dec | **Discussion.** Search-R1 | Review, Tue 18:00 |
+| 26 | Mon 07 Dec | Agent memory and context engineering. Compaction, isolated contexts, long-term memory. What production systems do, and whether anyone can measure it | - |
+| 27 | Wed 09 Dec | **Discussion.** Evaluating Memory in LLM Agents | Review, Tue 18:00 |
+| 28 | Mon 14 Dec | Privacy, personalisation and unlearning. Adversarial retrieval and SEO. Why an index can forget, and what 2025 did to that argument | - |
 | 29 | Wed 16 Dec | **Project workshop 3, 90 min.** Group presentations, review of the class record of model failures, and the closing answer to session 1 | Write-up due 09 Dec, 23:59 |
 
 Wednesday sessions are not recorded, so that criticism stays candid. Monday lectures are recorded.
@@ -375,18 +385,25 @@ The instructor prepares lecture material with model assistance and adds the mode
 |---|---|---|
 | 1 | 4 (9 Sep) | Yang, Lu & Lin (2019), *Critically Examining the "Neural Hype"* (SIGIR) |
 | 2 | 6 (16 Sep) | Thakur et al. (2021), *BEIR* (NeurIPS Datasets and Benchmarks) |
-| 3 | 8 (30 Sep) | Brin & Page (1998), *The Anatomy of a Large-Scale Hypertextual Web Search Engine* (WWW) |
-| 4 | 13 (21 Oct) | Khattab & Zaharia (2020), *ColBERT* (SIGIR) |
+| 3 | 11 (14 Oct) | Khattab & Zaharia (2020), *ColBERT* (SIGIR) |
+| 4 | 13 (21 Oct) | Su et al. (2025), *BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval* (ICLR) |
 | 5 | 15 (28 Oct) | Chun et al. (2021), *Probabilistic Embeddings for Cross-Modal Retrieval* (CVPR) |
-| 6 | 21 (18 Nov) | Sukhbaatar et al. (2015), *End-To-End Memory Networks* (NeurIPS) |
-| 7 | 25 (2 Dec) | Khandelwal et al. (2020), *Generalization through Memorization: Nearest Neighbor Language Models* (ICLR) |
-| 8 | 27 (9 Dec) | Asai et al. (2024), *OpenScholar* |
+| 6 | 21 (18 Nov) | Cheng et al. (2026), *Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models* - the Engram paper |
+| 7 | 25 (2 Dec) | Jin et al. (2025), *Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning* (COLM) |
+| 8 | 27 (9 Dec) | Hu, Wang & McAuley (2026), *Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions* (ICLR) |
 
-Three notes on the choices. Session 4 opens with a paper whose whole argument is that other people's baselines were weak, which sets the tone. Session 15 is the instructor's own paper, and that is deliberate - six students attacking it in front of the author settles the question of whether criticism is welcome. Sessions 21 and 25 pair a dead idea with the successor that beat it, given to the adversary, so the argument happens inside the groups.
+**Four of the eight were published in the last eighteen months, and that is the point.** An earlier draft of this course required every assigned paper to be two to six years old, so that a real contradicting paper, a real predecessor and a reproduction all existed. That rule produces a tidy syllabus about a field that has moved on. It is gone. Sessions 21 and 27 assign work whose lineage is still being written, and part of the exercise is judging a paper without the safety of a literature that has already judged it.
 
-{{< details "Supporting papers for the first four discussion sessions" >}}
+Four notes on the choices.
 
-The rest are published two weeks before each session. Extenders choose their own.
+- **Session 4** opens with a paper whose whole argument is that other people's baselines were weak. That sets the tone for eight sessions.
+- **Sessions 6 and 13** are the same finding five years apart. BEIR reports that BM25 beats dense retrievers out of domain; BRIGHT reports that they lose again once the query needs reasoning. Nobody is told in advance that these are related.
+- **Session 15** is the instructor's own paper, deliberately. Six students attacking it in front of the author settles the question of whether criticism is welcome.
+- **Session 27** closes the loop to session 4 with 2026 material. A benchmark finds that no memory method masters all four competencies it defines; the adversary's paper then finds that swapping only the embedding model flips which method wins.
+
+{{< details "Supporting papers, where they are settled" >}}
+
+The rest are published two weeks before each session. Extenders choose their own. Eight slots are still open. The Referee role closed four of them: a paper published in January 2026 has no reproduction study, but it usually has reviewers, and their thread is a better document than an invented rerun.
 
 | Session | Role | Paper |
 |---|---|---|
@@ -398,14 +415,24 @@ The rest are published two weeks before each session. Extenders choose their own
 | 6 | Historian | Nguyen et al. (2016), *MS MARCO* |
 | 6 | Replicator | Kamalloo, Thakur, Lin et al. (2024), *Resources for Brewing BEIR* |
 | 6 | Applier | Lin et al. (2021), *Pyserini* |
-| 8 | Adversary | Kleinberg (1999), *HITS* |
-| 8 | Historian | Garfield (1955), *Citation Indexes for Science* |
-| 8 | Replicator | Langville & Meyer (2004), *Deeper Inside PageRank* |
-| 8 | Applier | Dean & Ghemawat (2004), *MapReduce* |
-| 13 | Adversary | Hofstätter et al. (2021), *Balanced Topic Aware Sampling* (TAS-B) |
-| 13 | Historian | Karpukhin et al. (2020), *DPR* |
-| 13 | Replicator | Santhanam et al. (2022), *ColBERTv2* (NAACL) |
-| 13 | Applier | Santhanam et al. (2022), *PLAID* (CIKM) |
+| 11 | Adversary | Hofstätter et al. (2021), *Balanced Topic Aware Sampling* (TAS-B) |
+| 11 | Historian | Karpukhin et al. (2020), *DPR* |
+| 11 | Replicator | Santhanam et al. (2022), *ColBERTv2* (NAACL) |
+| 11 | Applier | Santhanam et al. (2022), *PLAID* (CIKM) |
+| 13 | Adversary | Shao et al. (2025), *ReasonIR: Training Retrievers for Reasoning Tasks* |
+| 13 | Referee | The paper's ICLR 2025 review thread, on OpenReview |
+| 13 | Applier | Zhang et al. (2025), *Qwen3 Embedding* |
+| 21 | Adversary | Behrouz, Zhong & Mirrokni (2025), *Titans: Learning to Memorize at Test Time* (NeurIPS) |
+| 21 | Historian | Sukhbaatar et al. (2015), *End-To-End Memory Networks* (NeurIPS) |
+| 21 | Referee | Titans' NeurIPS 2025 review thread, as a worked example. Engram itself has no thread, so you write the first review |
+| 21 | Applier | Berges et al. (2024), *Memory Layers at Scale* |
+| 25 | Adversary | Chen et al. (2025), *BrowseComp-Plus* |
+| 25 | Historian | Trivedi et al. (2023), *IRCoT* (ACL) |
+| 25 | Referee | No thread exists for this paper. You write the first review, from the reviewer guidelines alone |
+| 27 | Adversary | Wang (2026), *MemDelta: Controlled Baselines and Hidden Confounds in Agent Memory Evaluation* |
+| 27 | Referee | The paper's ICLR 2026 review thread, on OpenReview |
+
+Everyone holding the Referee role also reads the NeurIPS reviewer guidelines. Two pages, and it is what the role is being asked to do.
 
 {{< /details >}}
 
@@ -423,19 +450,29 @@ Session 9 will produce low agreement between judges, and these explain why that 
 
 {{< details "Further reading by topic" >}}
 
-**Where knowledge sits.** Weston, Chopra & Bordes (2014) *Memory Networks*; Graves et al. (2014) *Neural Turing Machines*; Graves et al. (2016) *DNC* (Nature); Lample et al. (2019) *Large Memory Layers with Product Keys*; Shazeer et al. (2017) *Outrageously Large Neural Networks*; Fedus, Zoph & Shazeer (2022) *Switch Transformers* (JMLR); Jiang et al. (2024) *Mixtral of Experts*; He (2024) *Mixture of a Million Experts*; Berges et al. (2024) *Memory Layers at Scale*.
+**Where knowledge sits, the classical lineage.** Weston, Chopra & Bordes (2014) *Memory Networks*; Graves et al. (2014) *Neural Turing Machines*; Graves et al. (2016) *DNC* (Nature); Lample et al. (2019) *Large Memory Layers with Product Keys*; Shazeer et al. (2017) *Outrageously Large Neural Networks*; Fedus, Zoph & Shazeer (2022) *Switch Transformers* (JMLR); Jiang et al. (2024) *Mixtral of Experts*; He (2024) *Mixture of a Million Experts*.
+
+**Where knowledge sits, 2025 and 2026.** Berges et al. (2024) *Memory Layers at Scale*; Cheng et al. (2026) *Conditional Memory via Scalable Lookup* - the Engram paper, and session 21's anchor; Behrouz, Zhong & Mirrokni (2025) *Titans* (NeurIPS); Behrouz et al. (2025) *Nested Learning* (NeurIPS); Eyuboglu et al. (2025) *Cartridges*; Lin et al. (2025) *Continual Learning via Sparse Memory Finetuning*, which is the counter-example to this course's own argument that weights cannot forget.
+
+**Attention as retrieval.** Wu et al. (2024) *Retrieval Head Mechanistically Explains Long-Context Factuality*, the empirical version of an analogy this course used to assert; Zhang & Bottou (2025) *Memory Mosaics at scale* (NeurIPS).
 
 **Long context versus retrieval.** Liu et al. (2023) *Lost in the Middle* (TACL); Li et al. (2024) *Retrieval Augmented Generation or Long-Context LLMs?* (EMNLP).
+
+**Dense retrieval, and one space for two jobs.** Reimers & Gurevych (2019) *Sentence-BERT* (EMNLP); Karpukhin et al. (2020) *DPR* (EMNLP); Ni et al. (2022) *Large Dual Encoders Are Generalizable Retrievers* (EMNLP); Muennighoff et al. (2024) *Generative Representational Instruction Tuning*; Zhang et al. (2024) *OneGen* (EMNLP Findings); Lee et al. (2025) *Gemini Embedding*; Zhang et al. (2025) *Qwen3 Embedding*.
+
+**Retrieval that needs reasoning.** Su et al. (2025) *BRIGHT* (ICLR), session 13's anchor; Shao et al. (2025) *ReasonIR*.
+
+**Multi-vector retrieval, and making it servable.** Khattab & Zaharia (2020) *ColBERT* (SIGIR); Santhanam et al. (2022) *ColBERTv2* (NAACL) and *PLAID* (CIKM); Dhulipala et al. (2024) *MUVERA* (NeurIPS); Veneroso et al. (2025) *CRISP*; Faysse et al. (2025) *ColPali* (ICLR).
 
 **Nearest neighbour search and systems.** Malkov & Yashunin (2018) *HNSW* (TPAMI); Jégou, Douze & Schmid (2011) *Product Quantization*; Johnson, Douze & Jégou (2019) *Billion-scale similarity search with GPUs*.
 
 **Learning to rank and click bias.** Burges (2010) *From RankNet to LambdaRank to LambdaMART*; Joachims et al. (2017) *Unbiased Learning-to-Rank with Biased Feedback* (WSDM); Craswell et al. (2008) *An Experimental Comparison of Click Position-Bias Models* (WSDM).
 
-**Retrieval-augmented generation.** Lewis et al. (2020) *RAG*; Borgeaud et al. (2022) *RETRO*; GraphRAG (2024); Search-R1 (2025); Asai et al. (2023) *Self-RAG*; Trivedi et al. (2023) *IRCoT*; Yao et al. (2023) *ReAct*.
+**Retrieval-augmented generation.** Lewis et al. (2020) *RAG*; Borgeaud et al. (2022) *RETRO*; Khandelwal et al. (2020) *kNN-LM* (ICLR); GraphRAG (2024); Gutiérrez et al. (2025) *From RAG to Memory* (ICML), which is HippoRAG 2.
 
-**Multi-turn retrieval.** Radlinski & Craswell (2017) *A Theoretical Framework for Conversational Search* (CHIIR); Elgohary, Peskov & Boyd-Graber (2019) *CANARD* (EMNLP); Anantha et al. (2021) *QReCC* (NAACL); the TREC CAsT overviews; Aliannejadi et al. (2019) *Asking Clarifying Questions* (SIGIR); Zamani et al. (2023) *Conversational Information Seeking*.
+**Agentic retrieval and deep research.** Yao et al. (2023) *ReAct*; Trivedi et al. (2023) *IRCoT* (ACL); Asai et al. (2023) *Self-RAG*; Jin et al. (2025) *Search-R1* (COLM), session 25's anchor; Chen et al. (2025) *BrowseComp-Plus*, which re-evaluates that literature on a fixed corpus and finds much smaller numbers; Liu, Zhang & Liang (2023) *Evaluating Verifiability in Generative Search Engines* (EMNLP Findings), on whether citations support the claims attached to them.
 
-**Answer engines.** Liu, Zhang & Liang (2023) *Evaluating Verifiability in Generative Search Engines* (EMNLP Findings). Measures whether citations actually support the claims attached to them, and finds they often do not.
+**Agent memory, and whether it can be measured.** Hu, Wang & McAuley (2026) *Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions* (ICLR), session 27's anchor; Wang (2026) *MemDelta*, on hidden confounds in that evaluation; Anthropic, *Effective context engineering for AI agents*, read critically as a primary source.
 
 **Semantic search in practice.** Cormack, Clarke & Buettcher (2009) *Reciprocal Rank Fusion* (SIGIR); Formal et al. (2021) *SPLADE*; Nogueira et al., *doc2query*.
 
@@ -443,7 +480,7 @@ Session 9 will produce low agreement between judges, and these explain why that 
 
 **Commercial search.** Shah & Bender (2022) *Situating Search* (CHIIR), the strongest case against replacing search with language models, and worth reading precisely because this course argues the other way; Google's *How Search Works*, read critically as a primary source.
 
-**Scholarly search and AI for science.** Lo et al. (2020) *S2ORC* (ACL); Swanson (1986) on literature-based discovery; Wang et al. (2024) *SciMON* (ACL); Skarlinski et al. (2024) *PaperQA2*.
+**Scholarly search and literature synthesis.** Lo et al. (2020) *S2ORC* (ACL); Swanson (1986) on literature-based discovery; Wang et al. (2024) *SciMON* (ACL); Asai et al. (2024) *OpenScholar*; Skarlinski et al. (2024) *PaperQA2*. This block lost its own lecture in the 2026 revision and is now read alongside session 24, because deep research and literature synthesis are the same problem.
 
 {{< /details >}}
 
