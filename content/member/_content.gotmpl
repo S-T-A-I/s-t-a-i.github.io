@@ -8,7 +8,7 @@
     {{ errorf "Failed to fetch members API %s: %s" $url . }}
   {{ else with .Value }}
     {{ $payload := . | transform.Unmarshal }}
-    {{ range $payload.members }}
+    {{ range where $payload.members "isCollaborator" "!=" true }}
       {{ if .handle }}
         {{ $content := dict "mediaType" "text/markdown" "value" (or .bio "") }}
         {{ $params := dict

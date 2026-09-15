@@ -13,7 +13,7 @@
   {{- else -}}
     {{- with $t.Value -}}
       {{- $j := . | transform.Unmarshal -}}
-      {{- with $j.members }}{{ $out = . }}{{ end -}}
+      {{- with $j.members }}{{ $out = where . "isCollaborator" "!=" true }}{{ end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

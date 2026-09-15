@@ -69,3 +69,13 @@
     {{ end }}
   </div>
 </section>
+
+<section class="blk" id="collaborators" data-collaborators-api="{{ .Site.Params.members_api_url }}">
+  <div class="shell">
+    <div class="hd"><h2>Collaborators</h2></div>
+    <p data-collaborator-status role="status">Loading collaborators...</p>
+    <div class="people" data-collaborator-list></div>
+    <noscript><p>Enable JavaScript to see collaborators who currently share a public profile.</p></noscript>
+  </div>
+</section>
+<script src="{{ "js/collaborators.js" | absURL }}" defer></script>
