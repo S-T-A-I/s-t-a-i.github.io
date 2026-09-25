@@ -26,6 +26,9 @@ jobs:
         with:
           hugo-version: 'latest'
 
+      - name: Test publication display
+        run: python3 tests/publications_test.py
+
       - name: Build
         run: hugo --minify
 

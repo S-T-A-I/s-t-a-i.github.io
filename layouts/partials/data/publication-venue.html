@@ -1,0 +1,38 @@
+{{- /* Pick the strongest recorded venue. Submission names are not acceptances. */ -}}
+{{- $label := "" -}}
+{{- $rank := 5 -}}
+{{- $full := .publication | default "" -}}
+{{- $short := .publicationShort | default "" -}}
+{{- if findRE `(?i)\b(submission|submitted|under review)\b` $full }}{{ $short = "" }}{{ end -}}
+{{- $candidates := slice (dict "label" $short "workshop" (gt (len (findRE `(?i)\bworkshop\b` $full)) 0)) (dict "label" $full) -}}
+{{- with .workshop }}{{ $candidates = $candidates | append (dict "label" . "workshop" true) }}{{ end -}}
+{{- range .links -}}
+  {{- if findRE `(?i)^https?://(?:www\.)?arxiv\.org/` .url -}}
+    {{- $candidates = $candidates | append (dict "label" "arXiv") -}}
+  {{- end -}}
+{{- end -}}
+{{- range $candidates -}}
+  {{- $value := trim .label " " -}}
+  {{- if and $value (not (findRE `(?i)\b(submission|submitted|under review)\b` $value)) -}}
+    {{- $kind := 4 -}}
+    {{- if findRE `(?i)\barxiv\b` $value -}}
+      {{- $kind = 3 -}}
+    {{- else if or .workshop (findRE `(?i)\bworkshop\b` $value) -}}
+      {{- $kind = 2 -}}
+    {{- else if findRE `(?i)\b(journal|transactions|nature|TMLR|JMLR|TPAMI|IJCV|TIP)\b` $value -}}
+      {{- $kind = 1 -}}
+    {{- else if findRE `(?i)\b(conference|NeurIPS|ICML|ICLR|EMNLP|NAACL|ACL|CoLM|CVPR|ICCV|ECCV|AAAI|AISTATS|UAI)\b` $value -}}
+      {{- $kind = 0 -}}
+    {{- end -}}
+    {{- if lt $kind $rank }}{{ $label = $value }}{{ $rank = $kind }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $label = trim (replaceRE `(?i)\s*\(?\bposter\b\)?` "" $label) " " -}}
+{{- $group := lower (replaceRE `(?i)\s*\(?\b(oral|spotlight)\b\)?` "" $label) -}}
+{{- if eq $rank 0 -}}
+  {{- /* Main, Findings, demo and dataset tracks belong to their parent conference. */ -}}
+  {{- range $name, $pattern := dict "NeurIPS" `(?i)neurips|neural information processing systems` "ICML" `(?i)\bICML\b|international conference on machine learning` "ICLR" `(?i)\bICLR\b|international conference on learning representations` "EMNLP" `(?i)\bEMNLP\b|empirical methods in natural language processing` "NAACL" `(?i)\bNAACL\b|north american chapter` "ACL" `(?i)\bACL\b|association for computational linguistics` "CoLM" `(?i)\bCoLM\b|conference on language modeling` "CVPR" `(?i)\bCVPR\b|computer vision and pattern recognition` "ICCV" `(?i)\bICCV\b|international conference on computer vision` "ECCV" `(?i)\bECCV\b|european conference on computer vision` -}}
+    {{- if findRE $pattern $label }}{{ $group = $name }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "label" $label "rank" $rank "group" (printf "%d/%s" $rank $group)) -}}
