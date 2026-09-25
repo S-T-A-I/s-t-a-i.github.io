@@ -73,6 +73,14 @@ hugo new post/yyyy-mm-dd-slug.md
 
 Each archetype seeds the required front matter.
 
+## Publication order and venue labels
+
+Papers are grouped by venue within each year. Main-conference tracks share one group; workshops stay separate. Add a newly accepted conference to the front of its year's list in `data/publication_order.json`. The other groups retain their feed order within the venue categories.
+
+Venue labels use the strongest confirmed record: conference, journal, workshop, arXiv, then other. An arXiv link supplies the fallback when acceptance is not known. Submission and under-review labels do not count as acceptances. Only Oral and Spotlight receive emphasis; Poster is omitted.
+
+The listing reads the central public API at build time. Update that database when a paper is accepted, then rebuild the site. `layouts/partials/data/publication-venue.html` selects labels and `publication-order.html` keeps each venue group together.
+
 ## Deployment
 
 A push to `master` triggers `.github/workflows/gh-pages.yml`, which builds the site with Hugo and publishes `public/` to the `gh-pages` branch. Pull requests trigger a build-only check.

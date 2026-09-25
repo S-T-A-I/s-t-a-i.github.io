@@ -1,0 +1,20 @@
+{{- /* Input is one year's papers. Keep venue groups consecutive, newest accepted batch first. */ -}}
+{{- $papers := slice -}}
+{{- range .papers -}}
+  {{- $venue := partial "data/publication-venue.html" . -}}
+  {{- $papers = $papers | append (merge . (dict "displayVenue" $venue.label "venueRank" $venue.rank "venueGroup" $venue.group)) -}}
+{{- end -}}
+{{- $groups := slice -}}
+{{- range (index site.Data.publication_order .year | default slice) -}}
+  {{- $groups = $groups | append (printf "0/%s" .) -}}
+{{- end -}}
+{{- range $rank := seq 0 5 -}}
+  {{- range where $papers "venueRank" $rank -}}
+    {{- if not (in $groups .venueGroup) }}{{ $groups = $groups | append .venueGroup }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $ordered := slice -}}
+{{- range $groups -}}
+  {{- range where $papers "venueGroup" . }}{{ $ordered = $ordered | append . }}{{ end -}}
+{{- end -}}
+{{- return $ordered -}}

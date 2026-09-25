@@ -27,12 +27,12 @@
     </div>
 
     {{ range $y := $years }}
-    {{ $group := where $pubs "year" $y }}
+    {{ $group := partial "data/publication-order.html" (dict "papers" (where $pubs "year" $y) "year" $y) }}
     <div class="yblk" id="y{{ $y }}">
       <div class="yr">{{ $y }}</div>
       <div>
         {{ range $group }}
-        {{- $venue := .publicationShort | default .publication -}}
+        {{- $venue := .displayVenue -}}
         {{- /* Community tags for the chart filter above. */ -}}
         {{- $key := replaceRE `[^a-z0-9]` "" (lower .title) -}}
         {{- $tags := index site.Data.communities.tags $key | default slice -}}
@@ -42,10 +42,6 @@
           {{- range $tag := $tags }}{{ if in $theme.tags $tag }}{{ $hit = true }}{{ end }}{{ end -}}
           {{- if $hit }}{{ $pubThemes = $pubThemes | append $theme }}{{ end -}}
         {{- end -}}
-        {{- /* "(Poster)" is the default outcome, so it carries no information --
-               drop it and let Oral / Spotlight be the things that stand out.
-               Matched literally so "NeurIPS D&B (Spotlight)" keeps its parens. */ -}}
-        {{- $venue = trim (replaceRE `(?i)\s*\(\s*poster\s*\)` "" $venue) " " -}}
         {{- $primary := "" -}}
         {{- range .links }}{{ if and (not $primary) (in (lower .name) "arxiv") }}{{ $primary = .url }}{{ end }}{{ end -}}
         {{- if not $primary }}{{ range .links }}{{ if and (not $primary) (in (lower .name) "pdf") }}{{ $primary = .url }}{{ end }}{{ end }}{{ end -}}
@@ -66,7 +62,7 @@
               {{- /* Emphasise "Oral"/"Spotlight" wherever they appear in the venue string. */ -}}
               {{- $out := slice -}}
               {{- range (split $venue " ") -}}
-                {{- $bare := lower (trim . "()") -}}
+                {{- $bare := lower (trim . "(),;") -}}
                 {{- if or (eq $bare "oral") (eq $bare "spotlight") -}}
                   {{- $out = $out | append (printf "<b>%s</b>" .) -}}
                 {{- else -}}
@@ -76,7 +72,7 @@
               {{ delimit $out " " | safeHTML }}
             </span>
             {{- /* Only show the award separately when the venue does not already say it. */ -}}
-            {{ with .award }}{{ if not (in (lower $venue) (lower .)) }}<span class="vn"><b>{{ . }}</b></span>{{ end }}{{ end }}
+            {{ with .award }}{{ if and (ne (lower .) "poster") (not (in (lower $venue) (lower .))) }}<span class="vn">{{ if in (slice "oral" "spotlight") (lower .) }}<b>{{ . }}</b>{{ else }}{{ . }}{{ end }}</span>{{ end }}{{ end }}
             {{ with .links }}
             <span class="lnk">
               {{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ end }}
