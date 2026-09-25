@@ -3,8 +3,8 @@ abstract = "Contextual Integrity (CI) defines privacy as governing information f
 date = "2026-05-18T00:00:00+00:00"
 publication_date = "2026-05-18T00:00:00+00:00"
 image = "sangwoo2026selfci.png"
-publication = "arXiv"
-publication_short = "arXiv"
+publication = "NeurIPS (Poster)"
+publication_short = "NeurIPS (Poster)"
 title = "It Takes Two: Complementary Self-Distillation for Contextual Integrity in LLMs"
 url_arxiv = "//arxiv.org/abs/2605.20258"
 url_pdf = "//arxiv.org/pdf/2605.20258"
@@ -16,9 +16,6 @@ url_pdf = "//arxiv.org/pdf/2605.20258"
     name = "Woongyeong Yeo"
     is_member = false
 [[authors]]
-    name = "Seanie Lee"
-    is_member = false
-[[authors]]
     name = "Yumin Choi"
     is_member = false
 [[authors]]
@@ -26,6 +23,9 @@ url_pdf = "//arxiv.org/pdf/2605.20258"
     is_member = false
 [[authors]]
     name = "Kangsan Kim"
+    is_member = false
+[[authors]]
+    name = "Seanie Lee"
     is_member = false
 [[authors]]
     name = "Jinheon Baek"
