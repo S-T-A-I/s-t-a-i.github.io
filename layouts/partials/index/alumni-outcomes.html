@@ -1,0 +1,49 @@
+{{ $pubs := partialCached "data/publications.html" . "publications" }}
+<section class="blk home-alumni" id="alumni-outcomes" aria-labelledby="alumni-outcomes-title">
+  <div class="shell">
+    <p class="home-label">Where our alumni are now</p>
+    <h2 id="alumni-outcomes-title">Graduate from STAI.<br>Stay part of our research community.</h2>
+    <p class="home-section-intro">Our alumni are building careers in industry and academia, and we keep doing research together. These collaborations connect our students with researchers beyond their own lab and country.</p>
+    <div class="home-alumni-grid">
+      {{ range site.Data.alumni_outcomes }}
+      <article>
+        <div class="home-alumni-person">
+          <img src="{{ .portrait }}" alt="" width="76" height="76" loading="lazy" decoding="async">
+          <div>
+            <h3><a href="{{ .profile_url }}">{{ .name }}</a></h3>
+            <p>{{ .former_role }} at STAI</p>
+          </div>
+        </div>
+        <div class="home-alumni-now">
+          <p class="home-label">Now at</p>
+          <h4><a href="{{ .profile_url }}">{{ .organisation }}</a></h4>
+          <p>{{ .role }}<br>{{ .location }}</p>
+        </div>
+        <p class="home-alumni-story">{{ .collaboration }}</p>
+        {{ $url := .paper_url }}
+        {{ $title := .paper_title }}
+        {{ $venue := "" }}
+        {{ range where $pubs "slug" .paper_slug }}
+          {{ $title = .title }}
+          {{ $venue = printf "%s %s" (partial "data/publication-venue.html" .).label .year }}
+        {{ end }}
+        <div class="home-alumni-paper">
+          <p class="home-label">Continuing collaboration</p>
+          <a href="{{ $url }}">{{ $title }} <span aria-hidden="true">↗</span></a>
+          {{ with $venue }}<p>{{ . }}</p>{{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    <div class="home-network" id="international-collaborations">
+      <div>
+        <h3>Build an international research network.</h3>
+        <p>From shared projects with alumni to external co-supervision, research internships and conference connections, we encourage students to grow relationships that last beyond a single paper.</p>
+      </div>
+      <div class="home-actions">
+        <a class="home-text-link" href="/members/#alumni">Meet our alumni <span aria-hidden="true">→</span></a>
+        <a class="home-text-link" href="/contact/">Collaborate with us <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>

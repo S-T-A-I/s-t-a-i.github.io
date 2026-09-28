@@ -73,6 +73,14 @@ hugo new post/yyyy-mm-dd-slug.md
 
 Each archetype seeds the required front matter.
 
+## Landing page recruitment content
+
+The landing page leads with publications, student research, mentorship and alumni careers. The Apply buttons share `params.application_url` in `config.toml`.
+
+Conference counts and Oral/Spotlight highlights use the central publications API and the same venue rules as the publication listing. `data/student_publications.json` selects student examples by publication slug; titles and venues come from the API.
+
+`data/alumni_outcomes.json` holds curated current roles, profile links, continuing collaborations and source URLs. Verify roles against the alumni's own profiles and update `verified_on` when editing a card. A former role at STAI must not be presented as a current position. Linked collaborations should postdate their graduation or departure. Paper titles and venues come from the API when available; the sourced external paper link remains usable if a paper is not in the feed. Add testimonials only when an attributable, approved quote is available.
+
 ## Publication order and venue labels
 
 Papers are grouped by venue within each year. Main-conference tracks share one group; workshops stay separate. Add a newly accepted conference to the front of its year's list in `data/publication_order.json`. The other groups retain their feed order within the venue categories.

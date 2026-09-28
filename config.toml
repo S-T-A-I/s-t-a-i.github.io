@@ -17,6 +17,7 @@ tag = "tags"
 [params]
   # author = "Seong Joon Oh"
   email = "coallaoh@kaist.ac.kr"
+  application_url = "https://internal.stai-lab.org/apply"
   address = "Seoul AI Hub, 108 Taebong-ro, Seocho-gu, Seoul 06764, South Korea<br>서울 AI 허브, 서울특별시 서초구 태봉로 108"
 
   description = "Scalable Trustworthy AI (STAI) is a research group at KAIST AI led by Seong Joon Oh, working on Knowledge-Intelligence Separation: retrieval and RAG, memory-augmented architectures, agentic AI, training data attribution, privacy, and data ownership."
