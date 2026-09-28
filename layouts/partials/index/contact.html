@@ -3,7 +3,7 @@
   <li><b>Phone</b><span><a href="tel:{{ . }}">{{ . }}</a></span></li>
   {{ end }}
   {{ with .Site.Params.email }}
-  <li><b>Email</b><span>Seong Joon Oh &mdash; <a href="mailto:{{ . }}">{{ . }}</a></span></li>
+  <li><b>Email</b><span>Seong Joon Oh &mdash; <a href="mailto:{{ . }}">{{ . }}</a>{{ with $.Site.Params.contact.additional_email }}<br><a href="mailto:{{ . }}">{{ . }}</a>{{ end }}</span></li>
   {{ end }}
   {{ with .Site.Params.address }}
   <li><b>Address</b><span><a href="https://maps.google.com/?q=Seoul+AI+Hub,+108+Taebong-ro,+Seocho-gu,+Seoul,+South+Korea" rel="noopener">{{ . | safeHTML }}</a></span></li>

@@ -68,6 +68,7 @@ tag = "tags"
   [params.contact]
     enable = true
     title = "Contact"
+    additional_email = "coallaoh@gmail.com"
     subtitle = ""
     autolink = false  # Automatically link email and phone?
 
