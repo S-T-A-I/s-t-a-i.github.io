@@ -5,7 +5,7 @@
     <h2 id="alumni-outcomes-title">Graduate from STAI.<br>Stay part of our research community.</h2>
     <p class="home-section-intro">Our alumni are building careers in industry and academia, and we keep doing research together. These collaborations connect our students with researchers beyond their own lab and country.</p>
     <div class="home-alumni-grid">
-      {{ range site.Data.alumni_outcomes }}
+      {{ range where site.Data.alumni_outcomes "featured" true }}
       <article>
         <div class="home-alumni-person">
           <img src="{{ .portrait }}" alt="" width="76" height="76" loading="lazy" decoding="async">

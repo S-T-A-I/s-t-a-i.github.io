@@ -32,7 +32,20 @@
   <p class="nm" itemprop="name">
     {{ if $page }}<a href="{{ $page }}">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}
   </p>
-  {{ with $role }}<p class="rl">{{ . }}</p>{{ end }}
+  {{ with $role }}<p class="rl">{{ if $m.isAlumni }}At STAI: {{ end }}{{ . }}</p>{{ end }}
+  {{ if $m.isAlumni }}
+    {{ $outcome := where site.Data.alumni_outcomes "handle" $m.handle }}
+    <div class="alumni-current">
+      {{ range $outcome }}
+        <p class="alumni-now">Now at</p>
+        <p class="alumni-organisation"><a href="{{ .profile_url }}">{{ .organisation }}</a></p>
+        {{ with .role }}<p class="rl">{{ . }}</p>{{ end }}
+        {{ with .detail }}<p class="alumni-detail">{{ . }}</p>{{ end }}
+      {{ else }}
+        <p class="rl">Current role to be confirmed</p>
+      {{ end }}
+    </div>
+  {{ end }}
   {{- $links := slice -}}
   {{- with $m.email }}{{ $links = $links | append (dict "url" (printf "mailto:%s" .) "cls" "fa fa-envelope" "lab" "Email") }}{{ end -}}
   {{- range $m.socialLinks -}}

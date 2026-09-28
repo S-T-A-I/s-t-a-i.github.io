@@ -296,9 +296,9 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
   padding-bottom:9px;border-bottom:1px solid var(--rule);}
 .people{display:grid;grid-template-columns:repeat(4,1fr);gap:46px 32px;}
 @media (max-width:1000px){.people{grid-template-columns:repeat(3,1fr);}}
-@media (max-width:760px){.people{grid-template-columns:repeat(2,1fr);gap:32px 20px;}}
-.person{text-align:center;}
-.person .ph{width:140px;height:140px;border-radius:50%;object-fit:cover;margin:0 auto 16px;
+@media (max-width:760px){.people{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px;}}
+.person{text-align:center;min-width:0;overflow-wrap:anywhere;}
+.person .ph{width:140px;max-width:100%;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;margin:0 auto 16px;
   background:var(--paper-2);border:1px solid var(--rule);}
 .person .nm{font-family:var(--ui);font-weight:600;font-size:20.4px;letter-spacing:-.016em;line-height:1.28;color:var(--ink);margin:0 0 5px;}
 .person .nm a{color:var(--link);border-bottom:1px solid transparent;transition:border-color .15s;}
@@ -307,7 +307,11 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .person .phl .ph{transition:border-color .15s;}
 .person .phl:hover .ph{border-color:var(--link);}
 .person .rl{font-family:var(--ui);font-size:15px;color:var(--mut);line-height:1.32;margin:0;}
-.person .soc{display:flex;justify-content:center;gap:13px;margin-top:11px;font-size:18px;}
+.person .alumni-current{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule);font-family:var(--ui);}
+.person .alumni-now{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:0 0 4px;}
+.person .alumni-organisation{font-size:17px;font-weight:600;line-height:1.35;margin:0 0 5px;}
+.person .alumni-detail{font-size:13px;line-height:1.4;color:var(--mut);margin:6px 0 0;}
+.person .soc{display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-top:11px;font-size:18px;}
 .person .soc a{color:var(--mut);}
 .person .soc a:hover{color:var(--acc);}
 /*************************************************
