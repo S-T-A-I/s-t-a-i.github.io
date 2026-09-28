@@ -6,8 +6,8 @@ on:
       - master
   pull_request:
   schedule:
-    # Daily rebuild so member pages pick up central profile DB edits.
-    - cron: '0 20 * * *'
+    # Hourly rebuild refreshes publication highlights and member profiles from the database.
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 jobs:

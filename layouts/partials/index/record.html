@@ -22,9 +22,9 @@
       <article>
         {{ $venue := replaceRE `(?i)\s*\(?\b(oral|spotlight)\b\)?` "" .displayVenue }}
         {{ $honor := index (findRE `(?i)\b(oral|spotlight)\b` (printf "%s %s" .displayVenue (.award | default ""))) 0 }}
-        <p class="home-label">{{ $venue }} {{ .year }} · <strong>{{ $honor }}</strong></p>
+        <p class="home-label">{{ $venue }} {{ .year }} - <strong>{{ $honor }}</strong></p>
         <h3><a href="/publication/{{ .slug }}/">{{ .title }}</a></h3>
-        <p>{{ $names := slice }}{{ range .authors }}{{ $names = $names | append .name }}{{ end }}{{ delimit $names ", " }}</p>
+        <p>{{ range $i, $author := .authors }}{{ if $i }}, {{ end }}{{ if and .isMember .handle }}<a href="/member/{{ .handle | lower | urlize }}/">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}{{ end }}</p>
       </article>
       {{ end }}
     </div>
