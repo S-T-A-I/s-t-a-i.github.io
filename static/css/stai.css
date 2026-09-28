@@ -307,10 +307,10 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .person .phl .ph{transition:border-color .15s;}
 .person .phl:hover .ph{border-color:var(--link);}
 .person .rl{font-family:var(--ui);font-size:15px;color:var(--mut);line-height:1.32;margin:0;}
-.person .alumni-current{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule);font-family:var(--ui);}
-.person .alumni-now{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:0 0 4px;}
-.person .alumni-organisation{font-size:17px;font-weight:600;line-height:1.35;margin:0 0 5px;}
-.person .alumni-detail{font-size:13px;line-height:1.4;color:var(--mut);margin:6px 0 0;}
+.person .alumni-current{margin-top:7px;}
+.person .alumni-current .rl{font-size:14px;line-height:1.4;}
+.person .alumni-current a{color:inherit;}
+.person .alumni-current a:hover{color:var(--link);}
 .person .soc{display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-top:11px;font-size:18px;}
 .person .soc a{color:var(--mut);}
 .person .soc a:hover{color:var(--acc);}

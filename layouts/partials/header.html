@@ -48,7 +48,7 @@
 
     <link rel="stylesheet" href="{{ "css/" | absURL }}font-awesome.min.css">
     <link rel="stylesheet" href="{{ "css/" | absURL }}academicons.min.css">
-    <link rel="stylesheet" href="{{ "css/" | absURL }}stai.css">
+    <link rel="stylesheet" href="{{ "css/" | absURL }}stai.css?v={{ readFile "static/css/stai.css" | sha256 }}">
     {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ (printf "css/%s" .) | absURL }}">
     {{ end }}

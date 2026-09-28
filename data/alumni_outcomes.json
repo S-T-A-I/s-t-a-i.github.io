@@ -65,15 +65,14 @@
   {
     "handle": "elif",
     "name": "Elif Akata",
-    "role": "Research Scientist Intern",
-    "organisation": "Meta FAIR",
+    "role": "PhD Student",
+    "organisation": "Helmholtz Munich",
     "profile_url": "https://eliaka.github.io/",
     "verified_on": "2026-09-28",
     "sources": [
       "https://eliaka.github.io/"
     ],
-    "featured": false,
-    "detail": "PhD student at Helmholtz Munich & University of Tübingen"
+    "featured": false
   },
   {
     "handle": "anastasiia",
@@ -104,7 +103,7 @@
     "handle": "johannes",
     "name": "Johannes Bertram",
     "role": "PhD Student",
-    "organisation": "University of Tübingen / ELLIS Tübingen",
+    "organisation": "ELLIS Institute Tübingen",
     "profile_url": "https://johannesbertram.github.io/",
     "verified_on": "2026-09-28",
     "sources": [
@@ -122,8 +121,7 @@
     "sources": [
       "https://kargibora.github.io/"
     ],
-    "featured": false,
-    "detail": "OpenEuroLLM project"
+    "featured": false
   },
   {
     "handle": "philipp",
