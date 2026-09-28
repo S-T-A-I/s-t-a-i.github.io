@@ -1,0 +1,35 @@
+{{ $pubs := partialCached "data/publications.html" . "publications" }}
+{{ $examples := slice }}
+{{ range site.Data.student_publications }}
+  {{ $student := . }}
+  {{ range where $pubs "slug" .slug }}
+    {{ $venue := partial "data/publication-venue.html" . }}
+    {{ if eq $venue.rank 0 }}
+      {{ $examples = $examples | append (dict "student" $student "paper" . "venue" $venue.label) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+  <p class="home-label">Start your research career at STAI</p>
+  <h2 id="student-record-title">Your first paper can start here.</h2>
+  {{ with $examples }}
+  <p>Our MSc researchers and alumni are first authors on papers at NeurIPS and CoLM. Here are some of the people and publications behind that record.</p>
+  <div class="home-paper-grid">
+    {{ range . }}
+    <article>
+      {{ $venue := replaceRE `(?i)\s*\(?\b(oral|spotlight)\b\)?` "" .venue }}
+      <p class="home-label">{{ $venue }} {{ .paper.year }}{{ range first 1 (findRE `(?i)\b(oral|spotlight)\b` (printf "%s %s" .venue (.paper.award | default ""))) }} · <strong>{{ . }}</strong>{{ end }}</p>
+      <h3><a href="/publication/{{ .paper.slug }}/">{{ .paper.title }}</a></h3>
+      <p><a class="home-text-link" href="/member/{{ .student.handle }}/">{{ .student.name }}</a><br>{{ .student.context }} · First author</p>
+    </article>
+    {{ end }}
+  </div>
+  {{ end }}
+  <div class="home-internship">
+    <h3>Still an undergraduate? Start with a research internship.</h3>
+    <p>Work closely with a PhD student on a research project as a co-author. Build experience in developing ideas, running experiments and communicating results, with the aim of contributing to a research paper.</p>
+    <div class="home-actions">
+      <a class="home-button" href="{{ .Site.Params.application_url }}">Apply for an internship <span aria-hidden="true">↗</span></a>
+      <a class="home-text-link" href="/opening/kaist-internship/">How internships work <span aria-hidden="true">→</span></a>
+      <a class="home-text-link" href="/members/">Meet potential mentors <span aria-hidden="true">→</span></a>
+    </div>
+  </div>

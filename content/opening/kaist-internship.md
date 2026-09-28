@@ -6,6 +6,10 @@ status = "Open"
 weight = 5
 +++
 
+**Start your research career**
+
+Undergraduate students are welcome to apply. Join a research project, work closely with a PhD student and build experience towards contributing to a research paper. Explore [our publication record](/publication/) to see the questions we work on and the conferences where we publish.
+
 **Expectations**
 
 We expect interns to participate in a predefined research agenda as a co-author, working closely with their PhD student host.

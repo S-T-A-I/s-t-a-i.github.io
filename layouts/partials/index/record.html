@@ -1,0 +1,35 @@
+{{ $pubs := partialCached "data/publications.html" . "publications" }}
+{{ $record := partial "data/research-record.html" $pubs }}
+<section class="blk home-record" id="research-record" aria-labelledby="record-title">
+  <div class="shell">
+    <p class="home-label">Our publication record</p>
+    <h2 id="record-title">Ambitious research. Published results.</h2>
+    {{ if $record.papers }}
+    <p class="home-record-intro"><strong>{{ len $record.papers }} conference papers in {{ $record.year }}.</strong> Explore the work of STAI researchers and collaborators at leading AI conferences.</p>
+    <div class="home-venues">
+      {{ range $record.groups }}
+      {{ $papers := where $record.papers "venueGroup" . }}
+      <a href="/publication/#y{{ $record.year }}">
+        <span class="home-venue-count">{{ len $papers }}</span>
+        <span>{{ strings.TrimPrefix "0/" . }} {{ $record.year }}</span>
+      </a>
+      {{ end }}
+    </div>
+    <p class="home-record-note">Conference totals include main, Findings, demo and dataset tracks. Workshops and preprints are excluded.</p>
+    {{ with $record.highlights }}
+    <div class="home-paper-grid">
+      {{ range . }}
+      <article>
+        {{ $venue := replaceRE `(?i)\s*\(?\b(oral|spotlight)\b\)?` "" .displayVenue }}
+        {{ $honor := index (findRE `(?i)\b(oral|spotlight)\b` (printf "%s %s" .displayVenue (.award | default ""))) 0 }}
+        <p class="home-label">{{ $venue }} {{ .year }} · <strong>{{ $honor }}</strong></p>
+        <h3><a href="/publication/{{ .slug }}/">{{ .title }}</a></h3>
+        <p>{{ $names := slice }}{{ range .authors }}{{ $names = $names | append .name }}{{ end }}{{ delimit $names ", " }}</p>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+    <p><a class="home-text-link" href="/publication/">Explore the full publication record <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>

@@ -46,7 +46,7 @@ class PublicationsTest(unittest.TestCase):
         ]
         cls.records = records
         (root / "data/fixture.json").write_text(json.dumps(records))
-        for rel in ["data/publication-venue.html", "data/publication-order.html", "index/publications.html"]:
+        for rel in ["data/publication-venue.html", "data/publication-order.html", "data/research-record.html", "index/publications.html"]:
             target = root / "layouts/partials" / rel
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(ROOT / "layouts/partials" / rel, target)
@@ -56,6 +56,8 @@ class PublicationsTest(unittest.TestCase):
 {{ $papers := partial "data/publication-order.html" (dict "papers" site.Data.fixture "year" "2026") }}
 <script id="ordered">{{ $papers | jsonify | safeJS }}</script>
 {{ partial "index/publications.html" . }}
+<script id="record">{{ partial "data/research-record.html" site.Data.fixture | jsonify | safeJS }}</script>
+<script id="empty-record">{{ partial "data/research-record.html" slice | jsonify | safeJS }}</script>
 ''')
         run = subprocess.run([os.environ.get("HUGO_BIN", "hugo"), "--source", str(root)],
                              text=True, capture_output=True)
@@ -64,6 +66,7 @@ class PublicationsTest(unittest.TestCase):
         cls.html = (root / "public/index.html").read_text()
         cls.ordered = json.loads(re.search(r'<script id="ordered">(.*?)</script>', cls.html, re.S)[1])
         cls.by_slug = {p["slug"]: p for p in cls.ordered}
+        cls.record = json.loads(re.search(r'<script id="record">(.*?)</script>', cls.html, re.S)[1])
 
     @classmethod
     def tearDownClass(cls):
@@ -91,13 +94,29 @@ class PublicationsTest(unittest.TestCase):
         self.assertEqual(self.by_slug["workshop-first"]["venueRank"], 2)
 
     def test_only_oral_and_spotlight_are_highlighted(self):
-        markup = self.html.split('</script>', 1)[1]
+        markup = self.html.split('</script>', 1)[1].split('<script id="record">')[0]
         self.assertNotIn('Poster', markup)
         bold = re.findall(r'<b>(.*?)</b>', markup)
         self.assertTrue(bold)
         self.assertTrue(all(value.strip('()') in ['Oral', 'Spotlight'] for value in bold), bold)
         self.assertEqual(sum('Spotlight' in value for value in bold), 1)
         self.assertIn('Best Paper', markup)
+
+    def test_homepage_counts_confirmed_conferences_and_groups_tracks(self):
+        self.assertEqual(self.record['year'], '2026')
+        papers = self.record['papers']
+        self.assertEqual(len(papers), 10)
+        self.assertEqual(self.record['groups'][0], '0/NeurIPS')
+        self.assertEqual(sum(p['venueGroup'] == '0/NeurIPS' for p in papers), 4)
+        self.assertEqual(sum(p['venueGroup'] == '0/ACL' for p in papers), 2)
+        self.assertEqual({p['slug'] for p in self.record['highlights']},
+                         {'icml-oral', 'spotlight'})
+
+    def test_homepage_handles_unavailable_publications(self):
+        record = json.loads(re.search(r'<script id="empty-record">(.*?)</script>', self.html, re.S)[1])
+        self.assertEqual(record['year'], '')
+        self.assertEqual(record['papers'], [])
+        self.assertEqual(record['highlights'], [])
 
 
 if __name__ == "__main__":

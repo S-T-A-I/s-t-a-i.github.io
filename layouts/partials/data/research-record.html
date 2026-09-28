@@ -1,0 +1,23 @@
+{{- /* Count only confirmed conference papers, using the publication listing's venue rules. */ -}}
+{{- $accepted := slice -}}
+{{- range . -}}
+  {{- $venue := partial "data/publication-venue.html" . -}}
+  {{- if eq $venue.rank 0 -}}
+    {{- $accepted = $accepted | append (merge . (dict "year" (string .year) "displayVenue" $venue.label "venueGroup" $venue.group)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $year := "" -}}
+{{- range $accepted }}{{ if gt (string .year) $year }}{{ $year = string .year }}{{ end }}{{ end -}}
+{{- $papers := where $accepted "year" $year -}}
+{{- $groups := slice -}}
+{{- $highlights := slice -}}
+{{- if $year -}}
+  {{- $papers = partial "data/publication-order.html" (dict "papers" $papers "year" $year) -}}
+  {{- range $papers -}}
+    {{- if not (in $groups .venueGroup) }}{{ $groups = $groups | append .venueGroup }}{{ end -}}
+    {{- if or (findRE `(?i)\b(oral|spotlight)\b` .displayVenue) (in (slice "oral" "spotlight") (lower (.award | default ""))) -}}
+      {{- $highlights = $highlights | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "year" $year "papers" $papers "groups" $groups "highlights" $highlights) -}}
