@@ -46,7 +46,7 @@ class PublicationsTest(unittest.TestCase):
         ]
         cls.records = records
         (root / "data/fixture.json").write_text(json.dumps(records))
-        for rel in ["data/publication-venue.html", "data/publication-order.html", "data/research-record.html", "index/publications.html"]:
+        for rel in ["data/publication-venue.html", "data/publication-order.html", "data/research-record.html", "data/student-record.html", "index/publications.html"]:
             target = root / "layouts/partials" / rel
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(ROOT / "layouts/partials" / rel, target)
@@ -58,6 +58,14 @@ class PublicationsTest(unittest.TestCase):
 {{ partial "index/publications.html" . }}
 <script id="record">{{ partial "data/research-record.html" site.Data.fixture | jsonify | safeJS }}</script>
 <script id="empty-record">{{ partial "data/research-record.html" slice | jsonify | safeJS }}</script>
+{{ $student := dict "handle" "student" "name" "Student Name" "title" "MSc Student" "isAlumni" true }}
+{{ $author := dict "handle" "student" "name" "Student Name" "isMember" true }}
+{{ $future := dict "slug" "new-db-paper" "year" "2027" "publicationShort" "ICML" "award" "Spotlight" "authors" (slice $author) }}
+{{ $pending := merge $future (dict "slug" "pending-student" "publication" "Submitted to ICML") }}
+{{ $older := merge $future (dict "slug" "older-student" "year" "2026") }}
+{{ $updated := site.Data.fixture | append $future }}
+<script id="updated-record">{{ partial "data/research-record.html" $updated | jsonify | safeJS }}</script>
+<script id="student-record">{{ partial "data/student-record.html" (dict "papers" (slice $older $pending $future) "members" (slice $student)) | jsonify | safeJS }}</script>
 ''')
         run = subprocess.run([os.environ.get("HUGO_BIN", "hugo"), "--source", str(root)],
                              text=True, capture_output=True)
@@ -111,6 +119,14 @@ class PublicationsTest(unittest.TestCase):
         self.assertEqual(sum(p['venueGroup'] == '0/ACL' for p in papers), 2)
         self.assertEqual({p['slug'] for p in self.record['highlights']},
                          {'icml-oral', 'spotlight'})
+
+    def test_database_updates_refresh_highlights_and_student_examples(self):
+        updated = json.loads(re.search(r'<script id="updated-record">(.*?)</script>', self.html, re.S)[1])
+        self.assertEqual(updated['year'], '2027')
+        self.assertEqual([p['slug'] for p in updated['highlights']], ['new-db-paper'])
+        students = json.loads(re.search(r'<script id="student-record">(.*?)</script>', self.html, re.S)[1])
+        self.assertEqual([r['paper']['slug'] for r in students], ['new-db-paper', 'older-student'])
+        self.assertTrue(students[0]['student']['isAlumni'])
 
     def test_homepage_handles_unavailable_publications(self):
         record = json.loads(re.search(r'<script id="empty-record">(.*?)</script>', self.html, re.S)[1])

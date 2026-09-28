@@ -10,7 +10,7 @@
         <div class="home-alumni-person">
           <img src="{{ .portrait }}" alt="" width="76" height="76" loading="lazy" decoding="async">
           <div>
-            <h3><a href="{{ .profile_url }}">{{ .name }}</a></h3>
+            <h3><a href="/member/{{ .handle }}/">{{ .name }}</a></h3>
             <p>{{ .former_role }} at STAI</p>
           </div>
         </div>
@@ -19,7 +19,7 @@
           <h4><a href="{{ .profile_url }}">{{ .organisation }}</a></h4>
           <p>{{ .role }}<br>{{ .location }}</p>
         </div>
-        <p class="home-alumni-story">{{ .collaboration }}</p>
+        <p class="home-alumni-story">{{ .collaboration | markdownify }}</p>
         {{ $url := .paper_url }}
         {{ $title := .paper_title }}
         {{ $venue := "" }}

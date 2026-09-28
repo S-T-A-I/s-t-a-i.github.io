@@ -1,0 +1,25 @@
+{{- /* Select recent accepted papers led by MSc members, including alumni. */ -}}
+{{- $members := .members -}}
+{{- $papers := .papers -}}
+{{- $years := slice -}}
+{{- range $papers }}{{ $years = $years | append (string .year) }}{{ end -}}
+{{- $examples := slice -}}
+{{- range collections.Reverse (sort (uniq $years)) -}}
+  {{- $year := . -}}
+  {{- $batch := partial "data/publication-order.html" (dict "papers" (where $papers "year" $year) "year" $year) -}}
+  {{- range $batch -}}
+    {{- $paper := . -}}
+    {{- if eq .venueRank 0 -}}
+      {{- with index (.authors | default slice) 0 -}}
+        {{- if and .isMember .handle -}}
+          {{- range where $members "handle" .handle -}}
+            {{- if in (lower (.title | default "")) "msc" -}}
+              {{- $examples = $examples | append (dict "student" . "paper" $paper "venue" $paper.displayVenue) -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return (first 3 $examples) -}}

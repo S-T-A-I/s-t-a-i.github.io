@@ -1,25 +1,17 @@
 {{ $pubs := partialCached "data/publications.html" . "publications" }}
-{{ $examples := slice }}
-{{ range site.Data.student_publications }}
-  {{ $student := . }}
-  {{ range where $pubs "slug" .slug }}
-    {{ $venue := partial "data/publication-venue.html" . }}
-    {{ if eq $venue.rank 0 }}
-      {{ $examples = $examples | append (dict "student" $student "paper" . "venue" $venue.label) }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+{{ $members := partialCached "data/members.html" . "members" }}
+{{ $examples := partial "data/student-record.html" (dict "papers" $pubs "members" $members) }}
   <p class="home-label">Start your research career at STAI</p>
   <h2 id="student-record-title">Your first paper can start here.</h2>
   {{ with $examples }}
-  <p>Our MSc researchers and alumni are first authors on papers at NeurIPS and CoLM. Here are some of the people and publications behind that record.</p>
+  <p>Our MSc researchers and alumni lead published research. These recent conference papers list them as first authors.</p>
   <div class="home-paper-grid">
     {{ range . }}
     <article>
       {{ $venue := replaceRE `(?i)\s*\(?\b(oral|spotlight)\b\)?` "" .venue }}
-      <p class="home-label">{{ $venue }} {{ .paper.year }}{{ range first 1 (findRE `(?i)\b(oral|spotlight)\b` (printf "%s %s" .venue (.paper.award | default ""))) }} · <strong>{{ . }}</strong>{{ end }}</p>
+      <p class="home-label">{{ $venue }} {{ .paper.year }}{{ range first 1 (findRE `(?i)\b(oral|spotlight)\b` (printf "%s %s" .venue (.paper.award | default ""))) }} - <strong>{{ . }}</strong>{{ end }}</p>
       <h3><a href="/publication/{{ .paper.slug }}/">{{ .paper.title }}</a></h3>
-      <p><a class="home-text-link" href="/member/{{ .student.handle }}/">{{ .student.name }}</a><br>{{ .student.context }} · First author</p>
+      <p><a class="home-text-link" href="/member/{{ .student.handle }}/">{{ .student.name }}</a><br>{{ if .student.isAlumni }}MSc alumnus{{ else }}MSc researcher{{ end }} - First author</p>
     </article>
     {{ end }}
   </div>
