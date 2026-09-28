@@ -75,7 +75,7 @@ Each archetype seeds the required front matter.
 
 ## Landing page recruitment content
 
-The landing page leads with publications, student research, mentorship and alumni careers. The Apply buttons share `params.application_url` in `config.toml`.
+The landing page introduces the research focus, then publications, student research, mentorship and alumni careers. Keep descriptions short; native `details` elements hold the optional research questions and paper links. Alternating section surfaces and labelled headings help readers scan the page. The Apply buttons share `params.application_url` in `config.toml`.
 
 Conference counts and Oral/Spotlight highlights use the central publications API and the same venue rules as the publication listing. The student examples automatically select the three most recent accepted conference papers whose first author matches an MSc member or alumnus in the central members API. Papers are ordered by year, then the same conference order as the publication list. No publication slugs need to be maintained. The hourly scheduled build refreshes both sections from the database (GitHub may delay scheduled runs); a manual workflow run also refreshes them.
 

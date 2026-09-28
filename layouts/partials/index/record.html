@@ -2,10 +2,10 @@
 {{ $record := partial "data/research-record.html" $pubs }}
 <section class="blk home-record" id="research-record" aria-labelledby="record-title">
   <div class="shell">
-    <p class="home-label">Our publication record</p>
-    <h2 id="record-title">Ambitious research. Published results.</h2>
+    <p class="home-label">Publication record</p>
+    <h2 id="record-title">Research with a publication record.</h2>
     {{ if $record.papers }}
-    <p class="home-record-intro"><strong>{{ len $record.papers }} conference papers in {{ $record.year }}.</strong> Explore the work of STAI researchers and collaborators at leading AI conferences.</p>
+    <p class="home-record-intro"><strong>{{ len $record.papers }} conference papers in {{ $record.year }}.</strong></p>
     <div class="home-venues">
       {{ range $record.groups }}
       {{ $papers := where $record.papers "venueGroup" . }}

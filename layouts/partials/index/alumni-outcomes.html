@@ -1,9 +1,9 @@
 {{ $pubs := partialCached "data/publications.html" . "publications" }}
 <section class="blk home-alumni" id="alumni-outcomes" aria-labelledby="alumni-outcomes-title">
   <div class="shell">
-    <p class="home-label">Where our alumni are now</p>
-    <h2 id="alumni-outcomes-title">Graduate from STAI.<br>Stay part of our research community.</h2>
-    <p class="home-section-intro">Our alumni are building careers in industry and academia, and we keep doing research together. These collaborations connect our students with researchers beyond their own lab and country.</p>
+    <p class="home-label">Alumni</p>
+    <h2 id="alumni-outcomes-title">Move forward. Stay connected.</h2>
+    <p class="home-section-intro">Our alumni build careers in industry and academia, and continue to publish with us.</p>
     <div class="home-alumni-grid">
       {{ range where site.Data.alumni_outcomes "featured" true }}
       <article>
@@ -17,9 +17,9 @@
         <div class="home-alumni-now">
           <p class="home-label">Now at</p>
           <h4><a href="{{ .profile_url }}">{{ .organisation }}</a></h4>
-          <p>{{ .role }}<br>{{ .location }}</p>
+          <p>{{ .role }}</p>
         </div>
-        <p class="home-alumni-story">{{ .collaboration | markdownify }}</p>
+
         {{ $url := .paper_url }}
         {{ $title := .paper_title }}
         {{ $venue := "" }}
@@ -37,8 +37,8 @@
     </div>
     <div class="home-network" id="international-collaborations">
       <div>
-        <h3>Build an international research network.</h3>
-        <p>From shared projects with alumni to external co-supervision, research internships and conference connections, we encourage students to grow relationships that last beyond a single paper.</p>
+        <h3>Build international collaborations.</h3>
+        <p>Connect through alumni projects, external co-supervision, research internships and conferences.</p>
       </div>
       <div class="home-actions">
         <a class="home-text-link" href="/members/#alumni">Meet our alumni <span aria-hidden="true">→</span></a>

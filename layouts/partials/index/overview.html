@@ -1,4 +1,4 @@
-<section class="blk" aria-label="Lab life and openings">
+<section class="blk home-life" aria-label="Lab life and openings">
   <div class="shell">
     <section class="home-people" aria-labelledby="home-people-title">
       <figure>
@@ -8,7 +8,7 @@
       <div>
         <p class="home-label">Life at STAI</p>
         <h2 id="home-people-title">Meet your future colleagues.</h2>
-        <p>Get to know the researchers behind STAI, their interests and the projects they are building. Lab life also takes us beyond research, from picnics to mountain trails.</p>
+        <p>Meet the team, explore their research and join us beyond the lab, from picnics to mountain trails.</p>
         <div class="home-actions">
           <a class="home-text-link" href="/members/">Meet the team <span aria-hidden="true">→</span></a>
           <a class="home-text-link" href="/activities/">Life at STAI <span aria-hidden="true">→</span></a>
@@ -20,7 +20,7 @@
       <div>
         <p class="home-label">Take the next step</p>
         <h2 id="home-join-title">Start your next chapter at STAI.</h2>
-        <p>Explore the route that fits you, from an undergraduate research internship to MSc and PhD study. Check the expectations and application steps, then tell us what you want to work on.</p>
+        <p>Explore undergraduate internships, MSc and PhD opportunities.</p>
         {{ $open := sort (where (where .Site.RegularPages "Type" "opening") ".Params.status" "Open") ".Params.weight" }}
         {{ with $open }}
         <ul class="home-roles" aria-label="Open positions">
