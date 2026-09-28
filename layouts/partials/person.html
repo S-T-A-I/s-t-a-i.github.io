@@ -37,10 +37,7 @@
     {{ $outcome := where site.Data.alumni_outcomes "handle" $m.handle }}
     <div class="alumni-current">
       {{ range $outcome }}
-        <p class="alumni-now">Now at</p>
-        <p class="alumni-organisation"><a href="{{ .profile_url }}">{{ .organisation }}</a></p>
-        {{ with .role }}<p class="rl">{{ . }}</p>{{ end }}
-        {{ with .detail }}<p class="alumni-detail">{{ . }}</p>{{ end }}
+        <p class="rl">Now: {{ with .role }}{{ . }}, {{ end }}<a href="{{ .profile_url }}">{{ .organisation }}</a></p>
       {{ else }}
         <p class="rl">Current role to be confirmed</p>
       {{ end }}
