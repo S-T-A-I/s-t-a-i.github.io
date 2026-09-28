@@ -177,7 +177,18 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 /*************************************************
  *  Landing page
  *************************************************/
-/* Landing page: mission, research directions and invitations. */
+/* Landing page: distinct sections and optional research detail. */
+.home-page > .blk{padding:64px 0;border-top:1px solid var(--rule-2);}
+.home-page > .home-record,.home-page > .home-mentorship,.home-page > .home-life{background:var(--paper-2);}
+.home-page > .blk > .shell > .home-label{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.home-page > .blk > .shell > .home-label::before{content:"";width:28px;height:3px;background:var(--acc);}
+.home-research-details{margin-top:18px;}
+.home-research-details summary{cursor:pointer;font-family:var(--ui);font-size:15px;font-weight:600;color:var(--link);}
+.home-research-details summary:hover{color:var(--acc);}
+.home-research-details summary:focus-visible{outline:2px solid var(--acc);outline-offset:5px;border-radius:2px;}
+.home-page .home-people{margin-top:0;padding-top:0;border-top:0;}
+.home-page .home-alumni-paper{margin-top:24px;}
+@media (max-width:760px){.home-page > .blk{padding:42px 0;}}
 .home-hero{padding-top:64px;padding-bottom:40px;border-bottom:1px solid var(--rule);}
 .home-hero h1{max-width:19ch;}
 .home-intro{max-width:66ch;color:var(--ink-2);margin:26px 0;font-size:22px;}
@@ -198,7 +209,7 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .home-label{font-family:var(--ui);font-size:13px;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;color:var(--acc);margin:0 0 16px;}
 .home-research{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 36px;margin:38px 0 24px;}
-.home-research article{display:flex;flex-direction:column;border-top:3px solid var(--acc);padding-top:22px;scroll-margin-top:calc(var(--bar-h) + 20px);}
+.home-research article{display:flex;flex-direction:column;border:1px solid var(--rule-2);border-radius:6px;background:var(--paper-2);padding:24px;scroll-margin-top:calc(var(--bar-h) + 20px);}
 .home-research h3{font-family:var(--ui);font-size:25px;line-height:1.3;letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance;}
 .home-research article > p{font-size:18px;color:var(--ink-2);margin:0;}
 .home-research-questions{padding-left:22px;margin:18px 0 24px;font-size:18px;color:var(--ink-2);}
@@ -262,7 +273,6 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .home-alumni-now .home-label{margin-bottom:8px;}
 .home-alumni-now h4{font-family:var(--ui);font-size:27px;line-height:1.2;letter-spacing:-.02em;margin:0 0 10px;}
 .home-alumni-now p:last-child{font-family:var(--ui);font-size:15px;color:var(--ink-2);margin:0;}
-.home-alumni-story{font-size:18px;color:var(--ink-2);margin:24px 0;}
 .home-alumni-paper{margin-top:auto;padding-top:18px;border-top:1px solid var(--rule);}
 .home-alumni-paper .home-label{font-size:11px;margin:0 0 10px;}
 .home-alumni-paper a{font-family:var(--ui);font-size:16px;font-weight:600;line-height:1.45;display:block;color:var(--link);}
@@ -272,7 +282,6 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 @media (max-width:1000px){
   .home-alumni-grid{grid-template-columns:1fr;gap:20px;}
   .home-principles,.home-network{align-items:flex-start;flex-direction:column;}
-  .home-alumni-story{max-width:72ch;}
 }
 @media (max-width:760px){
   .home-benefits{grid-template-columns:1fr;gap:26px;}
