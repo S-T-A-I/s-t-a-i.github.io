@@ -1,0 +1,40 @@
+{{ $pubs := partialCached "data/publications.html" . "publications" }}
+<section class="blk home-fit" id="research-fit" aria-labelledby="research-fit-title">
+  <div class="shell">
+    <p class="home-label">Find your research focus</p>
+    <h2 id="research-fit-title">AI safety, agents, memory and retrieval.</h2>
+    <p class="home-section-intro">How can AI take on more useful work while people can still guide it, correct it and judge its results? We study the division of work between a model, its tools and memory, and the people who use it.</p>
+    <p class="home-section-intro">Our approach is <strong>Knowledge-Intelligence Separation</strong>. We investigate which knowledge can live in editable external systems, and which capabilities need to stay in model parameters. The questions below are directions you could explore with us.</p>
+    <div class="home-research" aria-label="Research directions and example questions">
+      {{ range site.Data.research_focus }}
+      <article id="focus-{{ .id }}">
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        <ul class="home-research-questions">
+          {{ range .questions }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ $papers := slice }}
+        {{ range .papers }}
+          {{ range where $pubs "slug" . }}{{ $papers = $papers | append . }}{{ end }}
+        {{ end }}
+        {{ with $papers }}
+        <div class="home-research-papers">
+          <p class="home-label">Explore our work</p>
+          <ul>
+            {{ range . }}<li><a href="/publication/{{ .slug }}/">{{ .title }} <span aria-hidden="true">→</span></a></li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+    <div class="home-research-next">
+      <p>In your application, tell us which question interests you, how it connects to your experience and what you would like to investigate.</p>
+      <div class="home-actions">
+        <a class="home-button" href="{{ .Site.Params.application_url }}">Apply to STAI <span aria-hidden="true">↗</span></a>
+        <a class="home-text-link" href="/publication/">Explore all publications <span aria-hidden="true">→</span></a>
+        <a class="home-text-link" href="/overview/overview/">Read our research vision <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>

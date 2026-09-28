@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ai-safety",
+    "title": "AI safety and human oversight",
+    "description": "Make AI useful without losing privacy or human control.",
+    "questions": [
+      "How can an agent complete a task while sharing only the information its recipient needs?",
+      "How can it communicate uncertainty, expose unreliable reasoning and know when to ask a person?"
+    ],
+    "papers": ["sangwoo2026selfci", "michael2025selfreflect"]
+  },
+  {
+    "id": "agents",
+    "title": "Agents and system evaluation",
+    "description": "Improve the whole system, from planning and tool use to coordination between agents.",
+    "questions": [
+      "When an agent fails, was the cause its plan, a tool, retrieved evidence or communication with another agent?",
+      "How can we compare systems and check their reasoning and actions with reproducible evaluations?"
+    ],
+    "papers": ["cornelius2026maseval", "uselis2026crisp"]
+  },
+  {
+    "id": "memory",
+    "title": "Memory and continual adaptation",
+    "description": "Help agents learn from new information and user corrections without retraining for every update.",
+    "questions": [
+      "How should an agent update or delete a memory and revise the facts that depend on it?",
+      "How can it recognise that a previously known answer has become unknown, rather than repeat an outdated fact?"
+    ],
+    "papers": ["seokwon2026meme"]
+  },
+  {
+    "id": "retrieval",
+    "title": "Retrieval and grounded reasoning",
+    "description": "Connect models to relevant, current evidence across text and images.",
+    "questions": [
+      "When should a model rely on its parameters, and when should it search or use external knowledge?",
+      "How can it resolve conflicting evidence and distinguish a correct match from a plausible half-truth?"
+    ],
+    "papers": ["evgenii2024ralm", "bora2026halftruths"]
+  }
+]
