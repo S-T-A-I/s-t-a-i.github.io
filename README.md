@@ -79,6 +79,8 @@ The landing page leads with publications, student research, mentorship and alumn
 
 Conference counts and Oral/Spotlight highlights use the central publications API and the same venue rules as the publication listing. `data/student_publications.json` selects student examples by publication slug; titles and venues come from the API.
 
+`data/research_focus.json` defines the four research directions, example questions for applicants and related publication slugs. The focus section follows the publication record; linked paper titles come from the public API. Keep proposed research questions distinct from claims about completed work.
+
 `data/alumni_outcomes.json` holds curated current roles, profile links, continuing collaborations and source URLs. Verify roles against the alumni's own profiles and update `verified_on` when editing a card. A former role at STAI must not be presented as a current position. Linked collaborations should postdate their graduation or departure. Paper titles and venues come from the API when available; the sourced external paper link remains usable if a paper is not in the feed. Add testimonials only when an attributable, approved quote is available.
 
 ## Publication order and venue labels
