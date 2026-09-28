@@ -9,11 +9,16 @@
     "location": "Paris, France",
     "profile_url": "https://www.linkedin.com/in/michael-kirchhof/",
     "verified_on": "2026-09-28",
-    "sources": ["https://fr.linkedin.com/in/michael-kirchhof", "https://openreview.net/profile?id=~Michael_Kirchhof1", "https://openreview.net/pdf?id=hOErnDsehG"],
+    "sources": [
+      "https://fr.linkedin.com/in/michael-kirchhof",
+      "https://openreview.net/profile?id=~Michael_Kirchhof1",
+      "https://openreview.net/pdf?id=hOErnDsehG"
+    ],
     "collaboration": "After completing his PhD and joining Apple, Michael continued working with Joon and MSc researcher Luca Füger on how LLMs communicate uncertainty.",
     "paper_slug": "michael2025selfreflect",
     "paper_title": "SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?",
-    "paper_url": "https://openreview.net/pdf?id=hOErnDsehG"
+    "paper_url": "https://openreview.net/pdf?id=hOErnDsehG",
+    "featured": true
   },
   {
     "name": "Evgenii Kortukov",
@@ -25,11 +30,16 @@
     "location": "Berlin, Germany",
     "profile_url": "https://kortukov.github.io/",
     "verified_on": "2026-09-28",
-    "sources": ["https://kortukov.github.io/", "https://kortukov.github.io/files/cv.pdf", "https://arxiv.org/abs/2606.11172"],
+    "sources": [
+      "https://kortukov.github.io/",
+      "https://kortukov.github.io/files/cv.pdf",
+      "https://arxiv.org/abs/2606.11172"
+    ],
     "collaboration": "Now at Fraunhofer HHI, Evgenii continues to collaborate with Joon on predicting and steering the behaviour of reasoning models.",
     "paper_slug": "evgenii2026futureprobes",
     "paper_title": "Predicting Future Behaviors in Reasoning Models Enables Better Steering",
-    "paper_url": "https://arxiv.org/abs/2606.11172"
+    "paper_url": "https://arxiv.org/abs/2606.11172",
+    "featured": true
   },
   {
     "name": "Bálint Mucsányi",
@@ -41,10 +51,102 @@
     "location": "Tübingen, Germany",
     "profile_url": "https://www.balintmucsanyi.com/",
     "verified_on": "2026-09-28",
-    "sources": ["https://www.balintmucsanyi.com/", "https://www.balintmucsanyi.com/cv.pdf", "https://arxiv.org/abs/2601.21601"],
+    "sources": [
+      "https://www.balintmucsanyi.com/",
+      "https://www.balintmucsanyi.com/cv.pdf",
+      "https://arxiv.org/abs/2601.21601"
+    ],
     "collaboration": "After his MSc at STAI, Bálint began his PhD at Tübingen. He continues to publish with Joon, including joint work with KAIST researcher Hoyeon Chang.",
     "paper_slug": "hoyeon2026lpa",
     "paper_title": "Dynamics Reveals Structure: Challenging the Linear Propagation Assumption",
-    "paper_url": "https://arxiv.org/abs/2601.21601"
+    "paper_url": "https://arxiv.org/abs/2601.21601",
+    "featured": true
+  },
+  {
+    "handle": "elif",
+    "name": "Elif Akata",
+    "role": "Research Scientist Intern",
+    "organisation": "Meta FAIR",
+    "profile_url": "https://eliaka.github.io/",
+    "verified_on": "2026-09-28",
+    "sources": [
+      "https://eliaka.github.io/"
+    ],
+    "featured": false,
+    "detail": "PhD student at Helmholtz Munich & University of Tübingen"
+  },
+  {
+    "handle": "anastasiia",
+    "name": "Anastasiia Alekseeva",
+    "role": "AI Engineer",
+    "organisation": "digetiers",
+    "profile_url": "https://www.digetiers.com/de/firma/team",
+    "verified_on": "2026-09-28",
+    "sources": [
+      "https://www.digetiers.com/de/firma/team",
+      "https://de.linkedin.com/in/ana-alekseeva"
+    ],
+    "featured": false
+  },
+  {
+    "handle": "albert",
+    "name": "Albert Catalan Tatjer",
+    "role": "PhD Student",
+    "organisation": "ELLIS Institute Tübingen",
+    "profile_url": "https://aldakata.github.io/",
+    "verified_on": "2026-09-28",
+    "sources": [
+      "https://aldakata.github.io/"
+    ],
+    "featured": false
+  },
+  {
+    "handle": "johannes",
+    "name": "Johannes Bertram",
+    "role": "PhD Student",
+    "organisation": "University of Tübingen / ELLIS Tübingen",
+    "profile_url": "https://johannesbertram.github.io/",
+    "verified_on": "2026-09-28",
+    "sources": [
+      "https://johannesbertram.github.io/"
+    ],
+    "featured": false
+  },
+  {
+    "handle": "kargi",
+    "name": "Bora Kargi",
+    "role": "Research Engineer",
+    "organisation": "ELLIS Institute Tübingen",
+    "profile_url": "https://kargibora.github.io/",
+    "verified_on": "2026-09-28",
+    "sources": [
+      "https://kargibora.github.io/"
+    ],
+    "featured": false,
+    "detail": "OpenEuroLLM project"
+  },
+  {
+    "handle": "philipp",
+    "name": "Philipp Davydov",
+    "role": "",
+    "organisation": "JOSEPHA",
+    "profile_url": "https://www.linkedin.com/in/philipp-davydov-456091227/",
+    "verified_on": "2026-09-28",
+    "sources": [
+      "https://www.linkedin.com/in/philipp-davydov-456091227/"
+    ],
+    "featured": false
+  },
+  {
+    "handle": "fabian",
+    "name": "Fabian Morelli",
+    "role": "PhD Student",
+    "organisation": "KTH Royal Institute of Technology",
+    "profile_url": "https://www.fabianmorelli.de/",
+    "verified_on": "2026-09-28",
+    "sources": [
+      "https://www.fabianmorelli.de/"
+    ],
+    "featured": false
   }
 ]
