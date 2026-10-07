@@ -1,4 +1,5 @@
 +++
+image = "uselis2026crisp.png"
 title = "CRISP: Compositional Reasoning over Images via Stackable Programs for VLMs"
 date = "2026-09-25T00:00:00+09:00"
 publication_date = "2026-09-25T00:00:00+09:00"
