@@ -2,7 +2,7 @@
 abstract = "Which training examples help a language model with a task? Gradient-based methods compare how examples change the model. We vary tasks and answer formats separately and find that these methods mainly match the answer format. Examples from different tasks can look similar, while the same task in a different format can look unrelated. This shows why data attribution needs tests that separate format from task content."
 date = "2026-09-17T00:00:00+00:00"
 publication_date = "2026-09-17T00:00:00+00:00"
-image = "sunwoo2026form-summary.svg"
+image = "sunwoo2026form.png"
 publication = "arXiv"
 publication_short = "arXiv"
 title = "Form Over Content In Gradient-Based Data Attribution Methods"
