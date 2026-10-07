@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="350" viewBox="0 0 560 350" role="img" aria-labelledby="title desc">
+<title id="title">Answer format drives gradient similarity</title>
+<desc id="desc">The paper reports gradient similarity near 0.4 across tasks with a shared answer format, and near zero for the same task with different answer formats.</desc>
+<rect width="560" height="350" rx="18" fill="#f4f7fb"/>
+<g font-family="Arial, sans-serif" fill="#17293e">
+<text x="30" y="43" font-size="24" font-weight="700">What do gradients match?</text>
+<text x="30" y="76" font-size="16">Answer format matters more than task content</text>
+<text x="30" y="123" font-size="18" font-weight="700">Same format, different tasks</text>
+<rect x="30" y="139" width="390" height="42" rx="7" fill="#287c85"/>
+<text x="435" y="167" font-size="23" font-weight="700">~0.4</text>
+<text x="30" y="222" font-size="18" font-weight="700">Same task, different formats</text>
+<rect x="30" y="238" width="5" height="42" rx="2" fill="#b56539"/>
+<text x="48" y="266" font-size="23" font-weight="700">~0.0</text>
+<text x="30" y="321" font-size="15">Gradient similarity (disattenuated cosine)</text>
+</g></svg>
