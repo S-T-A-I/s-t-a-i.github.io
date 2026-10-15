@@ -283,6 +283,9 @@
   "muppetabenchmarkforcontextualprivacyofllmassistantsinmultipartyconversations": [
    "PILM",
    "LLMAG"
+  ],
+  "tuliptargetedllmunlearningatlayersidentifiedperinput": [
+   "MU"
   ]
  }
 }
