@@ -10,6 +10,10 @@ weight = 2
 
 We expect PhD students to run their own first-author projects, with possible collaborations with both senior and junior members inside and outside the lab.
 
+**Scholarships for international applicants**
+
+International applicants with an external scholarship receive preference. A scholarship is not required to apply or to be accepted. In the application form, describe any scholarship you hold and your plans to apply for funding. You may write “None”. See our [scholarship guidance by citizenship](/scholarships/).
+
 **Application process**
 
 ![PhD application process](/img/flowcharts/flowchart-phd-public.png)

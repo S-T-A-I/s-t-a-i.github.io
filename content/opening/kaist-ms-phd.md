@@ -14,6 +14,10 @@ The integrated MSc-PhD programme (석박통합과정) is a single KAIST admissio
 
 We expect integrated MSc-PhD students to run their own first-author projects, with possible collaborations with both senior and junior members inside and outside the lab.
 
+**Scholarships for international applicants**
+
+International applicants with an external scholarship receive preference. A scholarship is not required to apply or to be accepted. In the application form, describe any scholarship you hold and your plans to apply for funding. You may write “None”. See our [scholarship guidance by citizenship](/scholarships/).
+
 **Application process**
 
 1. Apply via the [STAI application form](https://internal.stai-lab.org/apply) with your CV and transcript attached

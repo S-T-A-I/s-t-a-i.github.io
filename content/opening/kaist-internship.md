@@ -18,6 +18,10 @@ We expect interns to participate in a predefined research agenda as a co-author,
 
 Your day-to-day supervisor is the PhD student you apply to work with. They define the research direction, set milestones, and provide regular feedback. Joon is available for broader guidance but does not manage the internship on a daily basis. Choose your PhD student host carefully - your internship experience depends largely on this match.
 
+**Scholarships for international applicants**
+
+International applicants with an external scholarship receive preference. A scholarship is not required to apply or to be accepted. In the application form, describe any scholarship you hold and your plans to apply for funding. You may write “None”. See our [scholarship guidance by citizenship](/scholarships/).
+
 **Application process**
 
 ![Internship application process](/img/flowcharts/flowchart-intern-public.png)

@@ -1,0 +1,77 @@
+{
+  "checked": "2026-10-16",
+  "programmes": [
+    {
+      "id": "lpdp",
+      "countries": [
+        "ID"
+      ],
+      "nationalities": "Indonesia",
+      "programmes": [
+        "ms",
+        "ms_phd",
+        "phd"
+      ],
+      "name": "LPDP",
+      "description": "Master’s and doctoral funding, including tuition and living expenses. Check the current STEM call, approved programme, full or partial funding option, and return-to-Indonesia obligations.",
+      "url": "https://lpdp.kemenkeu.go.id/en/beasiswa/beasiswa-stem-industri-strategis/industri-strategis/"
+    },
+    {
+      "id": "bolashak",
+      "countries": [
+        "KZ"
+      ],
+      "nationalities": "Kazakhstan",
+      "programmes": [
+        "ms",
+        "ms_phd",
+        "phd"
+      ],
+      "name": "Bolashak",
+      "description": "Tuition and living support for overseas postgraduate study. KAIST is listed by its admissions office as a recognised university. Check the current approved fields, selection requirements, and return-service obligations.",
+      "url": "https://bolashak.gov.kz/en/"
+    },
+    {
+      "id": "vingroup",
+      "countries": [
+        "VN"
+      ],
+      "nationalities": "Vietnam",
+      "programmes": [
+        "phd"
+      ],
+      "name": "Vingroup doctoral scholarship",
+      "description": "Doctoral funding for science and technology, including tuition and living expenses. KAIST is on the target-university list. From the 2026 cohort, new applications are for doctoral degrees only.",
+      "url": "https://scholarships.vinuni.edu.vn/"
+    },
+    {
+      "id": "lacaixa",
+      "countries": [
+        "ES",
+        "PT"
+      ],
+      "nationalities": "Spain and Portugal",
+      "programmes": [
+        "ms",
+        "ms_phd",
+        "phd"
+      ],
+      "name": "la Caixa postgraduate fellowships abroad",
+      "description": "Postgraduate funding that includes South Korea. Check the nationality, prior-degree location and completion-date requirements, eligible start dates, and maximum award duration.",
+      "url": "https://fundacionlacaixa.org/es/becas-posgrado-extranjero-convocatoria"
+    },
+    {
+      "id": "taiwan",
+      "countries": [
+        "TW"
+      ],
+      "nationalities": "Taiwan",
+      "programmes": [
+        "phd"
+      ],
+      "name": "Taiwan-KAIST scholarship",
+      "description": "For new doctoral applicants. KAIST lists tuition and an annual stipend. Check the Ministry of Education call for citizenship and residence requirements, award duration, and application dates.",
+      "url": "https://www.scholarship.moe.gov.tw/top100"
+    }
+  ]
+}
