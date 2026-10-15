@@ -1,0 +1,11 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+<main id="main" class="page">
+  <div class="shell">
+    <p class="crumb"><a href="/opening/">Openings</a></p>
+    <h1>{{ .Title }}</h1>
+    <div class="article-style">{{ .Content }}</div>
+  </div>
+</main>
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}

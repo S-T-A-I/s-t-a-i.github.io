@@ -10,6 +10,10 @@ weight = 1
 
 We expect postdocs to be independent researchers who can manage multiple research threads in the lab through supervision, while pursuing their own first-author agenda. A research vision broader than a single project is expected.
 
+**Scholarships for international applicants**
+
+International applicants with an external scholarship receive preference. A scholarship is not required to apply or to be accepted. In the application form, describe any scholarship you hold and your plans to apply for funding. You may write “None”. See our [scholarship guidance by citizenship](/scholarships/).
+
 **Application process**
 
 ![Postdoc application process](/img/flowcharts/flowchart-postdoc-public.png)

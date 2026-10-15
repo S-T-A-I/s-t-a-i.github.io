@@ -1,0 +1,4 @@
+{{ range .Site.Data.scholarships.programmes }}
+<h3>{{ .nationalities }}</h3>
+<p><a href="{{ .url }}">{{ .name }}</a>. {{ .description }}</p>
+{{ end }}
