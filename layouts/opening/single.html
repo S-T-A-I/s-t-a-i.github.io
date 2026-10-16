@@ -10,6 +10,9 @@
     </p>
     <h1>{{ .Title }}</h1>
     <div class="article-style">
+      {{ if eq .Params.status "Open" }}
+      <p>We accept applications only through the <a href="https://internal.stai-lab.org/apply">STAI application form</a>. We do not accept applications by email or social media.</p>
+      {{ end }}
       {{ .Content }}
     </div>
   </div>
