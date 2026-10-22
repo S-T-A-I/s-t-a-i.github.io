@@ -8,6 +8,7 @@ publication_short = "arXiv"
 title = "Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?"
 url_arxiv = "//arxiv.org/abs/2610.08775"
 url_pdf = "//arxiv.org/pdf/2610.08775"
+url_project = "//bottled-agents.com/"
 
 [[authors]]
     name = "Ankit Sonthalia"
