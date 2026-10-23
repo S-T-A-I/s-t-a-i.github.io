@@ -11,9 +11,9 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def paper(slug, short=None, full=None, workshop=None, award=None, arxiv=False):
+def paper(slug, short=None, full=None, workshop=None, award=None, arxiv=False, authors=()):
     return dict(slug=slug, title=slug, year="2026", publicationShort=short,
-                publication=full, workshop=workshop, award=award, authors=[],
+                publication=full, workshop=workshop, award=award, authors=list(authors),
                 links=[dict(name="arXiv", url="https://arxiv.org/abs/2607.00547")] if arxiv else [])
 
 
@@ -27,7 +27,12 @@ class PublicationsTest(unittest.TestCase):
         (root / "data/publication_order.json").write_text((ROOT / "data/publication_order.json").read_text())
         records = [
             paper("workshop-first", "SCSL @ ICLR", "ICLR Workshop on Shortcuts"),
-            paper("egogap", arxiv=True),
+            paper("egogap", arxiv=True, authors=[
+                dict(name="Student Name", isMember=True, handle="student", star=True),
+                dict(name="Outside Author", isMember=False, handle=None, star=False),
+                dict(name="Unlinked Author", isMember=False, handle=None, star=False),
+                dict(name="Former Member", isMember=True, handle="gone", star=False),
+            ]),
             paper("icml-oral", "ICML Oral", award="Oral"),
             paper("neurips-main", "NeurIPS (Poster)", award="Poster"),
             paper("journal", "arXiv", "Nature Human Behaviour", "ICML Workshop", arxiv=True),
@@ -46,6 +51,9 @@ class PublicationsTest(unittest.TestCase):
         ]
         cls.records = records
         (root / "data/fixture.json").write_text(json.dumps(records))
+        (root / "data/coauthors.json").write_text(json.dumps({"Outside Author": "https://outside.example/"}))
+        (root / "content/member").mkdir(parents=True)
+        (root / "content/member/student.md").write_text('---\ntitle: Student Name\n---\n')
         for rel in ["data/publication-venue.html", "data/publication-order.html", "data/research-record.html", "data/student-record.html", "index/publications.html"]:
             target = root / "layouts/partials" / rel
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -127,6 +135,14 @@ class PublicationsTest(unittest.TestCase):
         students = json.loads(re.search(r'<script id="student-record">(.*?)</script>', self.html, re.S)[1])
         self.assertEqual([r['paper']['slug'] for r in students], ['new-db-paper', 'older-student'])
         self.assertTrue(students[0]['student']['isAlumni'])
+
+    def test_authors_link_to_member_pages_and_external_pages(self):
+        authors = next(a for a in re.findall(r'<div class="au" itemprop="author">(.*?)</div>', self.html, re.S)
+                       if a.strip())
+        self.assertEqual(re.sub(r'\s+', ' ', authors).strip(),
+                         '<a href="/member/student/">Student Name*</a>, '
+                         '<a href="https://outside.example/" rel="noopener">Outside Author</a>, '
+                         'Unlinked Author, Former Member')
 
     def test_homepage_handles_unavailable_publications(self):
         record = json.loads(re.search(r'<script id="empty-record">(.*?)</script>', self.html, re.S)[1])
