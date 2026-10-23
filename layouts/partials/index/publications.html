@@ -51,11 +51,19 @@
             {{ if $primary }}<a href="{{ $primary }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
           </p>
           <div class="au" itemprop="author">
-            {{- $names := slice -}}
-            {{- range .authors -}}
-              {{- $names = $names | append (printf "%s%s" .name (cond (eq .star true) "*" "")) -}}
+            {{- /* Members link to their member page, others to data/coauthors.json. */ -}}
+            {{- range $i, $a := .authors -}}
+              {{- if $i }}, {{ end -}}
+              {{- $label := printf "%s%s" $a.name (cond (eq $a.star true) "*" "") -}}
+              {{- $page := cond (ne $a.handle nil) (site.GetPage (printf "/member/%v" $a.handle)) nil -}}
+              {{- with $page -}}
+                <a href="{{ .RelPermalink }}">{{ $label }}</a>
+              {{- else with index (site.Data.coauthors | default dict) $a.name -}}
+                <a href="{{ . }}" rel="noopener">{{ $label }}</a>
+              {{- else -}}
+                {{ $label }}
+              {{- end -}}
             {{- end -}}
-            {{ delimit $names ", " | safeHTML }}
           </div>
           <div class="mt">
             <span class="vn">

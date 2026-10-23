@@ -397,6 +397,8 @@ html.dark-mode .affil-row a:not(.stai) img{filter:invert(1) brightness(1.85) sat
 .pub .t a{border-bottom:1px solid color-mix(in srgb, var(--acc) 32%, transparent);}
 .pub .t a:hover{color:var(--acc);border-bottom-color:var(--acc);}
 .pub .au{font-size:17.4px;font-style:italic;color:var(--ink-2);line-height:1.4;}
+.pub .au a{border-bottom:1px solid color-mix(in srgb, var(--ink-2) 22%, transparent);}
+.pub .au a:hover{color:var(--acc);border-bottom-color:var(--acc);}
 .pub .mt{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:7px;}
 .pub .vn{font-family:var(--ui);font-size:13.8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-left:2px solid var(--acc);padding-left:9px;}
 .pub .vn b{display:inline-block;color:var(--acc);font-weight:700;background:var(--accent-wash);border:1px solid var(--info-bd);padding:1px 9px;border-radius:100px;margin:0 1px;letter-spacing:.1em;}

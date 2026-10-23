@@ -36,7 +36,7 @@ The site is then available at <http://localhost:1313/>.
 | `archetypes/` | Templates for new content via `hugo new`. |
 | `static/` | Static assets served as-is (images, PDFs, files). |
 | `data/` | Build-time data. `communities.json` holds the research themes behind the chart on the publications page. |
-| `scripts/` | Maintenance scripts. `sync-communities.py` rebuilds `data/communities.json`. |
+| `scripts/` | Maintenance scripts. `sync-communities.py` rebuilds `data/communities.json`; `sync-coauthors.py` rebuilds `data/coauthors.json`. |
 | `.github/workflows/` | GitHub Actions deploy pipeline. |
 
 Set `params.members_api_url` in `config.toml` to the public
@@ -102,3 +102,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the branching and review workflow.
 ## Contact
 
 `coallaoh@gmail.com`
+
+## Author links
+
+Members on the publications page link to their member page, through the handle
+in the publications API. Other authors link to the page recorded for them on the
+personal site (`data/authors.js`), copied into `data/coauthors.json`:
+
+```sh
+python3 scripts/sync-coauthors.py [path-to-coallaoh.github.io]
+```
+
+Run it after new papers land. It lists authors the personal site has no page for.
