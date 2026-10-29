@@ -8,7 +8,7 @@ after_offer = "After the offer, apply through [KAIST Graduate Admissions](https:
 
 [[steps]]
 title = "Apply"
-detail = "Fill in the STAI application form and attach your CV and a research statement."
+detail = "Fill in the STAI application form and attach your CV and transcript."
 
 [[steps]]
 title = "Coffee chat"

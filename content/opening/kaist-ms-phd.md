@@ -24,23 +24,23 @@ detail = "We tell you the outcome by the offer date for your intake."
 
 [[offer_dates]]
 intake = "International spring"
-date = "20 August"
+date = "31 August"
 
 [[offer_dates]]
 intake = "International autumn, early track"
-date = "20 November"
+date = "30 November"
 
 [[offer_dates]]
 intake = "International autumn, regular track"
-date = "20 February"
+date = "28 February"
 
 [[offer_dates]]
 intake = "Domestic spring"
-date = "20 June"
+date = "30 June"
 
 [[offer_dates]]
 intake = "Domestic autumn"
-date = "20 March"
+date = "31 March"
 +++
 
 **The programme**
