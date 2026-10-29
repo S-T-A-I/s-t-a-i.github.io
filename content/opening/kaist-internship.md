@@ -37,3 +37,7 @@ Your day-to-day supervisor is the PhD student you apply to work with. They defin
 **Scholarships for international applicants**
 
 International applicants with an external scholarship receive preference. A scholarship is not required to apply or to be accepted. In the application form, describe any scholarship you hold and your plans to apply for funding. You may write “None”. See our [scholarship guidance by citizenship](/scholarships/).
+
+**KAIST AI Research Internship (KAIRI)**
+
+The Kim Jaechul Graduate School of AI also runs KAIRI, a research internship each summer and winter. You can apply to KAIRI and name STAI as your preferred lab, in addition to the STAI application form. KAIRI is open to domestic applicants. International students at overseas universities apply through the [school's visiting internship](https://gsai.kaist.ac.kr/international-students-welcome-to-apply-for-an-internship/). Calls and deadlines are announced on the [school website](https://gsai.kaist.ac.kr/).
