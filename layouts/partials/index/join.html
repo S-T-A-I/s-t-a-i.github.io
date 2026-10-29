@@ -1,0 +1,14 @@
+{{ $open := sort (where (where .Site.RegularPages "Type" "opening") ".Params.status" "Open") ".Params.weight" }}
+<section class="blk home-join" id="join" aria-labelledby="join-title">
+  <div class="shell">
+    <h2 id="join-title">Join us</h2>
+    <p>Graduate students lead their own first-author projects, with regular one-to-one meetings with Seong Joon Oh. Undergraduates can start with an internship alongside a PhD student. {{ $orgs := slice }}{{ range where site.Data.alumni_outcomes "featured" true }}{{ $orgs = $orgs | append (cond (hasPrefix .organisation "University") (printf "the %s" .organisation) .organisation) }}{{ end }}{{ with $orgs }}Our alumni have gone on to {{ delimit . ", " " and " }}.{{ end }}</p>
+    {{ with $open }}
+    <p class="home-roles">Open positions: {{ range $i, $p := . }}{{ if $i }}, {{ end }}<a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ end }}</p>
+    {{ end }}
+    <div class="home-actions">
+      <a class="home-button" href="{{ .Site.Params.application_url }}">Apply to STAI <span aria-hidden="true">↗</span></a>
+      <a class="home-text-link" href="/opening/">Openings and process <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>

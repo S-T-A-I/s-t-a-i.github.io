@@ -3,6 +3,10 @@
 
 <main id="main">
 {{ partial "index/openings.html" . }}
+{{ partial "index/mentorship.html" . }}
+<section class="blk home-students" id="student-research" aria-labelledby="student-record-title">
+  <div class="shell">{{ partial "index/student-record.html" . }}</div>
+</section>
 </main>
 
 {{ partial "footer_container.html" . }}
