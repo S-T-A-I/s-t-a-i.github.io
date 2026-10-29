@@ -49,7 +49,8 @@
         {{- $img := "" -}}
         {{- with .image }}{{ $img = cond (hasPrefix . "http") . (printf "%simg/%s" site.BaseURL (strings.TrimPrefix "/" .)) }}{{ end -}}
         <div class="pub{{ if $img }} has-img{{ end }}" data-comm="{{ delimit $tags " " }}" itemscope itemtype="http://schema.org/ScholarlyArticle">
-          {{ with $img }}<img class="pub-img" src="{{ . }}" alt="" loading="lazy" itemprop="image">{{ end }}
+          {{- /* Illustration thumbnails ("-thumb.png") have a "-thumb-dark.png" twin for dark mode. */ -}}
+          {{ with $img }}{{ if hasSuffix . "-thumb.png" }}<span class="pub-img pub-pair"><img class="fig-light" src="{{ . }}" alt="" loading="lazy" itemprop="image"><img class="fig-dark" src="{{ replace . "-thumb.png" "-thumb-dark.png" }}" alt="" loading="lazy"></span>{{ else }}<img class="pub-img" src="{{ . }}" alt="" loading="lazy" itemprop="image">{{ end }}{{ end }}
           <div class="pub-body">
           <p class="t" itemprop="name">
             {{ if $primary }}<a href="{{ $primary }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
