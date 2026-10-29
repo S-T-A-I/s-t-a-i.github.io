@@ -1,7 +1,7 @@
 +++
 abstract = "Existing benchmarks for LLM-based agentic systems are model-centric, fixing the agentic setup without comparing system components like harness engineering choices. MASEval is a framework-agnostic evaluation library that treats the entire agent system as the unit of analysis. Through the first systematic system-level comparison across 3 benchmarks, 3 models, and 3 frameworks, we find that framework choice impacts performance comparably to model choice within a capability tier."
 date = "2026-03-12T00:00:00+00:00"
-image = "cornelius2026maseval.png"
+image = "cornelius2026maseval-thumb.png"
 publication = "Proceedings of the Annual Meeting of the Association for Computational Linguistics: System Demonstration Track"
 publication_short = "ACL System Demo"
 title = "MASEval: Extending Multi-Agent Evaluation from Models to Systems"

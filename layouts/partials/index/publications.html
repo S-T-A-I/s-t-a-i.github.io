@@ -46,7 +46,11 @@
         {{- range .links }}{{ if and (not $primary) (in (lower .name) "arxiv") }}{{ $primary = .url }}{{ end }}{{ end -}}
         {{- if not $primary }}{{ range .links }}{{ if and (not $primary) (in (lower .name) "pdf") }}{{ $primary = .url }}{{ end }}{{ end }}{{ end -}}
         {{- if not $primary }}{{ with index (.links | default slice) 0 }}{{ $primary = .url }}{{ end }}{{ end -}}
-        <div class="pub" data-comm="{{ delimit $tags " " }}" itemscope itemtype="http://schema.org/ScholarlyArticle">
+        {{- $img := "" -}}
+        {{- with .image }}{{ $img = cond (hasPrefix . "http") . (printf "%simg/%s" site.BaseURL (strings.TrimPrefix "/" .)) }}{{ end -}}
+        <div class="pub{{ if $img }} has-img{{ end }}" data-comm="{{ delimit $tags " " }}" itemscope itemtype="http://schema.org/ScholarlyArticle">
+          {{ with $img }}<img class="pub-img" src="{{ . }}" alt="" loading="lazy" itemprop="image">{{ end }}
+          <div class="pub-body">
           <p class="t" itemprop="name">
             {{ if $primary }}<a href="{{ $primary }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
           </p>
@@ -91,6 +95,7 @@
               {{ range . }}<span class="pub-tag" style="--c:var(--s{{ .slot }})">{{ .short }}</span>{{ end }}
             </span>
             {{ end }}
+          </div>
           </div>
         </div>
         {{ end }}
