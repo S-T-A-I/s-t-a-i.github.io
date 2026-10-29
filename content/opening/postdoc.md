@@ -7,7 +7,7 @@ weight = 1
 
 [[steps]]
 title = "Apply"
-detail = "Fill in the STAI application form and attach your CV and a research statement."
+detail = "Fill in the STAI application form and attach your CV."
 
 [[steps]]
 title = "Coffee chat"
