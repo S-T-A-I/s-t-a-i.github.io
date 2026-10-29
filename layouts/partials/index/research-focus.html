@@ -3,7 +3,10 @@
     <h2 id="research-fit-title">Research</h2>
     <ul class="home-areas">
       {{ range site.Data.research_focus }}
-      <li><h3>{{ .title }}</h3><p>{{ .description }}</p></li>
+      <li>
+        {{ with .image }}<img class="home-thumb" src="{{ partial "data/home-image.html" . }}" alt="" width="112" height="75" loading="lazy" decoding="async">{{ end }}
+        <div><h3>{{ .title }}</h3><p>{{ .description }}</p></div>
+      </li>
       {{ end }}
     </ul>
     <p class="home-more"><a href="/overview/overview/">Our research vision <span aria-hidden="true">→</span></a></p>

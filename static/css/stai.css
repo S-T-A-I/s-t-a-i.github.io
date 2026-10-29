@@ -573,3 +573,15 @@ footer.st a:hover{color:var(--acc);}
 .home-join .home-roles a:hover{color:var(--acc);border-color:var(--acc);}
 .home-page .home-people{margin-top:0;}
 @media (max-width:760px){.home-areas{grid-template-columns:1fr;}.home-page > .blk{padding:38px 0;}}
+/* Landing visuals: small paper figures and one featured result. */
+.home-thumb{flex:0 0 112px;width:112px;height:75px;object-fit:contain;background:#000;border-radius:4px;}
+.home-areas li,.home-papers li{display:flex;gap:18px;align-items:flex-start;}
+.home-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:36px;align-items:center;
+  padding:0 0 30px;margin:0 0 26px;border-bottom:1px solid var(--rule);}
+.home-feature img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;background:#fff;}
+.home-feature-venue{font-family:var(--ui);font-size:14px;color:var(--mut);margin:0 0 6px;}
+.home-feature h3{font-family:var(--ui);font-size:22px;line-height:1.35;margin:0 0 12px;}
+.home-feature h3 a:hover{color:var(--acc);}
+.home-feature h3 + p{font-size:18px;color:var(--ink-2);margin:0;}
+@media (max-width:760px){.home-feature{grid-template-columns:1fr;gap:18px;}
+  .home-thumb{flex-basis:84px;width:84px;height:56px;}}

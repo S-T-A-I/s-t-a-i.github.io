@@ -1,6 +1,7 @@
 [
   {
     "id": "ai-safety",
+    "image": "sangwoo2026selfci.png",
     "title": "AI safety and human oversight",
     "description": "Make AI useful without losing privacy or human control.",
     "questions": [
@@ -11,6 +12,7 @@
   },
   {
     "id": "agents",
+    "image": "cornelius2026maseval.png",
     "title": "Agents and system evaluation",
     "description": "Improve the whole system, from planning and tool use to coordination between agents.",
     "questions": [
@@ -21,6 +23,7 @@
   },
   {
     "id": "memory",
+    "image": "seokwon2026meme.png",
     "title": "Memory and continual adaptation",
     "description": "Help agents learn from new information and user corrections without retraining for every update.",
     "questions": [
@@ -31,6 +34,7 @@
   },
   {
     "id": "retrieval",
+    "image": "bora2026halftruths.png",
     "title": "Retrieval and grounded reasoning",
     "description": "Connect models to relevant, current evidence across text and images.",
     "questions": [
