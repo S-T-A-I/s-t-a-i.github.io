@@ -10,10 +10,33 @@
     </p>
     <h1>{{ .Title }}</h1>
     <div class="article-style">
-      {{ if eq .Params.status "Open" }}
-      <p>We accept applications only through the <a href="https://internal.stai-lab.org/apply">STAI application form</a>. We do not accept applications by email or social media.</p>
-      {{ end }}
       {{ .Content }}
+      {{ if and (eq .Params.status "Open") .Params.steps }}
+      <section class="apply" aria-labelledby="how-to-apply">
+        <h2 id="how-to-apply">How to apply</h2>
+        <ol class="apply-steps">
+          {{ range $i, $s := .Params.steps }}
+          <li>
+            <span class="apply-n" aria-hidden="true">{{ add $i 1 }}</span>
+            <h3>{{ $s.title }}</h3>
+            <p>{{ $s.detail | markdownify }}</p>
+          </li>
+          {{ end }}
+        </ol>
+        {{ with .Params.after_offer }}<p>{{ . | markdownify }}</p>{{ end }}
+        <p>We accept applications only through the <a href="{{ .Site.Params.application_url }}">STAI application form</a>. We do not accept applications by email or social media.</p>
+        {{ with .Params.offer_dates }}
+        <p>Apply at least a month before the offer date for your intake. This leaves time for the chat and the interview.</p>
+        <details class="apply-dates">
+          <summary>Offer dates by intake</summary>
+          <ul>
+            {{ range . }}<li>{{ .intake }}: {{ .date }}</li>{{ end }}
+          </ul>
+        </details>
+        {{ end }}
+        <p class="apply-cta"><a class="home-button" href="{{ .Site.Params.application_url }}">Apply to STAI <span aria-hidden="true">↗</span></a></p>
+      </section>
+      {{ end }}
     </div>
   </div>
 </main>

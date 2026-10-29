@@ -1,16 +1,32 @@
 +++
 title = "Internship"
 date = "2026-01-20"
-short_description = ""
+short_description = "For undergraduates. Join a project with a PhD student host. One-hour interview with that student."
 status = "Open"
 weight = 5
+
+[[steps]]
+title = "Apply"
+detail = "Fill in the STAI application form. Choose the PhD student you would like to work with and attach your CV and a research statement."
+
+[[steps]]
+title = "Coffee chat"
+detail = "An informal call with that PhD student."
+
+[[steps]]
+title = "Interview"
+detail = "One hour with the PhD student. Present your past work for about 10 minutes and discuss it. Then talk about research ideas that combine your strengths with our direction."
+
+[[steps]]
+title = "Offer"
+detail = "We tell you the outcome after the interview."
 +++
 
 **Start your research career**
 
 Undergraduate students are welcome to apply. Join a research project, work closely with a PhD student and build experience towards contributing to a research paper. Explore [our publication record](/publication/) to see the questions we work on and the conferences where we publish.
 
-**Expectations**
+**What you will do**
 
 We expect interns to participate in a predefined research agenda as a co-author, working closely with their PhD student host.
 
@@ -21,14 +37,3 @@ Your day-to-day supervisor is the PhD student you apply to work with. They defin
 **Scholarships for international applicants**
 
 International applicants with an external scholarship receive preference. A scholarship is not required to apply or to be accepted. In the application form, describe any scholarship you hold and your plans to apply for funding. You may write “None”. See our [scholarship guidance by citizenship](/scholarships/).
-
-**Application process**
-
-![Internship application process](/img/flowcharts/flowchart-intern-public.png)
-
-1. Apply via the [STAI application form](https://internal.stai-lab.org/apply), selecting your preferred PhD supervisor, with your CV and research statement attached
-2. Coffee chat with the PhD student
-3. Interview: 30 min + 30 min with the PhD student
-   - *First half*: Present your prior work (aim for 10 minutes, leaving 20 minutes for discussion)
-   - *Second half*: Discuss future research ideas at the intersection of your expertise and our vision
-4. Offer
