@@ -4,7 +4,7 @@
     <ul class="home-areas">
       {{ range site.Data.research_focus }}
       <li>
-        {{ with .image }}<img class="home-thumb" src="{{ partial "data/home-image.html" . }}" alt="" width="112" height="75" loading="lazy" decoding="async">{{ end }}
+        {{ if .figure }}<span class="home-fig" aria-hidden="true"><img class="fig-light" src="/img/research/{{ .id }}-light.svg" alt="" width="112" height="75" loading="lazy"><img class="fig-dark" src="/img/research/{{ .id }}-dark.svg" alt="" width="112" height="75" loading="lazy"></span>{{ end }}
         <div><h3>{{ .title }}</h3><p>{{ .description }}</p></div>
       </li>
       {{ end }}

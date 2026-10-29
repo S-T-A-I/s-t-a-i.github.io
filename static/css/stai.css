@@ -615,3 +615,9 @@ footer.st a:hover{color:var(--acc);}
 .intern-lead{margin:0;font-family:var(--ui);font-size:17px;color:var(--ink);}
 .intern-topics{margin:0;white-space:pre-wrap;font-family:var(--ui);font-size:16.5px;line-height:1.5;color:var(--ink-2);}
 .intern-cta{margin:16px 0 0;font-family:var(--ui);font-size:15.5px;color:var(--ink-2);}
+/* Research diagrams: separate light and dark files, transparent background. */
+.home-fig{flex:0 0 112px;width:112px;height:75px;}
+.home-fig img{width:100%;height:100%;}
+.home-fig .fig-dark,html.dark-mode .home-fig .fig-light{display:none;}
+html.dark-mode .home-fig .fig-dark{display:block;}
+@media (max-width:760px){.home-fig{flex-basis:84px;width:84px;height:56px;}}
