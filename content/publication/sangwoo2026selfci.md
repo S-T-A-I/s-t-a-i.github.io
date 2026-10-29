@@ -2,7 +2,7 @@
 abstract = "Contextual Integrity (CI) defines privacy as governing information flows by contextual norms. LLMs deployed as personal agents remain unreliable at CI disclosure decisions, and existing mitigations degrade task utility. SELFCI is a self-distillation framework that decouples information suppression from task resolution. It jointly optimises two reverse KL divergences over distinct teacher distributions: one preserves task-relevant information, the other enforces minimal disclosure. The combination induces a Product-of-Experts target that aligns the policy with the intersection of capability and privacy. SELFCI outperforms competitive baselines such as GRPO without costly external supervision, and the gains extend to agentic workflows with accumulated private context."
 date = "2026-05-18T00:00:00+00:00"
 publication_date = "2026-05-18T00:00:00+00:00"
-image = "sangwoo2026selfci.png"
+image = "sangwoo2026selfci-thumb.png"
 publication = "NeurIPS (Poster)"
 publication_short = "NeurIPS (Poster)"
 title = "It Takes Two: Complementary Self-Distillation for Contextual Integrity in LLMs"

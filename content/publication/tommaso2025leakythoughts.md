@@ -2,7 +2,7 @@
 abstract = "A critical paradox emerges when a Large Language Model (LLM) is tasked with reasoning over private information. The model will actively attempt to conceal the sensitive data within its reasoning trace; ironically, the more complex its effort to hide the information, the greater the risk of an accidental leak. This demonstrates that the very presence of private data within an LLM's reasoning process is inherently risky."
 date = "2025-06-19T00:00:00+00:00"
 publication_date = "2025-11-01T00:00:00+00:00"
-image = "tommaso2025leakythoughts.png"
+image = "tommaso2025leakythoughts-thumb.png"
 publication = "Conference on Empirical Methods in Natural Language Processing"
 publication_short = "EMNLP"
 title = "Leaky Thoughts: Large Reasoning Models Are Not Private Thinkers"

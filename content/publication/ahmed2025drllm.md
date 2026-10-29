@@ -2,7 +2,7 @@
 abstract = "Dr.LLM improves reasoning with less computation. Lightweight routers at each layer decide whether to skip, execute, or repeat transformer blocks. Monte Carlo tree search trains the routers to find optimal paths. The approach is retrofittable and generalises to new tasks."
 date = "2026-01-27T00:00:00+00:00"
 publication_date = "2026-04-24T00:00:00+00:00"
-image = "ahmed2025drllm.png"
+image = "ahmed2025drllm-thumb.png"
 publication = "International Conference on Learning Representations"
 publication_short = "ICLR"
 title = "Dr.LLM: Dynamic Layer Routing for LLMs"
