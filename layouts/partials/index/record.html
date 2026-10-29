@@ -1,14 +1,30 @@
 {{ $pubs := partialCached "data/publications.html" . "publications" }}
 {{ $record := partial "data/research-record.html" $pubs }}
+{{ $featured := site.Data.featured_result }}
+{{ $feature := index (where $pubs "slug" $featured.slug) 0 }}
 <section class="blk home-record" id="research-record" aria-labelledby="record-title">
   <div class="shell">
     <h2 id="record-title">Recent papers</h2>
-    {{ with $record.highlights }}
+    {{ with $feature }}
+    {{ $venue := partial "data/publication-venue.html" . }}
+    <article class="home-feature">
+      {{ with .image }}<a href="/publication/{{ $feature.slug }}/" tabindex="-1" aria-hidden="true"><img src="{{ partial "data/home-image.html" . }}" alt="" loading="lazy" decoding="async"></a>{{ end }}
+      <div>
+        <p class="home-feature-venue">{{ $venue.label }} {{ .year }}</p>
+        <h3><a href="/publication/{{ .slug }}/">{{ .title }}</a></h3>
+        <p>{{ $featured.takeaway }}</p>
+      </div>
+    </article>
+    {{ end }}
+    {{ with where $record.highlights "slug" "ne" $featured.slug }}
     <ul class="home-papers">
       {{ range . }}
       <li>
-        <a href="/publication/{{ .slug }}/">{{ .title }}</a>
-        <p>{{ range $i, $author := .authors }}{{ if $i }}, {{ end }}{{ .name }}{{ end }} - {{ .displayVenue }} {{ .year }}</p>
+        {{ with .image }}<img class="home-thumb" src="{{ partial "data/home-image.html" . }}" alt="" width="112" height="75" loading="lazy" decoding="async">{{ end }}
+        <div>
+          <a href="/publication/{{ .slug }}/">{{ .title }}</a>
+          <p>{{ range $i, $author := .authors }}{{ if $i }}, {{ end }}{{ .name }}{{ end }} - {{ .displayVenue }} {{ .year }}</p>
+        </div>
       </li>
       {{ end }}
     </ul>

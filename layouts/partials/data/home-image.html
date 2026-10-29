@@ -1,0 +1,3 @@
+{{- /* Landing-page copy of a publication image: a small WebP in static/img/home/ when present, else the original. */ -}}
+{{- $small := printf "img/home/%s.webp" (path.BaseName .) -}}
+{{- return (cond (os.FileExists (printf "static/%s" $small)) (printf "/%s" $small) (printf "/img/%s" .)) -}}
