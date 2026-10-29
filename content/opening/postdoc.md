@@ -1,28 +1,31 @@
 +++
 title = "Postdoc"
 date = "2026-01-20"
-short_description = ""
+short_description = "Lead research threads alongside your own agenda. Interview day at the lab, with travel supported."
 status = "Open"
 weight = 1
+
+[[steps]]
+title = "Apply"
+detail = "Fill in the STAI application form and attach your CV and a research statement."
+
+[[steps]]
+title = "Coffee chat"
+detail = "An informal call with Seong Joon to see whether our interests fit."
+
+[[steps]]
+title = "Interview"
+detail = "An interview day at the lab. We support travel, and the interview can be remote if travel is not feasible. Present your past work to the lab (30 minutes plus questions), meet four or more lab members one-on-one, discuss future research with Seong Joon, then join the lab for a meal."
+
+[[steps]]
+title = "Offer"
+detail = "We tell you the outcome after the interview."
 +++
 
-**Expectations**
+**What you will do**
 
 We expect postdocs to be independent researchers who can manage multiple research threads in the lab through supervision, while pursuing their own first-author agenda. A research vision broader than a single project is expected.
 
 **Scholarships for international applicants**
 
 International applicants with an external scholarship receive preference. A scholarship is not required to apply or to be accepted. In the application form, describe any scholarship you hold and your plans to apply for funding. You may write “None”. See our [scholarship guidance by citizenship](/scholarships/).
-
-**Application process**
-
-![Postdoc application process](/img/flowcharts/flowchart-postdoc-public.png)
-
-1. Apply via the [STAI application form](https://internal.stai-lab.org/apply) with your CV and research statement attached
-2. Coffee chat with Seong Joon to figure out initial fit
-3. On-site interview day (we support travel for on-site visits; remote interview possible if travel is not feasible)
-   - *Job talk*: Present your prior work to the entire lab (30 minutes + discussion)
-   - *1-on-1 interviews*: Meet individually with 4+ lab members (we will connect you via email to arrange times)
-   - *Future research discussion*: Chat with Seong Joon about research directions at the intersection of your expertise and our vision
-   - *Lab lunch/dinner*: Informal time to get to know the team
-4. Offer
