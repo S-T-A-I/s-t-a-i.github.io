@@ -21,6 +21,7 @@
 
         <h1 class="prof-nm" itemprop="name">{{ .Params.name }}</h1>
         {{ with .Params.role }}<p class="prof-rl" itemprop="jobTitle">{{ . }}</p>{{ end }}
+        {{ if not .Params.is_alumni }}{{ with .Params.intern_supervision }}<p class="ib ib-{{ .status }}">{{ if eq .status "open" }}Looking for interns{{ else }}At full capacity{{ end }}</p>{{ end }}{{ end }}
 
         {{- $links := slice -}}
         {{- with .Params.email }}{{ $links = $links | append (dict "url" (printf "mailto:%s" .) "cls" "fa fa-envelope" "lab" "Email") }}{{ end -}}
@@ -44,6 +45,21 @@
       </aside>
 
       <div class="prof-main" itemprop="description">
+        {{ if not .Params.is_alumni }}{{ with .Params.intern_supervision }}
+        <h2>Internships</h2>
+        <div class="intern-box ib-box-{{ .status }}">
+          {{ if eq .status "open" }}
+          <p class="intern-lead">{{ $.Params.name }} is looking for a new intern.</p>
+          {{ else }}
+          <p class="intern-lead">{{ $.Params.name }} already hosts as many interns as they can take. You can still apply, but an application is less likely to go ahead.</p>
+          {{ end }}
+          {{ with .interests }}
+          <h3>Research interests for interns</h3>
+          <p class="intern-topics">{{ . }}</p>
+          {{ end }}
+          <p class="intern-cta"><a href="{{ site.Params.application_url }}">Apply through the STAI application form</a> and choose {{ $.Params.name }} as your preferred supervisor. <a href="{{ "opening/kaist-internship/" | relURL }}">About the internship</a></p>
+        </div>
+        {{ end }}{{ end }}
         {{ with .Params.research_interests }}
         <h2>Interests</h2>
         <ul class="ints">

@@ -25,7 +25,7 @@
 {{- $page := "" -}}
 {{- with $m.handle }}{{ $page = printf "/member/%s/" (urlize (lower .)) }}{{ end -}}
 
-<div class="person">
+<div class="person"{{ with $m.internSupervision }}{{ if not $m.isAlumni }} data-interns="{{ .status }}"{{ end }}{{ end }}>
   {{ if $page }}<a href="{{ $page }}" class="phl">{{ end }}
   <img class="ph" src="{{ $img }}" alt="{{ $name }}" loading="lazy" width="104" height="104">
   {{ if $page }}</a>{{ end }}
@@ -33,6 +33,21 @@
     {{ if $page }}<a href="{{ $page }}">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}
   </p>
   {{ with $role }}<p class="rl">{{ if $m.isAlumni }}At STAI: {{ end }}{{ . }}</p>{{ end }}
+  {{- if not $m.isAlumni }}
+  {{- with $m.internSupervision }}
+  <p class="ib ib-{{ .status }}">{{ if eq .status "open" }}Looking for interns{{ else }}At full capacity{{ end }}</p>
+  {{- end }}
+  {{- /* Up to three interest tags. Members write them one per line, or on one line separated by commas. */ -}}
+  {{- with $m.researchInterests }}
+    {{- $tags := slice -}}
+    {{- $text := replace . "\r\n" "\n" -}}
+    {{- if not (in $text "\n") }}{{ $text = replace $text "," "\n" }}{{ end -}}
+    {{- range split $text "\n" }}{{ with trim . " " }}{{ $tags = $tags | append . }}{{ end }}{{ end -}}
+    {{- with first 3 $tags }}
+  <ul class="tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+    {{- end }}
+  {{- end }}
+  {{- end }}
   {{ if $m.isAlumni }}
     {{ $outcome := where site.Data.alumni_outcomes "handle" $m.handle }}
     <div class="alumni-current">

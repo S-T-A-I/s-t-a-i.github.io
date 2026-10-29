@@ -49,13 +49,21 @@
 
 <section class="blk" id="members">
   <div class="shell">
+    {{- $open := 0 -}}
+    {{- range $current }}{{ with .internSupervision }}{{ if eq .status "open" }}{{ $open = add $open 1 }}{{ end }}{{ end }}{{ end }}
     <div class="hd">
       <div>
         <h2>Members</h2>
       </div>
+      {{ if $open }}
+      <button type="button" class="intern-filter" aria-pressed="false" aria-controls="member-groups" data-intern-filter hidden>
+        Looking for interns ({{ $open }})
+      </button>
+      {{ end }}
     </div>
 
     {{ if $buckets }}
+      <div id="member-groups">
       {{ range $buckets }}
       <div class="mgrp">
         <h3>{{ .label }}</h3>
@@ -64,6 +72,8 @@
         </div>
       </div>
       {{ end }}
+      </div>
+      {{ if $open }}<p class="intern-apply">To work with one of them, <a href="{{ site.Params.application_url }}">apply through the STAI application form</a>. Read about <a href="{{ "opening/kaist-internship/" | relURL }}">our internship</a>.</p>{{ end }}
     {{ else }}
     <p class="text-muted">Member list is temporarily unavailable.</p>
     {{ end }}
@@ -79,3 +89,4 @@
   </div>
 </section>
 <script src="{{ "js/collaborators.js" | absURL }}" defer></script>
+<script src="{{ "js/intern-filter.js" | absURL }}" defer></script>
