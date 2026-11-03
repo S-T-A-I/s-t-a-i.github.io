@@ -592,6 +592,12 @@ footer.st a:hover{color:var(--acc);}
 .home-feature h3 + p{font-size:18px;color:var(--ink-2);margin:0;}
 @media (max-width:760px){.home-feature{grid-template-columns:1fr;gap:18px;}
   .home-thumb{flex-basis:84px;width:84px;height:56px;}}
+/* Light and dark illustration pairs on the landing page and paper pages. */
+.home-thumb.pub-pair,.home-feature .pub-pair img{background:transparent;}
+.home-feature .pub-pair{display:block;}
+.home-feature .pub-pair img{height:auto;}
+.pub-banner.pub-pair{display:block;}
+.pub-banner.pub-pair img{height:auto;}
 /*************************************************
  *  Intern availability - member cards and pages
  *************************************************/
