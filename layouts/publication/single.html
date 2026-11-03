@@ -22,7 +22,12 @@
         </div>
 
         {{ if .Params.image }}
-        <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="pub-banner" itemprop="image">
+        {{ $src := printf "%simg/%s" $.Site.BaseURL .Params.image }}
+        {{ if hasSuffix .Params.image "-thumb.png" }}
+        <span class="pub-banner pub-pair"><img class="fig-light" src="{{ $src }}" itemprop="image"><img class="fig-dark" src="{{ replace $src "-thumb.png" "-thumb-dark.png" }}" alt=""></span>
+        {{ else }}
+        <img src="{{ $src }}" class="pub-banner" itemprop="image">
+        {{ end }}
         {{end}}
 
         <div class="row">

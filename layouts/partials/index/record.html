@@ -8,7 +8,7 @@
     {{ with $feature }}
     {{ $venue := partial "data/publication-venue.html" . }}
     <article class="home-feature">
-      {{ with .image }}<a href="/publication/{{ $feature.slug }}/" tabindex="-1" aria-hidden="true"><img src="{{ partial "data/home-image.html" . }}" alt="" loading="lazy" decoding="async"></a>{{ end }}
+      {{ with .image }}<a href="/publication/{{ $feature.slug }}/" tabindex="-1" aria-hidden="true">{{ if hasSuffix . "-thumb.png" }}<span class="pub-pair"><img class="fig-light" src="{{ partial "data/home-image.html" . }}" alt="" loading="lazy" decoding="async"><img class="fig-dark" src="{{ partial "data/home-image.html" (replace . "-thumb.png" "-thumb-dark.png") }}" alt="" loading="lazy" decoding="async"></span>{{ else }}<img src="{{ partial "data/home-image.html" . }}" alt="" loading="lazy" decoding="async">{{ end }}</a>{{ end }}
       <div>
         <p class="home-feature-venue">{{ $venue.label }} {{ .year }}</p>
         <h3><a href="/publication/{{ .slug }}/">{{ .title }}</a></h3>
@@ -20,7 +20,7 @@
     <ul class="home-papers">
       {{ range . }}
       <li>
-        {{ with .image }}<img class="home-thumb" src="{{ partial "data/home-image.html" . }}" alt="" width="112" height="75" loading="lazy" decoding="async">{{ end }}
+        {{ with .image }}{{ if hasSuffix . "-thumb.png" }}<span class="home-thumb pub-pair"><img class="fig-light" src="{{ partial "data/home-image.html" . }}" alt="" width="112" height="75" loading="lazy" decoding="async"><img class="fig-dark" src="{{ partial "data/home-image.html" (replace . "-thumb.png" "-thumb-dark.png") }}" alt="" width="112" height="75" loading="lazy" decoding="async"></span>{{ else }}<img class="home-thumb" src="{{ partial "data/home-image.html" . }}" alt="" width="112" height="75" loading="lazy" decoding="async">{{ end }}{{ end }}
         <div>
           <a href="/publication/{{ .slug }}/">{{ .title }}</a>
           <p>{{ range $i, $author := .authors }}{{ if $i }}, {{ end }}{{ .name }}{{ end }} - {{ .displayVenue }} {{ .year }}</p>
