@@ -1,6 +1,32 @@
-{{ $activities := where .Site.RegularPages "Type" "activity" }}
-{{ $talks := where .Site.RegularPages "Type" "talk" }}
-{{ if or $activities $talks }}
+{{/* Activities come from the internal tool's feed. The Markdown pages in
+     content/activity and content/talk predate it; one shows only when the
+     feed has nothing in the same section on the same day. */}}
+{{ $feed := partial "data/activities.html" . }}
+{{ $socials := slice }}
+{{ $talks := slice }}
+{{ $socialDays := slice }}
+{{ $talkDays := slice }}
+{{ range $feed }}
+  {{ $item := dict "date" (time .date) "title" .name "image" .photo "link" "" }}
+  {{ if eq .category "social" }}
+    {{ $socials = $socials | append $item }}
+    {{ $socialDays = $socialDays | append .date }}
+  {{ else if eq .category "invited_talk" }}
+    {{ $talks = $talks | append $item }}
+    {{ $talkDays = $talkDays | append .date }}
+  {{ end }}
+{{ end }}
+{{ range where .Site.RegularPages "Type" "activity" }}
+  {{ if not (in $socialDays (.Date.Format "2006-01-02")) }}
+    {{ $socials = $socials | append (dict "date" .Date "title" .Title "image" (cond (isset .Params "image") (printf "/%s" .Params.image) "") "link" "") }}
+  {{ end }}
+{{ end }}
+{{ range where .Site.RegularPages "Type" "talk" }}
+  {{ if not (in $talkDays (.Date.Format "2006-01-02")) }}
+    {{ $talks = $talks | append (dict "date" .Date "title" .Params.speaker "image" (cond (isset .Params "image") (printf "/%s" .Params.image) "") "link" (.Params.speaker_url | default "")) }}
+  {{ end }}
+{{ end }}
+{{ if or $socials $talks }}
 <section class="blk" id="activities">
   <div class="shell">
     <div class="hd">
@@ -9,18 +35,18 @@
       </div>
     </div>
 
-    {{ with $activities }}
+    {{ with $socials }}
     <div class="act-grp">
       <h3>Social Activities</h3>
       <div class="act-grid">
-        {{ range (sort . ".Date" "desc") }}
-        {{ $page := . }}
+        {{ range (sort . "date" "desc") }}
+        {{ $item := . }}
         <div class="act"><figure>
-          {{ with $page.Params.image }}
-          <img src="/{{ . }}" alt="{{ $page.Title }}" loading="lazy">
+          {{ with $item.image }}
+          <img src="{{ . }}" alt="{{ $item.title }}" loading="lazy">
           {{ end }}
-          <div class="dt">{{ $page.Date.Format "January 2, 2006" }}</div>
-          <div class="tl">{{ $page.Title }}</div>
+          <div class="dt">{{ $item.date.Format "January 2, 2006" }}</div>
+          <div class="tl">{{ $item.title }}</div>
         </figure></div>
         {{ end }}
       </div>
@@ -31,17 +57,16 @@
     <div class="act-grp">
       <h3>Invited Talks</h3>
       <div class="act-grid">
-        {{ range (sort . ".Date" "desc") }}
-        {{ $page := . }}
-        {{ $speaker := $page.Params.speaker }}
+        {{ range (sort . "date" "desc") }}
+        {{ $item := . }}
         <div class="act"><figure>
-          {{ with $page.Params.image }}
-          <img src="/{{ . }}" alt="{{ $speaker }}" loading="lazy">
+          {{ with $item.image }}
+          <img src="{{ . }}" alt="{{ $item.title }}" loading="lazy">
           {{ end }}
-          <div class="dt">{{ $page.Date.Format "January 2, 2006" }}</div>
+          <div class="dt">{{ $item.date.Format "January 2, 2006" }}</div>
           <div class="tl">
-            {{ with $page.Params.speaker_url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $speaker }}</a>
-            {{ else }}{{ $speaker }}{{ end }}
+            {{ with $item.link }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $item.title }}</a>
+            {{ else }}{{ $item.title }}{{ end }}
           </div>
         </figure></div>
         {{ end }}

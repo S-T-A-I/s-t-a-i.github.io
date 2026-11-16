@@ -25,6 +25,7 @@ tag = "tags"
   slogan_text = "Creating scalable and trustworthy AI with human guidance"
   members_api_url = "https://internal.stai-lab.org/api/public/members.json"
   publications_api_url = "https://internal.stai-lab.org/api/public/publications.json"
+  activities_api_url = "https://internal.stai-lab.org/api/public/activities.json"
 
   [params.logo]
     image = "img/stai-logos-bright.png"
